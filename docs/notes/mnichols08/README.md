@@ -3,7 +3,7 @@
 
 **__Task Description__**
 - [x] Familiarize yourself with the [Chingu Agile Methodology](https://github.com/chingu-voyages/Handbook/blob/main/docs/guides/voyage/voyage.md#sprint-3-5---reaching-your-mvp) used in a Voyage 
-- [ ] Learn more about Agile Methodologies in general by reading [Agile Methodology 101](https://github.com/chingu-voyages/Handbook/blob/main/docs/resources/projresources/agile101.md#agile-methodology-101)
+- [x] Learn more about Agile Methodologies in general by reading [Agile Methodology 101](https://github.com/chingu-voyages/Handbook/blob/main/docs/resources/projresources/agile101.md#agile-methodology-101)
 **__Notes__**
 Voyages are 6 week long remote **team** projects where we will level up our skills and experience to help us land our dream job by: 
 * Puttiong the technical knowledge that we have already gained to practice.
@@ -11,3 +11,6 @@ Voyages are 6 week long remote **team** projects where we will level up our skil
 * Being accountable to our commitments to the team and to ourselves.
 * A Voyage may be free in financial cost, but it is not free in our time.
 * We have signed up for 8-12 hours per week of committment to the Voyage.
+* Sprints are increments in time where we will be completing tasks. A Chingu Sprint is one week in length
+* At the start of a sprint the team reviews the backlog of the remaining work and chooses the tasks to be completed int he upcoming sprint.
+* If we complete them before the end of the sprint then we should start new tasks from the backlog to fill the remaining time.
