@@ -35,7 +35,7 @@ your repo access and to practice PR'ing with your team *before* you start
 coding!
 
 - Sebastian De La Quintana: [GitHub](https://github.com/sebastiandlq) / Don't have Linkedin :(
-- Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Mikey Nichols: [GitHub](https://github.com/mnichols08) / [LinkedIn](https://linkedin.com/in/mnix-dev)
 
    ...
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
