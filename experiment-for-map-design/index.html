@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .hidden{
+            display: none !important;
+        }
+        .map{
+            background: url("./map.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        .map{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: absolute;
+        }
+        .map__element{
+            position: absolute;
+            display: flex;
+            width: 15px;
+            height: 15px;
+        }
+        .map__element__link{
+            width: 10px;
+            height: 10px;
+            border: 1px solid black;
+            background-color: black;
+            border-radius: 100%;
+        }
+        #China{
+            top: 35%;
+            left: 70%;
+        }
+        #Bolivia{
+            top: 55%;
+            left: 20%;
+        }
+        .map__dino_details{
+            border: 3px black solid;
+            min-width: 400px;
+            min-height: 250px;
+            display: flex;
+            position: relative;
+            right: 200px;
+            margin: 0;
+        }
+        .map__dino_details__image{
+            height: 80%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <body>
+        <section class="map" id="map">
+            <div class="map__element" id="China">
+                <a href="." class="map__element__link" ></a>
+                <div class="map__dino_details hidden">
+                    <img class="map__dino_details__image" src="./dinosaurjpeg.jpeg" alt="velociraptor" srcset="">
+                    <p class="map__dino_details__description">Lorem Ipsum, los velociraptors son geniales, a que si verdad. askjndakjndsak. miau. My abogata is the greates cat there is in this world</p>
+                </div>
+            </div>
+            <div class="map__element" id="Bolivia">
+                <a href="." class="map__element__link" ></a>
+                <div class="map__dino_details hidden">
+                    <img class="map__dino_details__image" src="./dinosaurjpeg.jpeg" alt="velociraptor" srcset="">
+                    <p class="map__dino_details__description">Lorem Ipsum, los velociraptors son geniales, a que si verdad. askjndakjndsak. miau. My abogata is the greates cat there is in this world</p>
+                </div>
+            </div>
+        </section>
+    </body>
+
+    <script>
+        const map = document.getElementById("map")
+        function create_point_in_the_map(id, country, coordinates, dinosaurName, dinosaurImage, dinosaurDescription, link){
+            //This function is for creating a new point in the map that can be clicked or hoover at for more information
+            //I was thinking convert the data into an array and then use this function to create all the points
+            let newPoint = document.createElement('div')
+            newPoint.classList.add('map__element')
+            newPoint.id = country
+            //newPoint.style.position = 'relative'
+            //Still figuring out how to use the coordinates correctly
+            newPoint.style.left = String(coordinates.x) + '%'
+            newPoint.style.top = String(coordinates.y) + '%'
+            newPoint.innerHTML = 
+            `
+                <a href="${link}" class="map__element__link" ></a>
+                <div class="map__dino_details hidden">
+                    <img class="map__dino_details__image" src="${dinosaurImage}" alt="${dinosaurName}">
+                    <div class = dino_text>
+                        <h1>${dinosaurName}</h1>
+                        <p class="map__dino_details__description">${dinosaurDescription}</p>
+                    </div>
+                </div>
+            `
+
+            map.appendChild(newPoint)
+            newPoint.addEventListener('mouseenter', ()=>{
+                newPoint.children[1].classList.remove("hidden");
+            })
+            newPoint.addEventListener('mouseleave', ()=>{
+                newPoint.children[1].classList.add("hidden");
+            })
+            
+        }
+        create_point_in_the_map(1, "USA", {x: 20, y: 30}, "Broncosaurio", "./dinosaurjpeg.jpeg", "HOLA", ".")
+        create_point_in_the_map(1, "france", {x: 50, y: 30}, "MIau", "./dinosaurjpeg.jpeg", "HOLA", ".")
+
+
+        //Adding manually for first tests
+        const country = document.getElementById("China");
+        country.addEventListener('mouseenter', ()=>{
+            console.log("Mouse entered");
+            country.children[1].classList.remove("hidden");
+        })
+        country.addEventListener('mouseleave', ()=>{
+            console.log("mouse leave");
+            country.children[1].classList.add("hidden");
+        })
+        const country2 = document.getElementById("Bolivia");
+        country2.addEventListener('mouseenter', ()=>{
+            console.log("Mouse entered");
+            country2.children[1].classList.remove("hidden");
+        })
+        country2.addEventListener('mouseleave', ()=>{
+            console.log("mouse leave");
+            country2.children[1].classList.add("hidden");
+        })
+    </script>
+    <footer>
+
+    </footer>
+</body>
+</html>
