@@ -37,7 +37,6 @@ coding!
 - Sebastian De La Quintana: [GitHub](https://github.com/sebastiandlq) / Don't have Linkedin :(
 - Mikey Nichols: [GitHub](https://github.com/mnichols08) / [LinkedIn](https://linkedin.com/in/mnix-dev)
 - Joel Nwamba: [Github](https://github.com/joel-elyon-nwamba)/ [Linkedin](https://www.linkedin.com/in/joel-nwamba/)
-- Brett Meril: [GitHub](https://github.com/b-kicks-IT) / [LinkedIn](https://linkedin.com/in/brett-meril/)
 - Vincent Chan: [GitHub](https://github.com/vinccodes) / [Linkedin](https://www.linkedin.com/in/vincentdychan/)
-   ...
-- Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname) "
+- Jordan Osikowicz: [GitHub](https://github.com/JOSIK95) / [LinkedIn](https://www.linkedin.com/in/jordan-osikowicz-developer/) 
+
