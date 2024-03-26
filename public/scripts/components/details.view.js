@@ -1,8 +1,5 @@
 import createElement from "../utils/createEle.js";
 
-// temporary var for until I know what container that Sebastian creates
-anchor = document.createElement("div")
-
 // function to display a dinosaur modal
 const displayDinosaur = (dinosaur, anchor) => {
   const {
@@ -38,7 +35,7 @@ const displayDinosaur = (dinosaur, anchor) => {
     <div class="container">
     <p><strong>Found In:</strong> ${foundIn}</p>
     <p><strong>Type:</strong> ${typeOfDinosaur}</p>
-    <p><strong>Length:</strong> ${length}/p>
+    <p><strong>Length:</strong> ${length}</p>
     <p><strong>Weight:</strong> ${weight}</p>
     <p><strong>Diet:</strong> ${diet}</p>
     <p><strong>Lived during:</strong> ${whenLived}</p>
