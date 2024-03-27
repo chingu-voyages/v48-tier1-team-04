@@ -36,7 +36,7 @@ const displayDinosaur = (dinosaur, anchor) => {
     <p><strong>Found In:</strong> ${foundIn}</p>
     <p><strong>Type:</strong> ${typeOfDinosaur}</p>
     <p><strong>Length:</strong> ${length}</p>
-    <p><strong>Weight:</strong> ${weight}</p>
+    ${ weight > 0 ? `<p><strong>Weight:</strong> ${weight} kgs</p>`: ``}
     <p><strong>Diet:</strong> ${diet}</p>
     <p><strong>Lived during:</strong> ${whenLived}</p>
     <p><strong>Species Type:</strong> ${typeSpecies}</p>
