@@ -1123,5 +1123,18 @@
       "namedBy": "OsmÃ³lska, Roniewicz and Barsbold (1972)",
       "typeSpecies": "bullatus",
       "description": "N/A"
-    }
+    },
+    {  "id": 112,
+    "name": "Tyranosaurus Rex",
+    "imageSrc": "",
+    "typeOfDinosaur": "",
+    "length": "",
+    "weight": "",
+    "diet": "",
+    "whenLived": "",
+    "foundIn": "",
+    "taxonomy": "",
+    "namedBy": "",
+    "typeSpecies": "",
+    "description": ""}
   ]
