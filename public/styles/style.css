@@ -1,0 +1,25 @@
+.hidden{
+    display: none !important;
+}
+.dinosaur-modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-container{
+    width: 80%;
+    min-width: 500px;
+    height: 80%;
+
+    background-color: white;
+    border-radius: 10px;
+    
+    overflow: scroll;
+}

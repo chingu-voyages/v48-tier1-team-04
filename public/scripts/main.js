@@ -10,7 +10,7 @@ data.map(dinosaur =>
 
 
 // temporary testing (This is a temporary workaround to allow me to test the display data feature -mn)
-const modalAnchor = document.createElement("div"); // temporary var for until I know what container that Sebastian creates
+const modalAnchor = document.getElementById("dinosaur-modal"); // temporary var for until I know what container that Sebastian creates
 Array.from(document.querySelectorAll('li')).forEach((dino, index) => {
     dino.style = "cursor: pointer" // changes the cursor to pointer
     dino.onclick = e => {
