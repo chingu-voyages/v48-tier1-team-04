@@ -1,12 +1,11 @@
 import createElement from "../utils/createEle.js";
 
 // function to display a dinosaur modal
-const displayDinosaur = (dinosaur, anchor) => {
+const displayDinosaur = (dinosaur) => {
   const {
     description,
     diet,
     foundIn,
-    id,
     imageSrc,
     length,
     name,
@@ -18,9 +17,8 @@ const displayDinosaur = (dinosaur, anchor) => {
     whenLived,
   } = dinosaur;
   // destructures the dinosaur object
-
-  anchor.id = id; // applies an id to the anchor, so grab the close button later
-
+  const anchor = document.getElementById("dinosaur-modal");
+  anchor.innerHTML = ``;
   const content = `
     <div class="header-flex">
     <h1 class="dinosaur-name">${name} (${taxonomy})</h1>
@@ -36,24 +34,25 @@ const displayDinosaur = (dinosaur, anchor) => {
     <p><strong>Found In:</strong> ${foundIn}</p>
     <p><strong>Type:</strong> ${typeOfDinosaur}</p>
     <p><strong>Length:</strong> ${length}</p>
-    ${ weight > 0 ? `<p><strong>Weight:</strong> ${weight} kgs</p>`: ``}
+    ${weight > 0 ? `<p><strong>Weight:</strong> ${weight} Kg</p>` : ``}
     <p><strong>Diet:</strong> ${diet}</p>
     <p><strong>Lived during:</strong> ${whenLived}</p>
     <p><strong>Species Type:</strong> ${typeSpecies}</p>
     <p><strong>Description:</strong> ${description}</p>   
     </div>
     `; // the innerHTML for our page
-  const modal = createElement("div", content, anchor); // creates an empty div and fills it in with 
-  anchor.classList.remove("hidden") // Shows the modal
-  
-  modal.classList = "modal-container" // applies a className of modal-container to the modal
+  const modal = createElement("div", content, anchor); // creates an empty div and fills it in with
+
+  modal.classList = "modal-container"; // applies a className of modal-container to the modal
   const closeBtn = modal.querySelector(".close-btn"); // points to the close button
   closeBtn.style = "cursor:pointer"; // when hovering over the close button the cursor changes to a pointer
   closeBtn.onclick = () => {
-    modal.remove()
-    anchor.classList.add("hidden")
+    modal.remove();
+    anchor.classList.add("hidden");
   }; // remoove the modal from the dom on click of th close button and hides the modal
-  document.body.prepend(anchor); // prepends the anchor to the body
+  anchor.append(modal);
+  anchor.classList.remove("hidden");
+  return "modal popup of " + name + " added to the dom";
 };
 
-export default displayDinosaur
+export default displayDinosaur;
