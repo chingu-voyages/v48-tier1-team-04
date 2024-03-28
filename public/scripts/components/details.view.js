@@ -44,11 +44,15 @@ const displayDinosaur = (dinosaur, anchor) => {
     </div>
     `; // the innerHTML for our page
   const modal = createElement("div", content, anchor); // creates an empty div and fills it in with 
+  anchor.classList.remove("hidden") // Shows the modal
   
-  modal.className = "modal-container" // applies a className of modal-container to the modal
+  modal.classList = "modal-container" // applies a className of modal-container to the modal
   const closeBtn = modal.querySelector(".close-btn"); // points to the close button
   closeBtn.style = "cursor:pointer"; // when hovering over the close button the cursor changes to a pointer
-  closeBtn.onclick = () => modal.remove(); // remoove the modal from the dom on click of th close button
+  closeBtn.onclick = () => {
+    modal.remove()
+    anchor.classList.add("hidden")
+  }; // remoove the modal from the dom on click of th close button and hides the modal
   document.body.prepend(anchor); // prepends the anchor to the body
 };
 
