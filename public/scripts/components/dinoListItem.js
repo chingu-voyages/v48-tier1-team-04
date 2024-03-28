@@ -1,5 +1,5 @@
 import createElement from "../utils/createEle.js";
-import displayDinosaur from "./details.view.js";
+import displayDinosaur from "./detailsView.js";
 
 const dinoListItem = (dinosaur) => {
   const { diet, foundIn, imageSrc, name, typeSpecies, weight } = dinosaur;
