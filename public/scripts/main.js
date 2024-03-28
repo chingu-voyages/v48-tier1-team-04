@@ -1,14 +1,12 @@
 import data from './json.js'
 import displayDinosaur from './components/details.view.js';
+import dinoListItem from './components/dinoListItem.js';
 
 const anchor = document.getElementById('dino-list')
 
-data.map(dinosaur => {
-    const li = document.createElement('li')
-    li.innerHTML = dinosaur.name
-anchor.append(li)
-return "list item added of " + dinosaur.name + " to the list"
-});
+data.map(dinosaur => 
+   dinoListItem(dinosaur, anchor)
+  );
 
 
 // temporary testing (This is a temporary workaround to allow me to test the display data feature -mn)
