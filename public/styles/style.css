@@ -1,6 +1,10 @@
 .hidden{
     display: none !important;
 }
+
+#dino-list {
+    cursor: pointer;
+}
 .dinosaur-modal{
     position: fixed;
     top: 0;
