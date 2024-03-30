@@ -5,6 +5,10 @@
 #dino-list, .close-btn {
     cursor: pointer;
 }
+
+section#dino-index{
+    margin-bottom: 5em;
+}
 .dinosaur-modal{
     position: fixed;
     top: 0;
