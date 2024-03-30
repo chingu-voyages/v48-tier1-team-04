@@ -1,7 +1,9 @@
-import data from '../../assets/dinosaurs.json' with { type: 'json'};
+import data from '../../assets/dinosaurs.json' assert { type: 'json'};
 
-export function filterDinosaursByName(query){
+function filterDinosaursByName(query){
     return data.filter(dino => {
         return dino.name.toLowerCase().indexOf(query.toLowerCase()) > -1
     })
 }
+
+export default filterDinosaursByName
