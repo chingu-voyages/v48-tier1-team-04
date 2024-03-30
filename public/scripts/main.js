@@ -1,4 +1,4 @@
-import data from "./json.js";
+import data from '../assets/dinosaurs.json' assert { type: 'json'};
 import dinoListItem from "./components/dinoListItem.js";
 
 data.map((dinosaur) => dinoListItem(dinosaur));
