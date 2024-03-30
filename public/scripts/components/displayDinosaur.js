@@ -17,8 +17,8 @@ const displayDinosaur = (dinosaur) => {
     whenLived,
   } = dinosaur;
   // destructures the dinosaur object
-  const anchor = document.getElementById("dinosaur-modal");
-  anchor.innerHTML = ``;
+  const parentContainer = document.getElementById("dinosaur-modal"); // declares where we are going to append this container
+  parentContainer.innerHTML = ``; // resets the innerHTML of the parentContainer so that we can update with new content
   const content = `
     <div class="header-flex">
     <h1 class="dinosaur-name">${name} (${taxonomy})</h1>
@@ -40,19 +40,17 @@ const displayDinosaur = (dinosaur) => {
     <p><strong>Species Type:</strong> ${typeSpecies}</p>
     <p><strong>Description:</strong> ${description}</p>   
     </div>
-    `; // the innerHTML for our page
-  const modal = createEle("div", content, anchor); // creates an empty div and fills it in with
-
+    `; // the innerHTML for our page dynamically generated with conditionals
+  const modal = createEle("div", content, parentContainer); // creates an empty div and fills it in with the content above appending it to the parentContainer
   modal.classList = "modal-container"; // applies a className of modal-container to the modal
   const closeBtn = modal.querySelector(".close-btn"); // points to the close button
-  closeBtn.style = "cursor:pointer"; // when hovering over the close button the cursor changes to a pointer
   closeBtn.onclick = () => {
-    modal.remove();
-    anchor.classList.add("hidden");
-  }; // remoove the modal from the dom on click of th close button and hides the modal
-  anchor.append(modal);
-  anchor.classList.remove("hidden");
-  return "modal popup of " + name + " added to the dom";
+    modal.remove(); // removes the modal from html dom on click
+    parentContainer.classList.add("hidden"); // sets the outer dark layer to hidden (display: none)
+  }; // remove the modal from the dom on click of th close button and hides the modal
+  parentContainer.append(modal); // appends this modal to its parent
+  parentContainer.classList.remove("hidden");
+  return "modal popup of " + name + " added to the screen"; // returns a message intended for the console if we wanted to log this function
 };
 
 export default displayDinosaur;
