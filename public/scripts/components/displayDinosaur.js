@@ -1,4 +1,4 @@
-import createElement from "../utils/createEle.js";
+import createEle from "../utils/createEle.js";
 
 // function to display a dinosaur modal
 const displayDinosaur = (dinosaur) => {
@@ -41,7 +41,7 @@ const displayDinosaur = (dinosaur) => {
     <p><strong>Description:</strong> ${description}</p>   
     </div>
     `; // the innerHTML for our page
-  const modal = createElement("div", content, anchor); // creates an empty div and fills it in with
+  const modal = createEle("div", content, anchor); // creates an empty div and fills it in with
 
   modal.classList = "modal-container"; // applies a className of modal-container to the modal
   const closeBtn = modal.querySelector(".close-btn"); // points to the close button
