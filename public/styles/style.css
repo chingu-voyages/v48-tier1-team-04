@@ -2,7 +2,7 @@
     display: none !important;
 }
 
-#dino-list {
+#dino-list, .close-btn {
     cursor: pointer;
 }
 .dinosaur-modal{
