@@ -27,3 +27,49 @@
     
     overflow: scroll;
 }
+
+footer {
+    color: #fff;
+    transition: all 0.5s;
+    background: linear-gradient(45deg, #00c44b8a, #19661d);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  footer a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  footer a:hover {
+    color: #ffb900;
+    text-decoration: underline;
+  }
+
+.heart {
+  background: url(../assets/chinguheart.png);
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 0.6em;
+}
+
+.shift {
+    transition: all 0.5s;
+  }
+  .shift-left {
+    transform: translate(-50vw, 0);
+  }
+  .shift-right {
+    transform: translate(50vw, 0);
+  }
+  .shift-down {
+    transform: translate(0, 50vh);
+  }
+  .shift-up {
+    transform: translate(0, -50vh);
+  }
