@@ -1,16 +1,15 @@
-import data from './json.js'
-import displayDinosaur from './components/details.view.js';
-import createElement from './utils/createEle.js';
+import data from '../assets/dinosaurs.json' assert { type: 'json'};
+import dinoListItem from "./components/dinoListItem.js";
+import './utils/hideFooter.js';
+import filterDinosaursByName from "./utils/filterDinosaurs.js";
 
-const anchor = document.getElementById('dino-list')
+data.forEach((dinosaur) => console.log(dinoListItem(dinosaur))); // loop over the json file and call dinoListItem, passing inthe dinosaur each time resulting in a filled list of dinosaurs on screen
 
-data.map(dinosaur => {
-    const li = document.createElement('li')
-    li.innerHTML = dinosaur.name
-anchor.append(li)
-return "list item added of " + dinosaur.name + " to the list"
-});
-
+const searchBar = document.getElementById('search-bar')
+searchBar.addEventListener('keyup', () => {
+    document.getElementById('dino-list').innerHTML = ''
+    filterDinosaursByName(searchBar.value).forEach((dinosaur) => console.log(dinoListItem(dinosaur)));
+})
 
 // temporary testing (This is a temporary workaround to allow me to test the display data feature -mn)
 const modalAnchor = document.createElement("div"); // temporary var for until I know what container that Sebastian creates

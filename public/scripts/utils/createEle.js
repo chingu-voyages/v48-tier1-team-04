@@ -1,8 +1,8 @@
-const createElement = (tag, innerHTML, anchor) => {
+const createEle = (tag, innerHTML, parentContainer) => {
     const ele = document.createElement(tag);
     ele.innerHTML = innerHTML;
-    anchor.append(ele);
+    parentContainer.append(ele);
     return ele;
 }
 
-export default createElement;
+export default createEle;
