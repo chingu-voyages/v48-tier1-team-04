@@ -7,24 +7,28 @@
 }
 
 section#dino-index{
-    margin-bottom: 5em;
+    margin-block-end: 5em;
 }
 .dinosaur-modal{
     position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    inset-inline-start: 0;
 
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
 }
+#map {
+  block-size: 33vh;
+  inline-size: 100%;
+}
 .modal-container{
-    width: 80%;
-    min-width: 500px;
-    height: 80%;
+    inline-size: 80%;
+    min-inline-size: 500px;
+    block-size: 80%;
 
     background-color: white;
     border-radius: 10px;
@@ -37,9 +41,9 @@ footer {
     transition: all 0.5s;
     background: linear-gradient(45deg, #00c44b8a, #19661d);
     position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    inset-inline-start: 0;
+    inset-block-end: 0;
+    inline-size: 100%;
     text-align: center;
   }
   footer a {
@@ -54,12 +58,12 @@ footer {
 .heart {
   background: url(../assets/chinguheart.png);
   display: inline-block;
-  height: 2em;
-  width: 2em;
+  block-size: 2em;
+  inline-size: 2em;
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
-  top: 0.6em;
+  inset-block-start: 0.6em;
 }
 
 .shift {
