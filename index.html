@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta title="charset" data="UTF-8">
+  <title>Chingu Raptors</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Chingu Raptor's Ready to Brawl !!!</h1>
+    <nav>
+      <ul>
+        <li>Diet</li>
+        <li>Age</li>
+        <li>Type</li>
+        <li>Data Search</li>
+        <li>Map Search</li>
+      </ul>
+    </nav>
+  </header>
+  <form>
+    <input id="search-bar" type="search" name="q" placeholder="Search..." />
+    <button>Search</button>
+  </form>
+  <div class="world-map">
+    <!-- The world map can be inserted here -->
+  </div>
+  <section id="about">
+    <h2>Chingu Raptors</h2>
+    <p>
+      Welcome to the Chingu Raptors website! We are a group of developers who are passionate about coding and
+      dinosaurs. We are a diverse group of individuals who come from all over the world. Our goal is to create a
+      website that is both fun and educational. We hope you enjoy your time here and learn something new about
+      dinosaurs!
+    </p>
+  </section>
+  <section id="dino-index">
+    <h2>Dinosaur Index</h2>
+    <ul id="dino-list"></ul>
+
+  </section>
+  <!-- My Pie Chart Demo -->
+  <h2>Dinosaur Diet Distribution</h2>
+  <div class="container">
+    <canvas id="dietChart"></canvas>
+  </div>
+  <div id="dinosaur-modal" class="dinosaur-modal hidden"></div>
+  <footer class="shift-down">
+    <span> &lt;/&gt; with </span><i class="heart"></i><span> by </span>
+    <span>
+      <a href="https://github.com/joel-elyon-nwamba" target="_blank">joel-elyon-nwamba</a>, <a
+        href="https://github.com/JOSIK95" target="_blank">JOSIK95</a>, <a href="https://github.com/mnichols08"
+        target="_blank">mnichols08</a>, <a href="https://github.com/sebastiandlq" target="_blank">sebastiandlq</a>, <a
+        href="https://github.com/vinccodes" target="_blank">vinccodes</a>
+    </span>
+    <hr>
+    <span> © 2024 </span><span>Inspired by <a href="https://www.chingu.io" target="_blank">Chingu</a>.
+      Built for Voyage 48.
+      | <a href="https://github.com/chingu-voyages/v48-tier1-team-04" target="_blank">View Source</a> | <a
+        href="https://chingu-voyages.github.io/v48-tier1-team-04/" target="_blank">Learn More</a></span> | <a href="#"
+      id="teamPage">Chingu Raptors</a>
+  </footer>
+  <script type="module" src="./scripts/main.js"></script>
+</body>
+
+</html>
