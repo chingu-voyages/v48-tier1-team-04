@@ -5,7 +5,7 @@ import MapboxGeocoder from "mapbox-gl-geocoder";
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOXAPIKEY // The API key is stored within `.env` which is not tracked by git therefore you must obtain this information or place your own API key to mapbox in your own .env file using VITE_MAPBOXAPIKEY=<enter api key>
 
 
-const mapComponent = () => {
+const mapComponent = (data) => {
     const map = new mapboxgl.Map({
         container: "map",
         style: "",
