@@ -85,3 +85,13 @@ inset-block-start: 0.6em;
 .shift-up {
   transform: translate(0, -50vh);
 }
+
+.fade {
+  transition: all .5s;
+  opacity: 0;
+}
+
+.fade-in {
+  transition: all .5s;
+  opacity: 1;
+}
