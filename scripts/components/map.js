@@ -3,6 +3,11 @@ import "mapbox-gl/dist/mapbox-gl.css";
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOXAPIKEY; // The API key is stored within `.env` which is not tracked by git therefore you must obtain this information or place your own API key to mapbox in your own .env file using VITE_MAPBOXAPIKEY=<enter api key>
 
+const displayTeamLocations = (map) => {
+  const teamLocations = ["Bolivia", "Cincinnati", "Chile", "Gormania", "Pittsburgh", "Toronto"]
+  teamLocations.forEach(location => fetchLocation(map, location))
+}
+
 const fetchLocation = async (map, query) => {
   const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json?access_token=${mapboxgl.accessToken}`;
   fetch(url)
@@ -30,14 +35,7 @@ const mapComponent = (data) => {
     zoom: 0,
   });
 
-  placeMarker(map, [0, 0]);
-  fetchLocation(map, "Gormania");
-  fetchLocation(map, "Toronto");
-  fetchLocation(map, "Vancouver");
-  fetchLocation(map, "Cincinatti");
-  fetchLocation(map, "Toronto");
-  fetchLocation(map, "Pittsburgh");
-  fetchLocation(map, "Bolivia");
+  displayTeamLocations(map);
   
 };
 
