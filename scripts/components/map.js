@@ -11,8 +11,13 @@ const mapComponent = (data) => {
     center: [0, 0],
     zoom: 0,
   });
-  
-  const marker = new mapboxgl.Marker()
+
+  const div = document.createElement('div');
+  div.style.backgroundImage = 'url(./assets/chinguheart.png)';
+  div.style.width = '50px';
+  div.style.height = '50px';
+
+  const marker = new mapboxgl.Marker(div)
   .setLngLat([0, 0]) 
   .addTo(map);
 };
