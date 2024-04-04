@@ -43,11 +43,19 @@ const displayDinosaur = async (dinosaur) => {
     </div>
     `; // the innerHTML for our page dynamically generated with conditionals
   const modal = createEle("div", content, parentContainer); // creates an empty div and fills it in with the content above appending it to the parentContainer
-  modal.classList = "modal-container"; // applies a className of modal-container to the modal
+  modal.classList = "modal-container fade"; // applies a className of modal-container to the modal
+  setTimeout(() => {
+    modal.classList.remove("fade");
+    modal.classList.add("fade-in");
+  }, 0); // removes the fade-out class after 100ms to animate the modal in
   const closeBtn = modal.querySelector(".close-btn"); // points to the close button
   closeBtn.onclick = () => {
-    modal.remove(); // removes the modal from html dom on click
-    parentContainer.classList.add("hidden"); // sets the outer dark layer to hidden (display: none)
+    modal.classList.remove("fade-in");
+    modal.classList.add("fade"); // adds the fade-out class to the modal
+    setTimeout(() => {
+      modal.remove(); // removes the modal from html dom on click
+      parentContainer.classList.add("hidden"); // sets the outer dark layer to hidden (display: none)
+    }, 500); // removes the modal from html dom after 100ms
   }; // remove the modal from the dom on click of th close button and hides the modal
   parentContainer.append(modal); // appends this modal to its parent
   parentContainer.classList.remove("hidden");
