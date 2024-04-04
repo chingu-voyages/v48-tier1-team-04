@@ -1,7 +1,8 @@
 import createEle from "../utils/createEle.js";
+import { flyToLocation, getCoords, map } from "./map.js";
 
 // function to display a dinosaur modal
-const displayDinosaur = (dinosaur) => {
+const displayDinosaur = async (dinosaur) => {
   const {
     description,
     diet,
@@ -50,6 +51,8 @@ const displayDinosaur = (dinosaur) => {
   }; // remove the modal from the dom on click of th close button and hides the modal
   parentContainer.append(modal); // appends this modal to its parent
   parentContainer.classList.remove("hidden");
+  const coordinates = await getCoords(foundIn); // gets the coordinates of the location the dinosaur was found
+  flyToLocation(map, coordinates); // calls the flyToLocation function from map.js to fly to the location of the dinosaur
   return "modal popup of " + name + " added to the screen"; // returns a message intended for the console if we wanted to log this function
 };
 
