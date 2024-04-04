@@ -47,6 +47,9 @@ const flyToLocation = (map, coordinates) => {
   map.flyTo({
     center: coordinates,
     zoom: 2,
+    speed: 1,
+    curve: 3,
+    pitch: 60,
   });
 };
 const map = new mapboxgl.Map({
