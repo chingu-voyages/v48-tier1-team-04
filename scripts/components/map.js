@@ -54,6 +54,8 @@ const map = new mapboxgl.Map({
   style: "mapbox://styles/mnix-dev/cluiiopsk01ca01ql97063j4f",
   center: [0, 0],
   zoom: 0,
+  pitch: 120,
+  bearing: 90,
 });
 const mapComponent = (data) => {
   displayTeamLocations(map, "url(./assets/chinguheart.png)");
