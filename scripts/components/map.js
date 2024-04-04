@@ -42,25 +42,24 @@ const placeMarker = (map, coordinates, image, dinosaur) => {
   new mapboxgl.Marker(div).setLngLat(coordinates).addTo(map);
 };
 
-export const flyToLocation = (map, coordinates) => {
+const flyToLocation = (map, coordinates) => {
   window.scrollTo(0, 0);
   map.flyTo({
     center: coordinates,
-    zoom: 10,
-    essential: true,
+    zoom: 2
   });
 
 }
+const map = new mapboxgl.Map({
+  container: "map",
+  style: "",
+  center: [0, 0],
+  zoom: 0,
+});
 const mapComponent = (data) => {
-  const map = new mapboxgl.Map({
-    container: "map",
-    style: "",
-    center: [0, 0],
-    zoom: 0,
-  });
-
   displayTeamLocations(map, "url(./assets/chinguheart.png)");
   data.forEach((dinosaur) => fetchLocation(map, dinosaur.foundIn, null, dinosaur));
 };
 
 export default mapComponent;
+export { flyToLocation, map };
