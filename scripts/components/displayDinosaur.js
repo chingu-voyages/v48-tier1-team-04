@@ -22,9 +22,9 @@ const displayDinosaur = async (dinosaur) => {
   parentContainer.innerHTML = ``; // resets the innerHTML of the parentContainer so that we can update with new content
   const content = `
     <div class="header-flex">
+    <span class="close-btn">&times;</span>
     <h1 class="dinosaur-name">${name} (${taxonomy})</h1>
     <p><strong>Named By:</strong> ${namedBy}</p>
-    <span class="close-btn">&times;</span>
     </div>
     <div class="dinosaur-image-container">
     <img class="dinosaur-detail-image"
