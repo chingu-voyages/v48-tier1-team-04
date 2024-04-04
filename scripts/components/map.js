@@ -13,17 +13,17 @@ const displayTeamLocations = (map, image) => {
     "Santiago",
     "Toronto",
   ];
-  teamLocations.forEach((location) => fetchLocation(map, location, image));
+  teamLocations.forEach(async (location) => {
+    const coordinates = await getCoords(location);
+    placeMarker(map, coordinates, image);
+  });
 };
 
-const fetchLocation = async (map, query, image, dinosaur) => {
+const getCoords = async (query) => {
   const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json?access_token=${mapboxgl.accessToken}`;
-  fetch(url)
+  return fetch(url)
     .then((response) => response.json())
-    .then((data) => {
-      const coordinates = data.features[0].geometry.coordinates;
-      placeMarker(map, coordinates, image, dinosaur);
-    });
+    .then((data) => data.features[0].geometry.coordinates);
 };
 
 const placeMarker = (map, coordinates, image, dinosaur) => {
@@ -37,7 +37,7 @@ const placeMarker = (map, coordinates, image, dinosaur) => {
     const randomImg = imagesArr[Math.floor(Math.random() * imagesArr.length)];
     div.style.backgroundImage = `url(./assets/${randomImg})`;
     div.style.cursor = "pointer";
-    div.onclick = () => displayDinosaur(dinosaur)
+    div.onclick = () => displayDinosaur(dinosaur);
   }
   new mapboxgl.Marker(div).setLngLat(coordinates).addTo(map);
 };
@@ -46,10 +46,9 @@ const flyToLocation = (map, coordinates) => {
   window.scrollTo(0, 0);
   map.flyTo({
     center: coordinates,
-    zoom: 2
+    zoom: 2,
   });
-
-}
+};
 const map = new mapboxgl.Map({
   container: "map",
   style: "",
@@ -58,7 +57,12 @@ const map = new mapboxgl.Map({
 });
 const mapComponent = (data) => {
   displayTeamLocations(map, "url(./assets/chinguheart.png)");
-  data.forEach((dinosaur) => fetchLocation(map, dinosaur.foundIn, null, dinosaur));
+  data.forEach(async (dinosaur) =>
+    {
+      const coordinates = await getCoords(dinosaur.foundIn);
+      placeMarker(map, coordinates, null, dinosaur);
+    }
+  );
 };
 
 export default mapComponent;
