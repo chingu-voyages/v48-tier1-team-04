@@ -7,9 +7,9 @@ const displayTeamLocations = (map, image) => {
   const teamLocations = [
     "Bolivia",
     "Cincinnati",
-    "Chile",
     "Gormania",
     "Pittsburgh",
+    "Santiago",
     "Toronto",
   ];
   teamLocations.forEach((location) => fetchLocation(map, location, image));
