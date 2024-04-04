@@ -51,7 +51,7 @@ const flyToLocation = (map, coordinates) => {
 };
 const map = new mapboxgl.Map({
   container: "map",
-  style: "",
+  style: "mapbox://styles/mnix-dev/cluiiopsk01ca01ql97063j4f",
   center: [0, 0],
   zoom: 0,
 });
