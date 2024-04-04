@@ -23,5 +23,5 @@ dinoPie(pie, {
     data: dinoDiet
 })
 
-map()
+map(data)
 
