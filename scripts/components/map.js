@@ -8,9 +8,7 @@ const placeMarker = (map, coordinates) => {
   div.style.backgroundImage = "url(./assets/chinguheart.png)";
   div.style.width = "50px";
   div.style.height = "50px";
-  console.log(coordinates);
-  const marker = new mapboxgl.Marker(div).setLngLat(coordinates);
-  map.on("load", () => marker.addTo(map));
+  new mapboxgl.Marker(div).setLngLat(coordinates).addTo(map);
 };
 
 const mapComponent = (data) => {
@@ -22,7 +20,7 @@ const mapComponent = (data) => {
   });
 
   placeMarker(map, [0, 0]);
-
+  
 };
 
 export default mapComponent;
