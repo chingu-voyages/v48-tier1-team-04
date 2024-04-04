@@ -52,22 +52,26 @@ const flyToLocation = (map, coordinates) => {
     pitch: 60,
   });
 };
+
+const randomLatLng = () => [
+  Math.random() * 360 - 180,
+  Math.random() * 180 - 90,
+];
+
 const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mnix-dev/cluiiopsk01ca01ql97063j4f",
-  center: [0, 0],
-  zoom: 0,
-  pitch: 120,
-  bearing: 90,
+  center: randomLatLng(),
+  zoom: 1.75,
+  pitch: 60,
+  bearing: 180,
 });
 const mapComponent = (data) => {
   displayTeamLocations(map, "url(./assets/chinguheart.png)");
-  data.forEach(async (dinosaur) =>
-    {
-      const coordinates = await getCoords(dinosaur.foundIn);
-      placeMarker(map, coordinates, null, dinosaur);
-    }
-  );
+  data.forEach(async (dinosaur) => {
+    const coordinates = await getCoords(dinosaur.foundIn);
+    placeMarker(map, coordinates, null, dinosaur);
+  });
 };
 
 export default mapComponent;
