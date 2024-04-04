@@ -4,8 +4,7 @@ import './utils/hideFooter.js';
 import filterDinosaursByName from "./utils/filterDinosaurs.js";
 import calculateDiet from './utils/chartHelpers.js';
 import dinoPie from './components/dinoDietChart.js';
-
-import Chart from 'chart.js/auto'
+import map from './components/map.js';
 
 data.forEach((dinosaur) => console.log(dinoListItem(dinosaur))); // loop over the json file and call dinoListItem, passing inthe dinosaur each time resulting in a filled list of dinosaurs on screen
 
@@ -23,4 +22,6 @@ dinoPie(pie, {
     labels: ['carnivorous', 'herbivorous', 'omnivorous'],
     data: dinoDiet
 })
+
+map()
 
