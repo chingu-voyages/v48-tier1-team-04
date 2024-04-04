@@ -1,4 +1,4 @@
-import data from '../assets/dinosaurs.json' assert { type: 'json'};
+import data from './data/dinosaurs.json' assert { type: 'json'};
 import dinoListItem from "./components/dinoListItem.js";
 import './utils/hideFooter.js';
 import filterDinosaursByName from "./utils/filterDinosaurs.js";
