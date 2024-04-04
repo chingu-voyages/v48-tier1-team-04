@@ -68,4 +68,4 @@ const mapComponent = (data) => {
 };
 
 export default mapComponent;
-export { flyToLocation, map };
+export { flyToLocation, getCoords, map };
