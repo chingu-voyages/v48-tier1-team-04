@@ -22,7 +22,10 @@ section#dino-index {
   align-items: center;
 }
 #map {
-  height: 30em;
+  block-size: 30em;
+}
+#dino-map {
+  block-size: 10em;
 }
 .modal-container {
   inline-size: 80%;
