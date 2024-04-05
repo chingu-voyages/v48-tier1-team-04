@@ -13,16 +13,16 @@
   - [Deployment](#development)
 - [Authors](#deployment)
 - [Acknowledgments](#authors)
-- [About Chingu](#acknowledgements)
+- [About Chingu](#acknowledgments)
 - [Contact Us](#about-chingu)
 
 ## Overview
 
-Chingu Voyage 47 is a six-week project where a team of seven individuals, including a user experience designer and a product owner, developed a web application for organizing and managing daily tasks effectively.
+Chingu Voyage 48 is a six-week project where a team of seven individuals, including a scrum master and a product owner, developed a web application for learning about dinosaurs
 
 ### The Project
 
-The Minimum Viable Product of this application allows users to create tasks, assign them a date, priority, frequency, and track their completion. Users can also delete or update tasks. The team was provided with a dataset, which was parsed and displayed in an interface that allows users to sort by category, activity type, and individual tasks.
+The Minimum Viable Product of this application ...
 
 #### Example Image
 
@@ -38,20 +38,17 @@ This project provided an opportunity for the team to gain hands-on experience in
 
 ### Links
 
-- [Repository](https://github.com/chingu-voyages/v47-tier1-team-04)
-- [Documentation](https://chingu-voyages.github.io/v47-tier1-team-04/)
-- [Live Site URL](https://v47-tier1-team-04.netlify.app/)
-- [Development URL](https://v47-tier1-team-04-dev.netlify.app/)
-- [Beta Testing URL](https://v47-tier1-team-04-beta.netlify.app/)
-- [Alpha Testing URL](https://v47-tier1-team-04-alpha.netlify.app/)
+- [Repository](https://github.com/chingu-voyages/v48-tier1-team-04)
+- [Documentation](https://chingu-voyages.github.io/v48-tier1-team-04/)
+- [Live Site URL](https://v48-tier1-team-04.netlify.app/)
+- [Development URL](https://v48-tier1-team-04-dev.netlify.app/)
 
 ### Built with
 
-- [Figma](https://www.figma.com/proto/2meMrjvZwr4FjPYGJsxryo/Chingu-Voyage-47?node-id=91-34&starting-point-node-id=91%3A34&show-proto-sidebar=1&mode=design&t=V6RzzKbhLvmLFLsz-1)
 - [HTML: HyperText Markup Language](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS: Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript)
-- [Model View Controller](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
+- [Vite](https://vitejs.dev)
 - [Scrum](https://www.scrumalliance.org/about-scrum)
 
 ### Getting Started
@@ -61,9 +58,9 @@ These instructions will guide you to set up and run the project on your local ma
 #### Dependencies
 
 First you should clone the repository if you have not done this yet.
-`git clone https://github.com/chingu-voyages/v47-tier1-team-04.git`
+`git clone https://github.com/chingu-voyages/v48-tier1-team-04.git`
 
-This project uses `live-server` as a developer dependency. Install it using one of the following commands:
+This project uses `vite` as a developer build tool. Install it using one of the following commands:
 
 - `npm i`
 - `npm install`
@@ -78,27 +75,27 @@ Enter the development environment with one of the following commands:
 
 #### Deployment
 
-This project doesn't have a deployment level build script. To deploy the app on a front-end cloud solution (Netlify, Vercel, AWS, etc.), set the publish directory as `public`.
+This project has a deployment level build script. To deploy the app on a front-end cloud solution (Netlify, Vercel, AWS, etc.), set the publish directory as `dist` and it set `npm run build` as the build command.
 
 #### Authors
 
-| Name | Role | GitHub Profile | Term |
+| Name | Role | Github Profile | LinkedIn Profile |
 | --- | --- | --- | --- |
-| Amanda Libbey | Developer | [Amanda-Libbey](https://github.com/Amanda-Libbey) | (8 January 2024 - 18 February 2024) |
-| Chingu Voyages | Initial work | [chingu-voyages](https://github.com/chingu-voyages) | (Pre Voyage) |
-| egpennington (애멧) | Developer | [egpennington](https://github.com/egpennington) | (8 January 2024 - 18 February 2024) |
-| jayanti-neu | Developer | [jayanti-neu](https://github.com/jayanti-neu) | (8 January 2024 - 18 February 2024) |
-| Jim Medlock | Initial work | [jmedlock](https://github.com/jdmedlock) | (Pre Voyage) |
-| Mikey Nichols | Product Owner | [mnichols08](https://github.com/mnichols08) | (8 January 2024 - 18 February 2024) |
-| Stacy Riley | Developer | [Stacy-Riley](https://github.com/Stacy-Riley) | (8 January 2024 - 18 February 2024) |
-| taswakil | UI/UX Designer | [taswakil](https://github.com/taswakil) | (8 January 2024 - 18 February 2024) |
-| WillBurroughs | Developer| [WillCburroughs](https://github.com/WillCBurroughs) | (8 January 2024 - 26 January 2024) |
+| Jim Medlock | Initial work | [jmedlock](https://github.com/jdmedlock) | [in/jmedlock](https://www.linkedin.com/in/jdmedlock/)
+| Joel Nwamba | Developer | [joel-elyon-nwamba](https://github.com/joel-elyon-nwamba) | [in/joel-nwamba](https://www.linkedin.com/in/joel-nwamba/) |
+| Chingu Voyages | Initial work | [chingu-voyages](https://github.com/chingu-voyages) | [company/chingu-os](https://www.linkedin.com/company/chingu-os/) |
+| Jordan Osikowics | Developer | [JOSIC95](https://github.com/JOSIC95) | [in/jordan-osikowicz-developer](https://www.linkedin.com/in/jordan-osikowicz-developer/) |
+| Mike | Product Owner | [Mikelovin23](https://github.com/Mikelovin23) | --- |
+| Mikey Nichols | Developer | [mnichols08](https://github.com/mnichols08) | [in/mnix-dev/](https://www.linkedin.com/in/mnix-dev/) |
+| Sebastian | Developer | [sebastiandlq](https://github.com/sebastiandlq) | --- |
+| Suruchi Patki | Scrum Master | [Supatki](https://github.com/Supatki) | [in/suruchi-patki-b0710b195/](https://linkedin.com/in/in/suruchi-patki-b0710b195/) |
+| Vincent Chan | Developer | [vinccodes](https://github.com/vinccodes) | --- |
 
 See also the list of [contributors](./CONTRIBUTORS.md) who participated in this project.
 
 ## Acknowledgments
 
-Shout out to [Klesta](https://github.com/klezi10), our wonderful Voyage Guide.
+Our fantastic Voyage Guide [imadrig](https://github.com/imadrig)
 
 ## About Chingu
 
@@ -106,4 +103,4 @@ If you aren’t yet a member of [Chingu](https://chingu.io), we invite you to jo
 
 ## Contact Us
 
-Please report any [🐛bug🐛](https://github.com/chingu-voyages/v47-tier1-team-04/issues/new?assignees=&labels=bug&projects=&template=bug-report-template.md). Or, feel free to participate in a discussion!
+Please report any [🐛bug🐛](https://github.com/chingu-voyages/v48-tier1-team-04/issues/new?assignees=&labels=bug&projects=&template=bug-report-template.md). Or, feel free to participate in a discussion!
