@@ -50,6 +50,7 @@ const displayDinosaur = async (dinosaur) => {
   }, 0); // removes the fade-out class after 100ms to animate the modal in
   const closeBtn = modal.querySelector(".close-btn"); // points to the close button
   closeBtn.onclick = () => {
+    flyToLocation(map,[0,0])
     modal.classList.remove("fade-in");
     modal.classList.add("fade"); // adds the fade-out class to the modal
     setTimeout(() => {
