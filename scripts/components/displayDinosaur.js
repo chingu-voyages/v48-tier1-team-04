@@ -61,7 +61,7 @@ const displayDinosaur = async (dinosaur) => {
   parentContainer.append(modal); // appends this modal to its parent
   parentContainer.classList.remove("hidden");
   const coordinates = await getCoords(foundIn); // gets the coordinates of the location the dinosaur was found
-  flyToLocation(map, coordinates); // calls the flyToLocation function from map.js to fly to the location of the dinosaur
+  flyToLocation(map, coordinates, 4); // calls the flyToLocation function from map.js to fly to the location of the dinosaur
   return "modal popup of " + name + " added to the screen"; // returns a message intended for the console if we wanted to log this function
 };
 
