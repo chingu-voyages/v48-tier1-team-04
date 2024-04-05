@@ -46,10 +46,10 @@ const flyToLocation = (map, coordinates) => {
   window.scrollTo(0, 0);
   map.flyTo({
     center: coordinates,
-    zoom: 2,
+    zoom: 1,
     speed: 1,
     curve: 3,
-    pitch: 60,
+    pitch: 0,
   });
 };
 
@@ -60,11 +60,12 @@ const randomLatLng = () => [
 
 const map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mnix-dev/cluiiopsk01ca01ql97063j4f",
-  center: randomLatLng(),
-  zoom: 1.75,
-  pitch: 60,
-  bearing: 180,
+  style: "",
+  center: [0, 0],
+  zoom: 1,
+  pitch: 0,
+  bearing: 0,
+  projection: 'naturalEarth'
 });
 const mapComponent = (data) => {
   displayTeamLocations(map, "url(./assets/chinguheart.png)");
