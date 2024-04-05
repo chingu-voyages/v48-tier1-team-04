@@ -42,11 +42,11 @@ const placeMarker = (map, coordinates, image, dinosaur) => {
   new mapboxgl.Marker(div).setLngLat(coordinates).addTo(map);
 };
 
-const flyToLocation = (map, coordinates) => {
+const flyToLocation = (map, coordinates, zoom) => {
   window.scrollTo(0, 0);
   map.flyTo({
     center: coordinates,
-    zoom: 1,
+    zoom: zoom ? zoom : 1,
     speed: 1,
     curve: 3,
     pitch: 0,
