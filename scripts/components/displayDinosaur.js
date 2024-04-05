@@ -1,3 +1,4 @@
+import mapboxgl from "mapbox-gl";
 import createEle from "../utils/createEle.js";
 import { flyToLocation, getCoords, map } from "./map.js";
 
@@ -24,6 +25,7 @@ const displayDinosaur = async (dinosaur) => {
     <div class="header-flex">
     <span class="close-btn">&times;</span>
     <h1 class="dinosaur-name">${name} (${taxonomy})</h1>
+    <div id="dino-map"></div>
     <p><strong>Named By:</strong> ${namedBy}</p>
     </div>
     <div class="dinosaur-image-container">
@@ -50,7 +52,7 @@ const displayDinosaur = async (dinosaur) => {
   }, 0); // removes the fade-out class after 100ms to animate the modal in
   const closeBtn = modal.querySelector(".close-btn"); // points to the close button
   closeBtn.onclick = () => {
-    flyToLocation(map,[0,0])
+    flyToLocation(map, [0, 0]);
     modal.classList.remove("fade-in");
     modal.classList.add("fade"); // adds the fade-out class to the modal
     setTimeout(() => {
@@ -61,6 +63,24 @@ const displayDinosaur = async (dinosaur) => {
   parentContainer.append(modal); // appends this modal to its parent
   parentContainer.classList.remove("hidden");
   const coordinates = await getCoords(foundIn); // gets the coordinates of the location the dinosaur was found
+
+  const dinoMap = new mapboxgl.Map({
+    container: "dino-map",
+    style: "mapbox://styles/mnix-dev/cluiiopsk01ca01ql97063j4f",
+    center: [0,0],
+    zoom: 1,
+    pitch: 0,
+    bearing: 0,
+  });
+  
+  dinoMap.flyTo({
+    center: coordinates,
+    zoom: 5,
+    speed: .491,
+    curve: 3,
+    pitch: 85,
+  });
+  // flies to the location using the newly rendered map within the modal
   flyToLocation(map, coordinates, 4); // calls the flyToLocation function from map.js to fly to the location of the dinosaur
   return "modal popup of " + name + " added to the screen"; // returns a message intended for the console if we wanted to log this function
 };
