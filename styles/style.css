@@ -28,30 +28,27 @@ section#dino-index {
 
 #dino-map {
   border-radius: 4% 3% 2% 1%;
-  height: 10em;
+  block-size: calc(60vh - 5em);
 }
-#dino-map
-#dino-map h3 {
+
+#dino-map .mapboxgl-ctrl-top-left {
+  text-shadow: 0 0 7px black;
+  background: #0000002e;
+  text-align: justify;
+  inline-size: 33%;
+  margin: 1em;
+  padding: 1em;
+}
+#dino-map #dino-map h3 {
   color: #000;
   text-align: center;
   font-size: 2.5em;
   font-weight: 700;
 }
-#dino-map img {
-  transition: all 1.5s;
-  filter: blur(50px) opacity(1);
-  cursor: pointer;
-}
 
-#dino-map img:hover {
-  filter: blur(0) opacity(.75);
-  border-radius: 5% 8% 7% 6%;
-  box-shadow: 0 0 10px 5px #000000a8;
-}
 .modal-container {
   inline-size: 80%;
   min-inline-size: 500px;
-  block-size: 80%;
   border-radius: 10px;
   overflow-y: auto;
   padding: 1em;
