@@ -60,7 +60,7 @@ const randomLatLng = () => [
 
 const map = new mapboxgl.Map({
   container: "map",
-  style: "",
+  style: "mapbox://styles/mnix-dev/cluiiopsk01ca01ql97063j4f",
   center: [0, 0],
   zoom: 1,
   pitch: 0,
@@ -72,6 +72,15 @@ const mapComponent = (data) => {
   data.forEach(async (dinosaur) => {
     const coordinates = await getCoords(dinosaur.foundIn);
     placeMarker(map, coordinates, null, dinosaur);
+    // disable map zooming 
+    map.scrollZoom.disable()
+    // disable map panning using click
+    map.dragPan.disable();
+    // disable map rotation using right click + drag
+    map.dragRotate.disable();
+    // disable map rotation using touch rotation gesture
+    map.touchZoomRotate.disableRotation();
+
   });
 };
 
