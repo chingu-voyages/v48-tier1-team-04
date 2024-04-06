@@ -78,6 +78,10 @@ footer {
     transform: translate(0, -50vh);
   }
 
+  h2 {
+    text-align: center;
+  }
+
   .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
