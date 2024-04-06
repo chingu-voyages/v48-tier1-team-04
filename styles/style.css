@@ -78,7 +78,7 @@ footer {
     transform: translate(0, -50vh);
   }
 
-  #dino-index {
+  .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     grid-gap: 20px;
@@ -109,5 +109,9 @@ footer {
 
 .dino-info span {
   font-weight: bold;
+}
+
+ul li {
+  list-style: none;
 }
 
