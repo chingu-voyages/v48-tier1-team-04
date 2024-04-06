@@ -54,17 +54,96 @@ footer a {
 footer a:hover {
   color: #ffb900;
   text-decoration: underline;
+  margin-block-end: 5em;
+}
+.dinosaur-modal {
+  position: fixed;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  inset-inline-start: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#map {
+  block-size: 30em;
+  filter: drop-shadow(0 0 10px #000000a8);
 }
 
+#dino-map {
+  border-radius: 4% 3% 2% 1%;
+  block-size: calc(60vh - 5em);
+}
+
+#dino-map .mapboxgl-ctrl-top-left {
+  text-shadow: 0 0 7px black;
+  background: #0000002e;
+  text-align: justify;
+  inline-size: 33%;
+  margin: 1em;
+  padding: 1em;
+}
+#dino-map #dino-map h3 {
+  color: #000;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.modal-container {
+  inline-size: 80%;
+  min-inline-size: 500px;
+  border-radius: 10px;
+  overflow-y: auto;
+  padding: 1em;
+  color: #dedede;
+  border-radius: 8px 13px 19px 38px;
+  box-shadow: 1px 3px 20px 0px #000000a8;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.233),
+    rgba(255, 255, 255, 0.22)
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid #6e6e6e;
+
+}
+
+footer {
+  color: #fff;
+  transition: all 0.5s;
+  background: linear-gradient(45deg, #00c44b8a, #19661d);
+  position: fixed;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+  inline-size: 100%;
+  text-align: center;
+}
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #ffb900;
+  text-decoration: underline;
+}
+span.close-btn {
+  display: flex;
+  font-size: 3em;
+  justify-content: flex-end;
+}
 .heart {
   background: url(../assets/chinguheart.png);
   display: inline-block;
-  height: 2em;
-  width: 2em;
+  block-size: 2em;
+  inline-size: 2em;
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
-  top: 0.6em;
+  inset-block-start: 0.6em;
 }
 
 .shift {
@@ -74,15 +153,12 @@ footer a:hover {
 .shift-left {
   transform: translate(-50vw, 0);
 }
-
 .shift-right {
   transform: translate(50vw, 0);
 }
-
 .shift-down {
   transform: translate(0, 50vh);
 }
-
 .shift-up {
   transform: translate(0, -50vh);
 }
@@ -177,6 +253,15 @@ li img {
   /* screen at 1024px and up index list styles */
   #dino-index {
     column-count: 4;
-    
   }
 }
+.fade {
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.fade-in {
+  transition: all 0.5s;
+  opacity: 1;
+}
+
