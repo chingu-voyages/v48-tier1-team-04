@@ -130,12 +130,45 @@ li img {
 
 /* media queries for diffrent size screens  */
 
-@media (min-width: 768px){
-  /* tablet index list styles */
- 
+@media (min-width: 768px) {
+  /* screen at 768px - 874px index list styles */
+
 }
 
-@media(min-width:1200px){
-  /* desktop index list styles */
+@media(min-width: 874px) {
+
+  /* screen at 874px and up index list styles */
+
+
+  h2 {
+    font-size: 2.125em;
+  }
+
+  h5 {
+    font-size: 1.5em;
+  }
+
+  #dino-index {
+    column-count: 3;
+    column-gap: 10px;
+  }
+
+  #dino-list {
+    padding: 0;
+  }
+
+  li {
+    margin: 20px;
+    break-inside: avoid-column;
+    width: 95%
+  }
+
+  .dino-info {
+    font-size: 1.125em;
+  }
+
+  .species-type {
+    font-size: 1.125em;
+  }
 
 }
