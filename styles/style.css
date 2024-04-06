@@ -172,3 +172,11 @@ li img {
   }
 
 }
+
+@media(min-width: 1200px) {
+  /* screen at 1024px and up index list styles */
+  #dino-index {
+    column-count: 4;
+    
+  }
+}
