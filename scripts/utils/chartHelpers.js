@@ -1,4 +1,4 @@
-import data from '../../assets/dinosaurs.json' assert { type: 'json'};
+import data from '../data/dinosaurs.json' assert { type: 'json'};
 import Chart from 'chart.js/auto'
 
 const calculateDiet = () =>{
