@@ -8,6 +8,52 @@
 }
 
 section#dino-index {
+  margin-bottom: 5em;
+}
+
+.dinosaur-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  width: 80%;
+  min-width: 500px;
+  height: 80%;
+
+  background-color: white;
+  border-radius: 10px;
+
+  overflow: scroll;
+}
+
+footer {
+  color: #fff;
+  transition: all 0.5s;
+  background: linear-gradient(45deg, #00c44b8a, #19661d);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffb900;
+  text-decoration: underline;
   margin-block-end: 5em;
 }
 .dinosaur-modal {
@@ -63,6 +109,7 @@ section#dino-index {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid #6e6e6e;
+
 }
 
 footer {
@@ -102,6 +149,7 @@ span.close-btn {
 .shift {
   transition: all 0.5s;
 }
+
 .shift-left {
   transform: translate(-50vw, 0);
 }
@@ -115,6 +163,98 @@ span.close-btn {
   transform: translate(0, -50vh);
 }
 
+
+/* base font size */
+html {
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+/* mobile index list styles */
+#dino-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+}
+
+li {
+  width: 90%;
+}
+
+li img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.dino {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+  background-color: fbfbfb;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+
+/* media queries for diffrent size screens  */
+
+@media (min-width: 768px) {
+  /* screen at 768px - 874px index list styles */
+
+}
+
+@media(min-width: 874px) {
+
+  /* screen at 874px and up index list styles */
+
+
+  h2 {
+    font-size: 2.125em;
+  }
+
+  h5 {
+    font-size: 1.5em;
+  }
+
+  #dino-index {
+    column-count: 3;
+    column-gap: 10px;
+  }
+
+  #dino-list {
+    padding: 0;
+  }
+
+  li {
+    margin: 20px;
+    break-inside: avoid-column;
+    width: 95%
+  }
+
+  .dino-info {
+    font-size: 1.125em;
+  }
+
+  .species-type {
+    font-size: 1.125em;
+  }
+
+}
+
+@media(min-width: 1200px) {
+  /* screen at 1024px and up index list styles */
+  #dino-index {
+    column-count: 4;
+  }
+}
 .fade {
   transition: all 0.5s;
   opacity: 0;
@@ -124,3 +264,4 @@ span.close-btn {
   transition: all 0.5s;
   opacity: 1;
 }
+
