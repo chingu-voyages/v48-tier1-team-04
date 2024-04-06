@@ -94,12 +94,12 @@ html {
 }
 
 h2 {
-  font-size: 3.5em;
+  font-size: 2em;
   text-align: center;
 }
 
 h5 {
-  font-size: 2.5em;
+  font-size: 1.25em;
 }
 
 /* mobile index list styles */
@@ -115,7 +115,7 @@ li {
 }
 
 li img {
-  width: 80%;
+  width: 100%;
   border-radius: 20px;
 }
 
