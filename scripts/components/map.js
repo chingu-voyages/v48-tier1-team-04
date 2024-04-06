@@ -32,9 +32,8 @@ const placeMarker = (map, coordinates, image, dinosaur) => {
   div.style.height = "50px";
   div.style.backgroundSize = "contain";
   if (image) div.style.backgroundImage = image;
-  else {
-    const imagesArr = ["dino-icon-1.png", "dino-icon-2.png"];
-    const randomImg = imagesArr[Math.floor(Math.random() * imagesArr.length)];
+  else { 
+    const randomImg = `dino-icon-${Math.floor(Math.random() * 3 + 1)}.png`;
     div.style.backgroundImage = `url(./assets/${randomImg})`;
     div.style.cursor = "pointer";
     div.onclick = () => displayDinosaur(dinosaur);
