@@ -24,7 +24,7 @@ class TitleControl {
 
 const placeMarker = (map, coordinates, image, dinosaur) => {
   const div = document.createElement("div");
-  div.innerHTML = `<div class="dino-popup" style="block-size: 220px; inline-size: 220px; background-image: url(${dinosaur.imageSrc})">
+  div.innerHTML = `<div class="dino-popup" style="block-size: 220px; inline-size: 220px; background-image: url(${dinosaur.imageSrc}); background-position: center; background-size: cover">
     
   </div>`;
   const pin = document.createElement("div");
@@ -33,8 +33,7 @@ const placeMarker = (map, coordinates, image, dinosaur) => {
   pin.style.backgroundSize = "contain";
   if (image) pin.style.backgroundImage = image;
   else {
-    const imagesArr = ["dino-icon-1.png", "dino-icon-2.png"];
-    const randomImg = imagesArr[Math.floor(Math.random() * imagesArr.length)];
+    const randomImg = `dino-icon-${Math.floor(Math.random() * 3 + 1)}.png`;
     pin.style.backgroundImage = `url(./assets/${randomImg})`;
   }
   new mapboxgl.Marker(pin).setLngLat(coordinates).addTo(map);
