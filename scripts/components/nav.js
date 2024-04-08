@@ -20,6 +20,7 @@ const hideNav = () => {
       ) {
         // Scrolling down causes the footer to slide up from the bottom
         footer.classList.remove("shift-up");
+        
       } else {
         // Hides the footer when the user scrolls up
         footer.classList.add("shift-up");
