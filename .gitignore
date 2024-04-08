@@ -1,1 +1,6 @@
-pages/.vscode/settings.json
+\.vscode
+docs/
+node_modules/
+\.github/
+*.doc
+.*

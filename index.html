@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta title="charset" data="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chingu Raptors</title>
   <link rel="stylesheet" href="./styles/style.css">
 </head>
@@ -9,21 +11,35 @@
 <body>
   <header>
     <h1>Chingu Raptor's Ready to Brawl !!!</h1>
-    <nav>
-      <ul>
-        <li>Diet</li>
-        <li>Age</li>
-        <li>Type</li>
-        <li>Data Search</li>
-        <li>Map Search</li>
-      </ul>
-    </nav>
+    <div class="navigation">
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
+      <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+      </label>
+      <div class="navigation__background">&nbsp;</div>
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Dig Up Some Dinosaurs</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">View Some Charts</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Learn More about Chingu</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">About The Chingu Raptors</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
   <form>
     <input id="search-bar" type="search" name="q" placeholder="Search..." />
     <button>Search</button>
   </form>
-  <div class="world-map">
+  <div id="map" class="world-map">
     <!-- The world map can be inserted here -->
   </div>
   <section id="about">
@@ -35,11 +51,21 @@
       dinosaurs!
     </p>
   </section>
+  <section class="chart">
+    <div>
+      <canvas id="dino-diet-chart"></canvas>
+    </div>
+  </section>
   <section id="dino-index">
     <h2>Dinosaur Index</h2>
-    <ul id="dino-list"></ul> 
+    <ul id="dino-list"></ul>
 
   </section>
+  <!-- My Pie Chart Demo -->
+  <div class="container">
+    <canvas id="dietChart"></canvas>
+  </div>
+  <h2>Dinosaur Diet Distribution</h2>
   <div id="dinosaur-modal" class="dinosaur-modal hidden"></div>
   <footer class="shift-down">
     <span> &lt;/&gt; with </span><i class="heart"></i><span> by </span>
@@ -57,6 +83,7 @@
       id="teamPage">Chingu Raptors</a>
   </footer>
   <script type="module" src="./scripts/main.js"></script>
+  <script type="module" src="./scripts/components/dinoDietChart.js"></script>
 </body>
 
 </html>
