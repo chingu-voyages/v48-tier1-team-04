@@ -1,0 +1,96 @@
+.btn{
+    &,
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      text-shadow: 0 0  $color-black;
+      padding: 1.4rem;
+      display: inline-block;
+      border-radius: 2pt;
+      border: 1pt solid $color-yellow;
+      position: relative;
+      font-size:1.6rem;
+      @include transition;
+
+      // Change for the button element
+      border: none;
+      cursor: pointer;
+      
+    }
+  
+    &:hover,
+    &:active {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem $color-shadow;
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+  
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 0 2rem $color-shadow;
+    }
+  
+    &--white {
+      background: $color-transwhite;
+      color: $color-green;
+      &::after {
+        background: $color-transwhite;
+      }
+    &--black {
+      background: black;
+      color: $color-transwhite;
+      border: 1px solid white;
+      border-radius: 2px;
+    }
+  
+    }
+    &--green {
+      background: $color-primary;
+      color: $color-white;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all .4s;
+    }
+  
+    &--animated{
+      animation: moveInBottom .5s ease-out .75s;
+      animation-fill-mode: backwards;
+    }
+    &-text{
+      &:link,
+      &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        }
+
+      &:hover{
+        background: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform:translateY(-2px);
+      }
+
+      &:active{
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform:translateY(0);
+      }
+      @include transition
+    }
+  } // .btn
+  
