@@ -99,25 +99,25 @@
     block-size: 1px;
     background-color: #333;
     display: inline-block;
-    content: "";
   }
-  &__icon::after {
+  &__icon::before,
+  .navigation__icon::after {
+    content: "";
     position: absolute;
     inset-inline-start: 0;
     transition: all 0.2s;
   }
-  &__icon::before,
-  .navigation .navigation__icon::before {
+  &__icon::before {
     inset-block-start: -0.4rem;
   }
   &__icon::after {
     inset-block-start: 0.4rem;
   }
   &__button:hover .navigation__icon::before {
-    inset-block-start: -1rem;
+    inset-block-start: -.65rem;
   }
   &__button:hover .navigation__icon::after {
-    inset-block-start: 1rem;
+    inset-block-start: .65rem;
   }
   &__checkbox:checked + .navigation__button .navigation__icon {
     background-color: transparent;
@@ -128,6 +128,6 @@
   }
   &__checkbox:checked + .navigation__button .navigation__icon::after {
     inset-block-start: 0;
-    transform: rotate(-180deg);
+    transform: rotate(-135deg);
   }
 }
