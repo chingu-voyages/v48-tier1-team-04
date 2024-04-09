@@ -6,7 +6,7 @@ import calculateDiet from './utils/chartHelpers.js';
 import dinoPie from './components/dinoDietChart.js';
 import mapComponent from './components/map.js';
 import dinoOfTheDay from './components/randoDino.js';
-import "../styles/nav.css";
+import "../styles/nav.scss";
 
 data.forEach((dinosaur) => console.log(dinoListItem(dinosaur))); // loop over the json file and call dinoListItem, passing inthe dinosaur each time resulting in a filled list of dinosaurs on screen
 
