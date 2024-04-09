@@ -6,6 +6,7 @@
 // import dinoPie from './components/dinoDietChart.js';
 //import mapComponent from './components/map.js';
 // import dinoOfTheDay from './components/randoDino.js';
+import renderMain from "./components/main.js";
 import "../styles/main.scss";
 
 import renderHeader from './components/header.js';
@@ -31,3 +32,4 @@ import renderHeader from './components/header.js';
 //mapComponent(data)
 
 renderHeader();
+renderMain();
