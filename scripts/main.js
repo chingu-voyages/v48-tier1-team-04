@@ -5,13 +5,17 @@ import filterDinosaursByName from "./utils/filterDinosaurs.js";
 import calculateDiet from './utils/chartHelpers.js';
 import dinoPie from './components/dinoDietChart.js';
 import mapComponent from './components/map.js';
+import dinoOfTheDay from './components/randoDino.js';
+import "../styles/nav.css";
 
 data.forEach((dinosaur) => console.log(dinoListItem(dinosaur))); // loop over the json file and call dinoListItem, passing inthe dinosaur each time resulting in a filled list of dinosaurs on screen
 
 const searchBar = document.getElementById('search-bar')
 const pie = document.getElementById('dietChart')
 const dinoDiet = calculateDiet()
-console.log(dinoDiet);
+const dinoOfTheDayContainer = document.getElementById('dino-of-the-day')
+
+dinoOfTheDay(dinoOfTheDayContainer)
 
 searchBar.addEventListener('input', () => {
     document.getElementById('dino-list').innerHTML = ''

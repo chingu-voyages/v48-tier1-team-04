@@ -4,12 +4,12 @@ import displayDinosaur from "./displayDinosaur.js";
 const dinoListItem = (dinosaur) => {
   const { diet, foundIn, imageSrc, name, typeSpecies, weight } = dinosaur; // destructures the dinosaur object into smaller chunks
   const content = `<li class="dino">
-  <div>
+  <div title="${name}"> 
     <img
       src="${imageSrc}" alt="${name}" />
   </div>
   <div class="dino-info">
-    <h5>${name}</h5>
+    <h5 class="dino-info__name">${name}</h5>
     <div class="region">Found in:
       <span>${foundIn}</span>
     </div>
