@@ -90,7 +90,7 @@
   }
   &__icon {
     position: relative;
-    margin-block-start: 3.5rem;
+    margin-block-start: 1.5rem;
   }
   &__icon,
   .navigation__icon::before,
@@ -99,19 +99,19 @@
     block-size: 1px;
     background-color: #333;
     display: inline-block;
+    content: "";
   }
   &__icon::after {
-    content: "";
     position: absolute;
     inset-inline-start: 0;
     transition: all 0.2s;
   }
   &__icon::before,
   .navigation .navigation__icon::before {
-    inset-block-start: -0.8rem;
+    inset-block-start: -0.4rem;
   }
   &__icon::after {
-    inset-block-start: 0.8rem;
+    inset-block-start: 0.4rem;
   }
   &__button:hover .navigation__icon::before {
     inset-block-start: -1rem;
@@ -128,6 +128,6 @@
   }
   &__checkbox:checked + .navigation__button .navigation__icon::after {
     inset-block-start: 0;
-    transform: rotate(-135deg);
+    transform: rotate(-180deg);
   }
 }
