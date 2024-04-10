@@ -27,64 +27,8 @@ section#dino-index {
   margin-bottom: 5em;
 }
 
-.dinosaur-modal {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
 
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.modal-container {
-  overflow-y: auto;
-  padding: 1em;
-  color: #dedede;
-  border-radius: 8px 13px 19px 38px;
-  box-shadow: 1px 3px 20px #000000a8;
-  background: linear-gradient(45deg,#2525253b,#14141438);
-  overflow: hidden;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid #6e6e6e;
-}
-
-footer {
-  color: #fff;
-  transition: all 0.5s;
-  background: linear-gradient(45deg, #00c44b8a, #19661d);
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
-
-footer a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #ffb900;
-  text-decoration: underline;
-  margin-block-end: 5em;
-}
-.dinosaur-modal {
-  position: fixed;
-  inset-block-start: 0;
-  inset-block-end: 0;
-  inset-inline-end: 0;
-  inset-inline-start: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 #map {
   block-size: 30em;
   filter: drop-shadow(0 0 10px #000000a8);
@@ -117,57 +61,6 @@ footer a:hover {
   font-weight: 700;
 }
 
-.modal-container {
-  border-radius: 10px;
-  overflow-y: auto;
-  padding: 1em;
-  color: #dedede;
-  border-radius: 8px 13px 19px 38px;
-  box-shadow: 1px 3px 20px 0px #000000a8;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.233),
-    rgba(255, 255, 255, 0.22)
-  );
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid #6e6e6e;
-
-}
-
-footer {
-  color: #fff;
-  transition: all 0.5s;
-  background: linear-gradient(45deg, #00c44b8a, #19661d);
-  position: fixed;
-  inset-inline-start: 0;
-  inset-block-end: 0;
-  inline-size: 100%;
-  text-align: center;
-}
-footer a {
-  color: #ffffff;
-  text-decoration: none;
-}
-footer a:hover {
-  color: #ffb900;
-  text-decoration: underline;
-}
-span.close-btn {
-  display: flex;
-  font-size: 3em;
-  justify-content: flex-end;
-}
-.heart {
-  background: url(../assets/chinguheart.png);
-  display: inline-block;
-  block-size: 2em;
-  inline-size: 2em;
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: relative;
-  inset-block-start: 0.6em;
-}
 
 .shift {
   transition: all 0.5s;

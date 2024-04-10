@@ -45,7 +45,11 @@ $breakpoint choices:
 @mixin random-bgr(){
     background-color: rgba(random(255), random(255), random(255), .4);
   }
-
+@mixin trans-img(){
+        user-select: none;
+        mix-blend-mode: multiply;
+        opacity: .5;
+}
 @mixin transition {
     transition: all .2s;
 }

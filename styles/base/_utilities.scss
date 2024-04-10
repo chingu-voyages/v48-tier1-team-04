@@ -50,7 +50,7 @@
 }
 .a{
     &-fade{
-        transition: all .5s;
+        transition: all 1.5s;
         &-in{
             opacity: 1 !important;
         }

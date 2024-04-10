@@ -61,15 +61,15 @@
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
 
             &--1 {
-                background-image:linear-gradient(30deg, $color-card-light, $color-card-dark), url(../img/nat-5.jpg);
+                background-image:linear-gradient(30deg, $color-card-light, $color-card-dark);
             }
 
             &--2 {
-                background-image: linear-gradient(30deg, $color-card-light, $color-card-dark), url(../img/nat-6.jpg);
+                background-image: linear-gradient(30deg, $color-card-dark, $color-card-light);
             }
 
             &--3 {
-                background-image: linear-gradient(30deg, $color-card-light, $color-card-dark), url(../img/nat-7.jpg);
+                background-image: linear-gradient(30deg, $color-green, $color-primary);
             }
         }
 
