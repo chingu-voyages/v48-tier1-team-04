@@ -1,0 +1,55 @@
+@import "../../../styles/components/bg-video";
+@import "../../../styles/abstracts/mixins";
+.header {
+    block-size: 75vh;
+    position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 55vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 55vh, 0 100%);
+  
+    @include respond(phone) {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+    }
+  
+    &__logo-box {
+      position: absolute;
+      inset-block-start: 2rem;
+      inset-inline-start: 2rem;
+    }
+  
+    &__logo {
+      block-size: 10em;
+      &:hover {
+        transform: rotate(1deg) scale(1.01);
+        transition: all 0.3s;
+        animation: hue-rotate 120s infinite;
+      }
+    }
+  
+    &__text-box {
+      position: absolute;
+      inset-block-start: 50%;
+      inset-inline-start: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
+  
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index:-1;
+    opacity: .75; 
+    overflow: hidden;   
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 55vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 55vh, 0 100%);
+    &__content {
+        height: 100%;
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+}
