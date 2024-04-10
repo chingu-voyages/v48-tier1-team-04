@@ -1,4 +1,4 @@
-import createEle from "../utils/createEle";
+import createEle from "../../../utils/createEle";
 const hideNav = () => {
     // listens for the user to scroll up or down
     const getNav = () => document.querySelector("nav");

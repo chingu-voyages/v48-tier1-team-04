@@ -2,7 +2,7 @@ import "./header.styles.scss";
 import createEle from "../../utils/createEle";
 import dinosaurs from "../../data/dinosaurs.json";
 import randomPhrase from "../../utils/randomPhrase";
-import renderNav from "../nav";
+import renderNav from "./nav/nav.component";
 import displayDinosaur from "../displayDinosaur";
 
 
