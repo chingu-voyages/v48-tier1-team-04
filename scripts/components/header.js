@@ -1,11 +1,7 @@
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
 import createEle from "../utils/createEle";
 import dinosaurs from "../data/dinosaurs.json";
 import randomPhrase from "../utils/randomPhrase";
 import renderNav from "./nav";
-
-
 
 
 const renderHeader = () => {
