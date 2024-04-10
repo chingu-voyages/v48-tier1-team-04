@@ -1,4 +1,5 @@
 import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 import dinosaurs from "../data/dinosaurs.json";
 import createEle from "../utils/createEle";
 import renderFooter from "./footer";
