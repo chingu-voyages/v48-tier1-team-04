@@ -1,34 +1,8 @@
 import createEle from "../../../utils/createEle";
-const hideNav = () => {
-    // listens for the user to scroll up or down
-    const getNav = () => document.querySelector("nav");
-    window.onscroll = () => {
-      const nav = getNav();
-      const pageTop = 0; // declares the pageTop to be 0
-        windowYOffset = window.pageYOffset; // declares the pageTop to be the value of the offsetHeight of the body subtracted by the inner height of the window
-      if (pageTop == windowYOffset) nav.classList.remove("shift-up");
-      // if we scroll to the bottom of the page, remove the class-list of shift-down from our footer - rendering it on screen
-      else nav.classList.add("shift-up"); // if we scroll away, hide it again by adding that class back
-    };
-  
-    // https://stackoverflow.com/users/10703934/kia-abdi && https://techstacker.com/javascript-detect-when-scrolled-to-bottom/
-    window.onwheel = (e) => {
-      const footer = getFooter(); // defines footer by running function to find it
-      if (
-        e.deltaY >= 0 &&
-        window.innerHeight + window.pageYOffset >= document.body.offsetHeight
-      ) {
-        // Scrolling down causes the footer to slide up from the bottom
-        footer.classList.remove("shift-up");
-        
-      } else {
-        // Hides the footer when the user scrolls up
-        footer.classList.add("shift-up");
-      }
-    };
-  };
+import "./nav.styles.scss";
+
 const content = `
-<input type="checkbox" class="navigation__checkbox shift-up" id="navi-toggle">
+<input type="checkbox" class="navigation__checkbox" id="navi-toggle">
 <label for="navi-toggle" class="navigation__button">
   <span class="navigation__icon">&nbsp;</span>
 </label>
@@ -49,6 +23,40 @@ const content = `
     </li>
   </ul>
 </nav>
+<button id="toTop" class="fade-out"></button>
 `;
-const renderNav = () => createEle("div", content, document.body, "navigation");
+let scrollTop = 0;
+
+const renderNav = () => {
+  createEle("div", content, document.body, "navigation fade-out", "nav"); // create the navigation element and appends it to document.body
+  const nav = document.getElementById("nav");
+  const toTopButton = document.getElementById("toTop");
+  toTopButton.onclick = () => window.scrollTo({ top: 0 });
+
+  window.addEventListener("scroll", () => {
+    let st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st > scrollTop) {
+      toTopButton.classList.remove("fade-in");
+      toTopButton.classList.add("fade-out");
+    } else {
+      toTopButton.classList.add("fade-in");
+      toTopButton.classList.remove("fade-out");
+    }
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      console.log("you're at the bottom of the page");
+      toTopButton.classList.remove("fade-out");
+      toTopButton.classList.add("fade-in");
+    }
+    if (window.scrollY > 0) {
+      nav.classList.remove("fade-out"); // show the navigation when the user scrolls down
+      nav.classList.add("fade-in");
+    } else {
+      nav.classList.remove("fade-in"); // removes fade-in class
+      nav.classList.add("fade-out"); // hide the navigation when the user reaches the top of the page
+    }
+    scrollTop = st <= 0 ? 0 : st;
+  });
+
+  return nav;
+};
 export default renderNav;
