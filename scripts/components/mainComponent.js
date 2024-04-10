@@ -5,7 +5,7 @@ import createEle from "../utils/createEle";
 import renderFooter from "./footer/footer.component";
 import randomDino from "../utils/giveRandoDino";
 import { getCoords, placeMarker } from "../utils/mapBox";
-import dinoListItem from "./dinoListItem";
+import dinoListItem from "./dino-list/dinoListItem.component";
 import renderDinoCard from "./card";
 import calculateDiet from "../utils/chartHelpers";
 import dinoPie from "./dinoDietChart";
@@ -156,7 +156,7 @@ const renderMain = async () => {
   allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(
     Math.random() * 58
   )}.png) fixed`; // sets the background of the parent container to the image of the dinosaur
-  allDinosaurs.style.backgroundSize = "cover"; // sets the background size to cover
+ // allDinosaurs.style.backgroundSize = "contain"; // sets the background size to cover
   const prevButton = document.getElementById("prev");
   const nextButton = document.getElementById("next");
   const pagination = (page, prev, reset) => {
@@ -199,7 +199,7 @@ const renderMain = async () => {
     setTimeout(() => {
       dinoList.classList.remove("fade-out");
       updatePageNumber(currentPage);
-    }, 10000);
+    }, 2);
   };
   const updatePageNumber = (page) => {
     document.querySelector("#currentPage").textContent = page;
