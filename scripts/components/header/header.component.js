@@ -1,7 +1,9 @@
-import createEle from "../utils/createEle";
-import dinosaurs from "../data/dinosaurs.json";
-import randomPhrase from "../utils/randomPhrase";
-import renderNav from "./nav";
+import "./header.styles.scss";
+import createEle from "../../utils/createEle";
+import dinosaurs from "../../data/dinosaurs.json";
+import randomPhrase from "../../utils/randomPhrase";
+import renderNav from "../nav";
+import displayDinosaur from "../displayDinosaur";
 
 
 const renderHeader = () => {
@@ -19,6 +21,7 @@ const renderHeader = () => {
     "Get Started",
     "Find Out More",
   ];
+  const randomDinosaur = dinosaurs[Math.floor(Math.random() * dinosaurs.length)];
   const headerContent = `
   <div class="bg-video">
     <video class="bg-video__content" autoplay muted loop>
@@ -38,11 +41,11 @@ const renderHeader = () => {
           greetings[Math.floor(Math.random() * greetings.length)]
         }</span>
         <span class="heading-primary--sub">${randomPhrase(
-          dinosaurs[Math.floor(Math.random() * dinosaurs.length)]
+          randomDinosaur
         )}</span>
       </h1>
 
-      <a href="#" class="btn btn--white btn--animated">
+      <a class="btn btn--white btn--animated" id="first-cta">
         ${callToActions[Math.floor(Math.random() * callToActions.length)]}
       </a>
 
@@ -56,6 +59,9 @@ const renderHeader = () => {
     null,
     true
   );
+  const firstCta = document.getElementById("first-cta");
+    firstCta.style.hover = "cursor: pointer";
+    firstCta.onclick = () => displayDinosaur(randomDinosaur);
   renderNav();
   return header;
 };
