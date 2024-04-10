@@ -8,7 +8,7 @@ import { getCoords, placeMarker } from "../utils/mapBox";
 import dinoListItem from "./dino-list/dinoListItem.component";
 import renderDinoCard from "./card";
 import calculateDiet from "../utils/chartHelpers";
-import dinoPie from "./dinoDietChart";
+import dinoPie from "./chart/dinoDietChart.component";
 import dinoOfTheDay from "./randoDino";
 
 
