@@ -4,6 +4,7 @@ import createEle from "../utils/createEle";
 import renderFooter from "./footer";
 import randomDino from "../utils/giveRandoDino";
 import { getCoords, placeMarker } from "../utils/mapBox";
+import dinoListItem from "./dino-list/dinoListItem";
 
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOXAPIKEY;
@@ -196,11 +197,13 @@ const renderMain = async () => {
   <section id="body-map" class="section-features">
 
 </section>
+<section id="dino-list" class="section-features"></section>
 
     `;
   const main = createEle("main", content, document.body);
   renderBodyMap();
   renderFooter();
+  dinosaurs.forEach(dino => dinoListItem(dino));
   return main;
 };
 

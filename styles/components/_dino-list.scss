@@ -1,0 +1,44 @@
+#dino-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  list-style-type: none;
+  padding:25em 15em;
+  li {
+    width: 19%;
+    margin: 1em auto;
+    img {
+      width: 100%;
+      border-radius: 20px;
+      mix-blend-mode: multiply;
+      opacity: .5;
+    }
+  }
+}
+
+.dino {
+  background: rgba(255, 255, 255, 0.77);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13.6px);
+  -webkit-backdrop-filter: blur(13.6px);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+  background-color: fbfbfb;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding-bottom: 1rem;
+  &:hover {
+    scale: 1.1;
+    transition: 0.1s all;
+    cursor: pointer;
+    @include random-bgr();
+  }
+  &-info__name {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: greenyellow;
+    padding: 1rem;
+  }
+}

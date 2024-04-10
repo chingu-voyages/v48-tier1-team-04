@@ -42,6 +42,9 @@ $breakpoint choices:
         @media (max-width: $breakpoint) { @content };
     }
 }
+@mixin random-bgr(){
+    background-color: rgba(random(255), random(255), random(255), .4);
+  }
 
 @mixin transition {
     transition: all .2s;
