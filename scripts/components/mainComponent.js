@@ -2,7 +2,7 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import dinosaurs from "../data/dinosaurs.json";
 import createEle from "../utils/createEle";
-import renderFooter from "./footer";
+import renderFooter from "./footer/footer.component";
 import randomDino from "../utils/giveRandoDino";
 import { getCoords, placeMarker } from "../utils/mapBox";
 import dinoListItem from "./dinoListItem";
@@ -150,7 +150,7 @@ const renderMain = async () => {
 <section id="charts" class="section-charts"><canvas id="dietChart"></canvas></section>
 <div id="dinosaur-modal"></div>
     `;
-  const main = createEle("main", content, document.body);
+    const main = createEle("main", content, document.body);
 
   const allDinosaurs = document.querySelector("section#all-dinosaurs"); // declares the parent container which is the list of dinosaurs
   allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(
