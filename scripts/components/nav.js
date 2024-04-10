@@ -36,10 +36,10 @@ const content = `
 <nav class="navigation__nav">
   <ul class="navigation__list">
     <li class="navigation__item">
-      <a href="#" class="navigation__link">Dig Up Some Dinosaurs</a>
+      <a href="#all-dinosaurs" class="navigation__link">Dig Up Some Dinosaurs</a>
     </li>
     <li class="navigation__item">
-      <a href="#" class="navigation__link">View Some Charts</a>
+      <a href="#charts" class="navigation__link">View Some Charts</a>
     </li>
     <li class="navigation__item">
       <a href="#" class="navigation__link">Learn More about Chingu</a>
