@@ -6,7 +6,6 @@ const renderFooter = () => {
     tier: 1,
     team: `04`,
     developers: [
-      `joel-elyon-nwamba`,
       `JOSIK95`,
       `mnichols08`,
       `sebastianlq`,
@@ -32,7 +31,12 @@ const renderFooter = () => {
         </div>
       </div>
       <div class="col-1-of-2">
-        <p class="footer__copyright"> &copy; ${new Date().getFullYear()} &lt; /&gt; with <span class="heart"></span> by <a href="#" class="footer__link">mnichols08</a> for a <a href="https://www.chingu.io/" target="_blank"
+        <p class="footer__copyright"> &copy; ${new Date().getFullYear()} &lt; /&gt; with <span class="heart"></span> by <span>
+        ${config.developers.map(
+          (dev) =>
+            `<a href="https://github.com/${dev}" class="footer__link" target="_blank"> ${dev}</a>`
+        )}
+      </span> for a <a href="https://www.chingu.io/" target="_blank"
             class="footer__link"> another wonderful Chingu Event </a> called <a href="#" href="https://www.chingu.io" target="_blank" class="footer__link">Voyage 48</a>
         </p>
       </div>
