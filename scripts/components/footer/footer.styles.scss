@@ -75,3 +75,13 @@
         }
     }
 }
+.heart {
+    background: url(./assets/chinguheart.png);
+    display: inline-block;
+    block-size: 2em;
+    inline-size: 2em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    inset-block-start: 0.6em;
+  }
