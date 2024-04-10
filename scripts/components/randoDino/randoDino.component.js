@@ -65,7 +65,7 @@ function dinoOfTheDay(parentContainer){
         </div>
     </div>
     `
-    createEle('div', innerHTML, parentContainer, "dino-of-the-day")
+    createEle('section', innerHTML, parentContainer, "features dino-of-the-day")
 }
 
 
