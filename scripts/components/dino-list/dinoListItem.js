@@ -31,8 +31,6 @@ const dinoListItem = (dinosaur) => {
 `; // dynamically generarte the html for a single dinosaur list item
   const randomColor = () => `${Math.floor(Math.random()*16777215).toString(16)}6f`; // generates a random color for the background of the dinosaur card
   const parentContainer = document.getElementById('dino-list'); // declares the parent container which is the list of dinosaurs
-  parentContainer.style.background = `url(./assets/watercolor/${Math.floor(Math.random()*58)}.png) fixed`; // sets the background of the parent container to the image of the dinosaur
-  parentContainer.style.backgroundSize = 'cover'; // sets the background size of the parent container to cover
   const dinoLi = createEle("li", content, parentContainer, 'dino'); // declares a variable to a new `<li>` with the content of `content` and appended  to the parentContainer
   dinoLi.onhover = () => dinoLi.style.backgroundColor = `red`; // adds an event listener to the list item to change the background color on hover
   dinoLi.style.filter = `hue-rotate(${Math.floor(Math.random()*360)}deg)`; // sets the filter of the list item to a random hue rotation
