@@ -5,9 +5,10 @@
     height: 100%;
     width: 100%;
     z-index:-1;
-    opacity: .15; 
-    overflow: hidden;
-
+    opacity: .75; 
+    overflow: hidden;   
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 55vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 55vh, 0 100%);
     &__content {
         height: 100%;
         width: 100%;

@@ -18,9 +18,9 @@
   &__logo {
     block-size: 10em;
     &:hover {
-      // transform: rotate(1deg) scale(1.01);
-      // transition: all 0.3s;
-      animation: hue-rotate 12s infinite;
+      transform: rotate(1deg) scale(1.01);
+      transition: all 0.3s;
+      animation: hue-rotate 120s infinite;
     }
   }
 

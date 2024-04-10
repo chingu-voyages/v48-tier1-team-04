@@ -10,10 +10,6 @@
     visibility: hidden;
     @include transition;
 
-   
-
-
-
     &__content {
         @include abs-center;
         width: 75%;
