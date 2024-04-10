@@ -43,6 +43,7 @@ function dinoOfTheDay(parentContainer){
     <img src="${imageSrc}" alt="${name}">
     </div>
     <div class="dino-of-the-day__info">
+    <h2 class="heading-main u-text-center">Dino of the Day</h3>
         <div class="header-flex">
             <h1 class="dinosaur-name">${name} (${taxonomy})</h1>
             <p><strong>Named By:</strong> ${namedBy}</p>
