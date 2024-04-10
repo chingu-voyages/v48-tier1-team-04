@@ -7,8 +7,6 @@ import randomDino from "../utils/giveRandoDino";
 import { getCoords, placeMarker } from "../utils/mapBox";
 import dinoListItem from "./dino-list/dinoListItem.component";
 import renderDinoCard from "./card";
-import calculateDiet from "../utils/chartHelpers";
-import dinoPie from "./chart/dinoDietChart.component";
 import dinoOfTheDay from "./randoDino";
 
 
@@ -76,13 +74,17 @@ const renderMain = async () => {
   const content = `
   <section class="section-about">
       <div class="u-text-center u-margin-bottom-lg">
-        <h2 class="heading-secondary">
+        <h2 class="heading-primary">
           ${
             [
               "Dinosaurs are cool",
               "Dinosaurs are awesome",
               "Dinosaurs are amazing",
               "Dinosaurs are fascinating",
+              "Fun Facts About Dinosaurs",
+              "Who Knew Dinosaurs Were So Interesting?",
+              "Give Me More Dinosaurs",
+              "Dinosaurs are the best!",
             ][Math.floor(Math.random() * 4)]
           }
         </h2>
@@ -147,7 +149,7 @@ const renderMain = async () => {
 <div id="dino-list"></div>
 <div class="u-text-center u-margin-top-xl"><div class="search"><input id="search-bar" type="text" placeholder="Search For a Dinosaur..."></div><button id="prev" class="btn btn-white">Previous</button> <span id="currentPage" style="border: 2em;">${currentPage}</span><button id="next" class="btn btn-white">Next</button></div>
 </section>
-<section id="charts" class="section-charts"><canvas id="dietChart"></canvas></section>
+
 <div id="dinosaur-modal"></div>
     `;
     const main = createEle("main", content, document.body);
@@ -212,7 +214,7 @@ const renderMain = async () => {
   const dinoOfTheDayContainer = document.getElementById("dino-of-the-day");
   dinoOfTheDay(dinoOfTheDayContainer);
   const searchBar = document.getElementById("search-bar");
-  const dinoDiet = calculateDiet();
+ 
 
   searchBar.addEventListener("input", () => {
     document.getElementById("dino-list").innerHTML = "";
@@ -220,11 +222,8 @@ const renderMain = async () => {
       dinoListItem(dinosaur)
     );
   });
-  const pie = document.getElementById("dietChart");
-  dinoPie(pie, {
-    labels: ["carnivorous", "herbivorous", "omnivorous"],
-    data: dinoDiet,
-  });
+
+  
   return main;
 };
 
