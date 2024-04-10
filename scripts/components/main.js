@@ -6,7 +6,6 @@ import randomDino from "../utils/giveRandoDino";
 import { getCoords, placeMarker } from "../utils/mapBox";
 import dinoListItem from "./dino-list/dinoListItem";
 
-
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOXAPIKEY;
 
 const placeMarkers = (map) =>
@@ -139,7 +138,7 @@ const renderMain = async () => {
       "https://dinosaur-facts-api.shultzlab.com/dinosaurs/random"
     ).then((res) => res.json());
   const randomFact = await generateRandomFact();
-  console.log(randomFact);
+  let currentPage = 1;
   const content = `
   <section class="section-about">
       <div class="u-text-center u-margin-bottom-lg">
@@ -191,19 +190,57 @@ const renderMain = async () => {
    
     </div>
     <div class="u-text-center u-margin-top-xl">
-    <button class="btn btn--black">View All Dinosaurs</button>
+    <a class="btn btn--white" href="#all-dinosaurs">View All Dinosaurs</a>
   </div>
   </section>
   <section id="body-map" class="section-features">
 
 </section>
-<section id="dino-list" class="section-features"></section>
+
+<section id="all-dinosaurs" class="section-features">
+<h2 class="heading-secondary u-text-center">${["View All Dinosaurs", "All Dinosaurs", "Dinosaurs"][Math.floor(Math.random()*2)]}</h2>
+<div id="dino-list"></div>
+<div class="u-text-center"><button id="prev" class="btn btn-white">Previous</button> <span id="currentPage" style="border: 2em;">${currentPage}</span><button id="next" class="btn btn-white">Next</button></div>
+</section>
 
     `;
-  const main = createEle("main", content, document.body);
+  const main = createEle("main", content, document.body); 
+  
+  const allDinosaurs = document.querySelector('section#all-dinosaurs'); // declares the parent container which is the list of dinosaurs
+  allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(Math.random()*58)}.png) fixed`; // sets the background of the parent container to the image of the dinosaur
+  const prevButton = document.getElementById("prev");
+  const nextButton = document.getElementById("next");
+  prevButton.onclick = () => {
+    currentPage = currentPage - 1;
+    document.getElementById("dino-list").innerHTML = "";
+    document.querySelector("#currentPage").textContent = currentPage;
+    const dinosaursToDisplay = displayItems(dinosaurs, currentPage);
+    dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
+  };
+  nextButton.onclick = () => {
+    currentPage = currentPage + 1;
+    document.getElementById("dino-list").innerHTML = "";
+    document.querySelector("#currentPage").textContent = currentPage;
+    const dinosaursToDisplay = displayItems(dinosaurs, currentPage);
+    dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
+  };
+
   renderBodyMap();
   renderFooter();
-  dinosaurs.forEach(dino => dinoListItem(dino));
+
+  const itemsPerPage = 5;
+
+  const displayItems = (items, page) => {
+    const start = (page - 1) * itemsPerPage;
+    const end = page * itemsPerPage;
+    return items.slice(start, end);
+  };
+
+  const updatePageNumber = (page) => (currentPage = page);
+  updatePageNumber(8);
+  const dinosaursToDisplay = displayItems(dinosaurs, currentPage);
+
+  dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
   return main;
 };
 
