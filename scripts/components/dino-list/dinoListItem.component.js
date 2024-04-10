@@ -1,6 +1,6 @@
 import "./dinoListItem.styles.scss";
 import createEle from "../../utils/createEle.js";
-import displayDinosaur from "../displayDinosaur.js";
+import displayDinosaur from "../displayDinosaur/displayDinosaur.js";
 
 
 const dinoListItem = (dinosaur) => {

@@ -1,4 +1,5 @@
-import createEle from "../utils/createEle.js";
+import "./displayDinosaur.styles.scss"; 
+import createEle from "../../utils/createEle.js";
 
 // function to display a dinosaur modal
 const displayDinosaur = async (dinosaur) => {
