@@ -4,28 +4,9 @@ import createEle from "../utils/createEle";
 import dinosaurs from "../data/dinosaurs.json";
 import randomPhrase from "../utils/randomPhrase";
 import renderNav from "./nav";
-import { getCoords, placeMarker } from "../utils/mapBox";
 
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOXAPIKEY;
 
-const placeMarkers = (map) =>
-  dinosaurs.forEach(async (dinosaur) =>
-    placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name)
-  );
 
-const renderHeaderMap = () => {
-  const map = new mapboxgl.Map({
-    container: "header-map",
-    style: "mapbox://styles/mnix-dev/cluiiopsk01ca01ql97063j4f",
-    center: [0, 0],
-    zoom: 1.75,
-    pitch: 0,
-    bearing: 0,
-    projection: "naturalEarth",
-    interactive: false,
-  });
-  placeMarkers(map);
-};
 
 const renderHeader = () => {
   const greetings = [
@@ -43,7 +24,13 @@ const renderHeader = () => {
     "Find Out More",
   ];
   const headerContent = `
-  <div id="header-map"></div>
+  <div class="bg-video">
+    <video class="bg-video__content" autoplay muted loop>
+      <source src="./assets/dino-video-tiny.mp4" type="video/mp4">
+      <!-- <source src="./dino-video-tiny.mp4" type="video/webm"> -->
+      A video is being played in the background here, but unfortunately your browser is not supported!
+    </video>
+  </div>
     <div class="header__logo-box">
       <img src="assets/raptors-logo-transparent.png" class="header__logo" alt="Logo">
     </div>
@@ -73,7 +60,6 @@ const renderHeader = () => {
     null,
     true
   );
-  renderHeaderMap();
   renderNav();
   return header;
 };
