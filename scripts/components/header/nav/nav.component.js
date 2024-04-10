@@ -27,12 +27,14 @@ const content = `
 `;
 let scrollTop = 0;
 
+const toggleDisplay = ele => ele.style.display === "none" ? ele.style.display = "block" : setTimeout(() => ele.style.display = "none", 500); // toggle the display of the navigation items
 const renderNav = () => {
-  createEle("div", content, document.body, "navigation fade-out", "nav"); // create the navigation element and appends it to document.body
-  const nav = document.getElementById("nav");
+  const nav = createEle("div", content, document.body, "navigation fade-out", "nav"); // create the navigation element and appends it to document.body
+  const navItems = document.querySelector('.navigation__nav')
+  document.querySelector('nav').style.display = "none";
   const toTopButton = document.getElementById("toTop");
   toTopButton.onclick = () => window.scrollTo({ top: 0 }); // scroll to the top of the page when the button is clicked
-
+  document.querySelector('.navigation__button').onclick = () => toggleDisplay(navItems); // toggle the display of the navigation items when the button is clicked
   window.addEventListener("scroll", () => {
     // get the current scroll position
     let st = window.scrollY || document.documentElement.scrollTop;
