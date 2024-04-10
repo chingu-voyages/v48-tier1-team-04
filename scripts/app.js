@@ -1,6 +1,6 @@
 // import data from './data/dinosaurs.json' assert { type: 'json'};
 // import dinoListItem from "./components/dinoListItem.js";
-import renderFooter from "./components/footer.js";
+import renderFooter from "./components/footer/footer.component.js";
 // import './utils/hideFooter.js';
 // import filterDinosaursByName from "./utils/filterDinosaurs.js";
 import calculateDiet from "./utils/chartHelpers.js";
