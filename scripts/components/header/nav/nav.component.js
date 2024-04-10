@@ -31,30 +31,35 @@ const renderNav = () => {
   createEle("div", content, document.body, "navigation fade-out", "nav"); // create the navigation element and appends it to document.body
   const nav = document.getElementById("nav");
   const toTopButton = document.getElementById("toTop");
-  toTopButton.onclick = () => window.scrollTo({ top: 0 });
+  toTopButton.onclick = () => window.scrollTo({ top: 0 }); // scroll to the top of the page when the button is clicked
 
   window.addEventListener("scroll", () => {
-    let st = window.pageYOffset || document.documentElement.scrollTop;
+    // get the current scroll position
+    let st = window.scrollY || document.documentElement.scrollTop;
     if (st > scrollTop) {
+      // downscroll code
       toTopButton.classList.remove("fade-in");
       toTopButton.classList.add("fade-out");
     } else {
+      // upscroll code
       toTopButton.classList.add("fade-in");
       toTopButton.classList.remove("fade-out");
     }
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-      console.log("you're at the bottom of the page");
+      // bottom of the page
       toTopButton.classList.remove("fade-out");
       toTopButton.classList.add("fade-in");
     }
     if (window.scrollY > 0) {
-      nav.classList.remove("fade-out"); // show the navigation when the user scrolls down
-      nav.classList.add("fade-in");
+      // user has scrolled down
+      nav.classList.remove("fade-out"); 
+      nav.classList.add("fade-in"); 
     } else {
-      nav.classList.remove("fade-in"); // removes fade-in class
-      nav.classList.add("fade-out"); // hide the navigation when the user reaches the top of the page
+      // user is at the top of the page
+      nav.classList.remove("fade-in"); 
+      nav.classList.add("fade-out"); 
     }
-    scrollTop = st <= 0 ? 0 : st;
+    scrollTop = st <= 0 ? 0 : st; // set the scrollTop to 0 if the user is at the top of the page
   });
 
   return nav;
