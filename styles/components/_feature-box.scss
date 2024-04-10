@@ -1,0 +1,31 @@
+.section-features .row{
+    @include respond(tab-port) {
+        padding: 0 5%;
+    }
+}
+.feature-box {
+    background: rgba($color-white, .8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    @include transition;
+    @include border-radius-leaf;
+    @include backface-visibility;   
+    
+    &__icon {
+        font-size: 6rem;
+        margin-bottom: .5rem;
+        display:inline-block;
+        background: linear-gradient($color-primary-light, $color-primary-dark);
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-attachment: fixed;
+        color:transparent;
+    }
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+
+}
