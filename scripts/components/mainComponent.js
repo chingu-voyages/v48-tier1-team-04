@@ -4,17 +4,22 @@ import createEle from "../utils/createEle";
 import renderFooter from "./footer";
 import randomDino from "../utils/giveRandoDino";
 import { getCoords, placeMarker } from "../utils/mapBox";
-import dinoListItem from "./dino-list/dinoListItem";
+import dinoListItem from "./dinoListItem";
+import renderDinoCard from "./card";
+import calculateDiet from "../utils/chartHelpers";
+import dinoPie from "./dinoDietChart";
+import dinoOfTheDay from "./randoDino";
+
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOXAPIKEY;
-
+let map;
 const placeMarkers = (map) =>
   dinosaurs.forEach(async (dinosaur) =>
     placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name)
   );
 
 const renderBodyMap = () => {
-  const map = new mapboxgl.Map({
+  map = new mapboxgl.Map({
     container: "body-map",
     style: "mapbox://styles/mnix-dev/cluiiopsk01ca01ql97063j4f",
     center: [0, 0],
@@ -39,78 +44,6 @@ const callToActions = [
 let i;
 const randomCallToAction = () =>
   callToActions[Math.floor(Math.random() * callToActions.length)];
-const renderDinoCard = (dino) => {
-  const renderDinoPopup = (dino) =>
-    createEle(
-      "div",
-      `
-    <div class="popup__content">
-<div class="popup__left"><img src="img/nat-8.jpg" alt="Tour Photo" class="popup__img"><img src="${
-        dino.imageSrc
-      }" alt="Tour Photo" class="popup__img"></div>
-    <div class="popup__right">
-      <a href="#section-tours" class="popup__close">&times;</a>
-      <h2 class="heading-secondary u-margin-bottom-sm">Start booking now!</h2>
-      <h3 class="heading-tertiary u-margin-bottom-sm">Important &ndash; Please read these terms before booking</h3>
-      <p class="popup__text">
-        Garrett County Adventures is just a fictional idea for now. I would personally love to offer services similar to those offered on this website, but my main reason for making this webpage was for practice learning the styling language SASS. If you like what you see, please consider hiring me for a future project =) Or, maybe you are nearby Garrett County and are looking for a tour, I can help with that too xD
-      </p>
-    <a href="#section-tours" class="btn btn--green">${randomCallToAction()}</a>
-    </div>
-  </div>
-    `,
-      document.body,
-      "popup",
-      `popup`
-    );
-
-  const div = document.createElement("div");
-  div.innerHTML = `
-        <div class="card">
-          <div class="card__side card__side--front">
-            <div class="card__picture card__picture--1" style="background-image:url(${
-              dino.imageSrc
-            })">
-              &nbsp;
-            </div>
-            <h4 class="card__heading">
-              <span class="card__heading-span card__heading-span--1">
-                ${dino.name}
-              </span>
-            </h4>
-            <div class="card__details">
-              <ul>
-                <li>Discovered in ${dino.foundIn}</li>
-                <li>Weighed ${dino.weight} tons</li>
-                <li>Stood ${dino.length} meters long</li>
-                <li>${dino.diet}</li>
-               </ul>
-            </div>
-          </div>
-          <div class="card__side card__side--back card__side--back-1" style="background-image:url(${
-            dino.imageSrc
-          })">
-            <div class="card__slide card__slide--back card__slide--back-1">
-              <div class="card__cta">
-                <div class="card__price-box">
-                  <p class="card__price-value">${dino.name}</p>
-                  <p class="card__price-only">(${dino.taxonomy})</p>
-                </div>
-                <a href="#popup" class="btn btn--black">${
-                  callToActions[
-                    Math.floor(Math.random() * callToActions.length)
-                  ]
-                }</a>
-              </div>
-            </div>
-          </div>
-        </div>
-     `;
-  div.classList.add("col-1-of-3");
-  renderDinoPopup(dino);
-  i++;
-  return div.outerHTML;
-};
 
 const renderMain = async () => {
   const headings = [
@@ -175,7 +108,9 @@ const renderMain = async () => {
       </div>
   </div>
     </section>
-    
+    <section class="section-features">
+    <div id="dino-of-the-day"></div>
+    </section>
          
 
     </section>
@@ -186,7 +121,11 @@ const renderMain = async () => {
       </h2>
     </div>
     <div class="row">
-        ${randomDinos.map((dino) => renderDinoCard(dino)).join("")}
+        ${randomDinos
+          .map((dino) =>
+            renderDinoCard(dino, callToActions, randomCallToAction, i)
+          )
+          .join("")}
    
     </div>
     <div class="u-text-center u-margin-top-xl">
@@ -198,49 +137,93 @@ const renderMain = async () => {
 </section>
 
 <section id="all-dinosaurs" class="section-features">
-<h2 class="heading-secondary u-text-center">${["View All Dinosaurs", "All Dinosaurs", "Dinosaurs"][Math.floor(Math.random()*2)]}</h2>
-<div id="dino-list"></div>
-<div class="u-text-center"><button id="prev" class="btn btn-white">Previous</button> <span id="currentPage" style="border: 2em;">${currentPage}</span><button id="next" class="btn btn-white">Next</button></div>
-</section>
-
-    `;
-  const main = createEle("main", content, document.body); 
+<h2 class="heading-secondary u-text-center">${
+    ["View All Dinosaurs", "All Dinosaurs", "Dinosaurs"][
+      Math.floor(Math.random() * 2)
+    ]
+  }</h2>
   
-  const allDinosaurs = document.querySelector('section#all-dinosaurs'); // declares the parent container which is the list of dinosaurs
-  allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(Math.random()*58)}.png) fixed`; // sets the background of the parent container to the image of the dinosaur
+<div id="dino-list"></div>
+<div class="u-text-center u-margin-top-xl"><div class="search"><input id="search-bar" type="text" placeholder="Search For a Dinosaur..."></div><button id="prev" class="btn btn-white">Previous</button> <span id="currentPage" style="border: 2em;">${currentPage}</span><button id="next" class="btn btn-white">Next</button></div>
+</section>
+<section id="charts" class="section-charts"><canvas id="dietChart"></canvas></section>
+<div id="dinosaur-modal"></div>
+    `;
+  const main = createEle("main", content, document.body);
+
+  const allDinosaurs = document.querySelector("section#all-dinosaurs"); // declares the parent container which is the list of dinosaurs
+  allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(
+    Math.random() * 58
+  )}.png) fixed`; // sets the background of the parent container to the image of the dinosaur
+  allDinosaurs.style.backgroundSize = "cover"; // sets the background size to cover
   const prevButton = document.getElementById("prev");
   const nextButton = document.getElementById("next");
-  prevButton.onclick = () => {
-    currentPage = currentPage - 1;
+  const pagination = (page, prev, reset) => {
+    if (prev && currentPage  <= 1) return 
+    if (!prev && currentPage >= totalPages) return
+    page < 2
+      ? (currentPage = 1)
+      : page > totalPages
+      ? (currentPage = totalPages)
+      : (currentPage = page) && updateDinoList();
+    reset
+      ? (currentPage = 1)
+      : prev
+      ? (currentPage = currentPage - 1)
+      : (currentPage = currentPage + 1);
+    
     document.getElementById("dino-list").innerHTML = "";
     document.querySelector("#currentPage").textContent = currentPage;
     const dinosaursToDisplay = displayItems(dinosaurs, currentPage);
     dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
   };
-  nextButton.onclick = () => {
-    currentPage = currentPage + 1;
-    document.getElementById("dino-list").innerHTML = "";
-    document.querySelector("#currentPage").textContent = currentPage;
-    const dinosaursToDisplay = displayItems(dinosaurs, currentPage);
-    dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
-  };
+  prevButton.onclick = () => pagination(currentPage, true);
+  nextButton.onclick = () => pagination(currentPage);
 
   renderBodyMap();
   renderFooter();
 
+  const totalItems = dinosaurs.length;
   const itemsPerPage = 5;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
 
   const displayItems = (items, page) => {
     const start = (page - 1) * itemsPerPage;
     const end = page * itemsPerPage;
     return items.slice(start, end);
   };
+  const updateDinoList = () => {
+    const dinoList = document.getElementById("dino-list");
+    dinoList.classList.add("fade-out");
+    setTimeout(() => {
+      dinoList.classList.remove("fade-out");
+      updatePageNumber(currentPage);
+    }, 10000);
+  };
+  const updatePageNumber = (page) => {
+    document.querySelector("#currentPage").textContent = page;
+  };
 
-  const updatePageNumber = (page) => (currentPage = page);
-  updatePageNumber(8);
   const dinosaursToDisplay = displayItems(dinosaurs, currentPage);
 
   dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
+
+  const dinoOfTheDayContainer = document.getElementById("dino-of-the-day");
+  dinoOfTheDay(dinoOfTheDayContainer);
+  const searchBar = document.getElementById("search-bar");
+  const dinoDiet = calculateDiet();
+
+  searchBar.addEventListener("input", () => {
+    document.getElementById("dino-list").innerHTML = "";
+    filterDinosaursByName(searchBar.value).forEach((dinosaur) =>
+      dinoListItem(dinosaur)
+    );
+  });
+  const pie = document.getElementById("dietChart");
+  dinoPie(pie, {
+    labels: ["carnivorous", "herbivorous", "omnivorous"],
+    data: dinoDiet,
+  });
   return main;
 };
 
