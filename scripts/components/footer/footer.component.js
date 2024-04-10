@@ -1,4 +1,5 @@
-import createEle from "../utils/createEle";
+import "./footer.styles.scss";
+import createEle from "../../utils/createEle";
 
 const renderFooter = () => {
   const config = {
