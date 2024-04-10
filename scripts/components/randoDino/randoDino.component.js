@@ -1,5 +1,5 @@
-import randomDino from "../utils/giveRandoDino";
-import createEle from "../utils/createEle";
+import randomDino from "../../utils/giveRandoDino";
+import createEle from "../../utils/createEle";
 
 
 const setDailyDinosaur = () => {

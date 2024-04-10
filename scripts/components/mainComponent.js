@@ -7,7 +7,7 @@ import randomDino from "../utils/giveRandoDino";
 import { getCoords, placeMarker } from "../utils/mapBox";
 import dinoListItem from "./dino-list/dinoListItem.component";
 import renderDinoCard from "./card";
-import dinoOfTheDay from "./randoDino";
+import dinoOfTheDay from "./randoDino/randoDino.component";
 
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOXAPIKEY;
