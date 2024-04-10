@@ -1,11 +1,11 @@
 #dino-list {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   list-style-type: none;
-  padding:25em 15em;
+  padding:5em 15em;
   li {
-    width: 19%;
+    width: 30%;
     margin: 1em auto;
     img {
       width: 100%;
@@ -41,4 +41,9 @@
     background-color: greenyellow;
     padding: 1rem;
   }
+}
+span#currentPage {
+  margin: auto 1em;
+  padding: .75em;
+  background: #f0f0f0;
 }
