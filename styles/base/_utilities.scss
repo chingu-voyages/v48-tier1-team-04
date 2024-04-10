@@ -48,3 +48,14 @@
         display: absolute !important;
     }
 }
+.a{
+    &-fade{
+        transition: all .5s;
+        &-in{
+            opacity: 1 !important;
+        }
+        &-out{
+            opacity: 0 !important;
+        }
+    }
+}
