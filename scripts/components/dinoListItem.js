@@ -1,4 +1,5 @@
-import createEle from "../../utils/createEle.js";
+import createEle from "../utils/createEle.js";
+import displayDinosaur from "./displayDinosaur.js";
 
 
 const dinoListItem = (dinosaur) => {
@@ -9,7 +10,7 @@ const dinoListItem = (dinosaur) => {
       src="${imageSrc}" alt="${name}" />
   </div>
   <div class="dino-info">
-    <h5 class="dino-info__name">${name}</h5>
+    <h5 class="dino-info__name" >${name}</h5>
     <div class="region">Found in:
       <span>${foundIn}</span>
     </div>
@@ -28,12 +29,14 @@ const dinoListItem = (dinosaur) => {
     </div>`
         : " "
     }
-`; // dynamically generarte the html for a single dinosaur list item
-  const randomColor = () => `${Math.floor(Math.random()*16777215).toString(16)}6f`; // generates a random color for the background of the dinosaur card
+`;
+
   const parentContainer = document.getElementById('dino-list'); // declares the parent container which is the list of dinosaurs
-  const dinoLi = createEle("li", content, parentContainer, 'dino'); // declares a variable to a new `<li>` with the content of `content` and appended  to the parentContainer
-  dinoLi.onhover = () => dinoLi.style.backgroundColor = `red`; // adds an event listener to the list item to change the background color on hover
-  dinoLi.style.filter = `hue-rotate(${Math.floor(Math.random()*360)}deg)`; // sets the filter of the list item to a random hue rotation
+  const dinoLi = createEle("li", content, parentContainer, 'dino show'); // declares a variable to a new `<li>` with the content of `content` and appended  to the parentContainer
+ // dinoLi.classList.add("show");
+
+  dinoLi.style.filter = `hue-rotate(${Math.floor(Math.random()*360)}deg)`
+  dinoLi.onhover = () => dinoLi.style.filter = `hue-rotate(${Math.floor(Math.random()*360)} saturate(5))`; // adds an event listener to the list item to change the background color on hover
   dinoLi.onclick = () => displayDinosaur(dinosaur); // adds event listen on click to the list item just created, and calls the `displayDinosaur`, passing in this dinosaur into the function
   return "Dinosaur added of " + name + " to the list"; // returns a log if we wanted to console.log our results
 };
