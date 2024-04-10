@@ -10,7 +10,7 @@ import dinoOfTheDay from "./components/randoDino.js";
 import renderMain from "./components/mainComponent.js";
 import "../styles/main.scss";
 
-import renderHeader from "./components/header.js";
+import renderHeader from "./components/header/header.component.js";
 //data.forEach((dinosaur) => console.log(dinoListItem(dinosaur))); // loop over the json file and call dinoListItem, passing inthe dinosaur each time resulting in a filled list of dinosaurs on screen
 
 //mapComponent(data)
