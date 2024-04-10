@@ -24,7 +24,15 @@ const calculateDiet = () =>{
     return dinoDiet;
 }
 
-export default calculateDiet;
+// calcuate the eras dinosaurs lived during
+//"whenLived": "Early Jurassic, 199-189 million years ago",
+const calculateEra = () =>{
+    // loop through every dinosaur object and print out the whenLived property
+    data.forEach(dinosaur =>{
+        console.log(dinosaur.whenLived);
+    })
+}
+export {calculateDiet, calculateEra}
       
 
     
