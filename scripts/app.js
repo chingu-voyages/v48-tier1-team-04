@@ -12,7 +12,7 @@ renderHeader();
 await renderMain();
 dinoOfTheDay(document.getElementById("dino-of-the-day"));
 renderBodyMap();
-dinoPie(document.querySelector('main'), {
+dinoPie(document.querySelector('.charts-container'), {
   labels: ["carnivorous", "herbivorous", "omnivorous"],
   data: dinoDiet,
 });

@@ -1,4 +1,4 @@
-import Chart  from "chart.js/auto";
+import Chart from "chart.js/auto";
 import createEle from "../../utils/createEle";
 
 /*
@@ -10,24 +10,24 @@ const data = [{
     count: 6
 }]*/
 
-const dinoPie = (parentContainer, {labels, data}) => {
-  const createChart = id => createEle("canvas", null, parentContainer, null, id);
-const dietChart = createChart('dietChart');
-    new Chart(
-        dietChart,
-        {
-          type: 'pie',
-          data: {
-            labels: labels,
-            datasets: [
-              {
-                label: 'diet',
-                data: [data.carnivorous, data.herbivorous, data.omnivorous]
-              }
-            ]
+const dinoPie = (parentContainer, { labels, data }) => {
+  const createChart = id => createEle("canvas", null, parentContainer, null, id); // creates a canvas element, setting the ID, containing the chart
+  const dietChart = createChart('dietChart');
+  new Chart(
+    dietChart,
+    {
+      type: 'pie',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'diet',
+            data: [data.carnivorous, data.herbivorous, data.omnivorous]
           }
-        }
-      );
+        ]
+      }
+    }
+  );
 }
 
 export default dinoPie
