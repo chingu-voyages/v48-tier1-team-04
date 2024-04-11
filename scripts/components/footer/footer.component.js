@@ -6,12 +6,7 @@ const renderFooter = () => {
     voyage: 48,
     tier: 1,
     team: `04`,
-    developers: [
-      `JOSIK95`,
-      `mnichols08`,
-      `sebastianlq`,
-      `vinccodes`,
-    ],
+    developers: [`JOSIK95`, `mnichols08`, `sebastianlq`, `vinccodes`],
   };
   const content = `
     <div class="footer__logo-box">
@@ -32,7 +27,7 @@ const renderFooter = () => {
         </div>
       </div>
       <div class="col-1-of-2">
-        <p class="footer__copyright"> &copy; ${new Date().getFullYear()} &lt; /&gt; with <span class="heart" style="background: url(./assets/chinguheart.png)"></span> by <span>
+        <p class="footer__copyright"> &copy; ${new Date().getFullYear()} &lt; /&gt; with <span class="heart" style="background: url(./assets/chinguheart.png);display: inline-block; block-size: 2em; inline-size: 2em; background-size: contain; background-repeat: no-repeat; position: relative; inset-block-start: 0.6em;"></span> by <span>
         ${config.developers.map(
           (dev) =>
             `<a href="https://github.com/${dev}" class="footer__link" target="_blank"> ${dev}</a>`
