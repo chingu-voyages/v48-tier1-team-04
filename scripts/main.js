@@ -28,4 +28,6 @@ dinoPie(pie, {
 mapComponent(data)
 
 // test
-console.log(calculateEra())
+
+const chartData = calculateEra()
+console.log(chartData);
