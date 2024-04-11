@@ -111,3 +111,21 @@
     }
   }
 }
+/* charts section */
+#charts {
+  padding: 2rem;
+}
+
+.charts__heading {
+  color: red;
+}
+.charts-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  max-width: 50%;
+}
+
+#dietChart {
+  width: 50%;
+}

@@ -22,9 +22,18 @@ const dinoPie = (parentContainer, { labels, data }) => {
         datasets: [
           {
             label: 'diet',
-            data: [data.carnivorous, data.herbivorous, data.omnivorous]
+            data: [data.carnivorous, data.herbivorous, data.omnivorous],
+            backgroundColor: ['rgb(235, 83, 83)', 'rgb(130, 205, 71)', 'rgb(24, 116, 152)'],
+            borderWidth: 5,
           }
         ]
+      },
+      options: {
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
       }
     }
   );

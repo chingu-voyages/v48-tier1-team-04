@@ -123,7 +123,7 @@ const renderMain = async () => {
 </section>
 
 <section id="charts">
-    <h2>Dinosaur Charts</h2>
+    <h2 class="charts__heading">Dinosaur Charts</h2>
     <div class="charts-container">
       
     </div>
