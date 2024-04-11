@@ -1,8 +1,7 @@
-
 import dinosaurs from "../data/dinosaurs.json";
 import createEle from "../utils/createEle";
 import randomDino from "../utils/giveRandoDino";
-
+import './about-section/about.styles.scss';
 import dinoListItem from "./dino-list/dinoListItem.component";
 import renderDinoCard from "./card/card.component";
 
@@ -47,7 +46,7 @@ const renderMain = async () => {
   const randomFact = await generateRandomFact();
   let currentPage = 1;
   const content = `
-  <section class="section-about">
+  <section class="section-about" id="about">
       <div class="u-text-center u-margin-bottom-lg">
         <h2 class="heading-primary">
           ${
@@ -127,18 +126,24 @@ const renderMain = async () => {
 
 <div id="dinosaur-modal"></div>
     `;
-    const main = createEle("main", content, document.body);
+  const randomNumber = (num) => Math.floor(Math.random() * num);
+  const randomRGBa = () =>
+    `rgba(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)}, ${Math.random() * 1})`;
+  const main = createEle("main", content, document.body);
+  const aboutSection = document.querySelector("section#about");
+  aboutSection.style.background = `linear-gradient(to right bottom, ${randomRGBa()}, rgba(201,230,94, 0.545),${randomRGBa()}), url(./assets/watercolor/${Math.floor(Math.random() * 27)}.png)`
+
 
   const allDinosaurs = document.querySelector("section#all-dinosaurs"); // declares the parent container which is the list of dinosaurs
   allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(
     Math.random() * 58
   )}.png) fixed`; // sets the background of the parent container to the image of the dinosaur
- // allDinosaurs.style.backgroundSize = "contain"; // sets the background size to cover
+  // allDinosaurs.style.backgroundSize = "contain"; // sets the background size to cover
   const prevButton = document.getElementById("prev");
   const nextButton = document.getElementById("next");
   const pagination = (page, prev, reset) => {
-    if (prev && currentPage  <= 1) return 
-    if (!prev && currentPage >= totalPages) return
+    if (prev && currentPage <= 1) return;
+    if (!prev && currentPage >= totalPages) return;
     page < 2
       ? (currentPage = 1)
       : page > totalPages
@@ -149,7 +154,7 @@ const renderMain = async () => {
       : prev
       ? (currentPage = currentPage - 1)
       : (currentPage = currentPage + 1);
-    
+
     document.getElementById("dino-list").innerHTML = "";
     document.querySelector("#currentPage").textContent = currentPage;
     const dinosaursToDisplay = displayItems(dinosaurs, currentPage);
@@ -157,9 +162,6 @@ const renderMain = async () => {
   };
   prevButton.onclick = () => pagination(currentPage, true);
   nextButton.onclick = () => pagination(currentPage);
-
-
-
 
   const totalItems = dinosaurs.length;
   const itemsPerPage = 5;
@@ -186,10 +188,7 @@ const renderMain = async () => {
 
   dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
 
-  
-  
   const searchBar = document.getElementById("search-bar");
- 
 
   searchBar.addEventListener("input", () => {
     document.getElementById("dino-list").innerHTML = "";
@@ -198,7 +197,6 @@ const renderMain = async () => {
     );
   });
 
-  
   return main;
 };
 
