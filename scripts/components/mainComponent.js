@@ -17,7 +17,8 @@ const callToActions = [
 let i;
 const randomCallToAction = () =>
   callToActions[Math.floor(Math.random() * callToActions.length)];
-
+const renderMainContainer = () => createEle("main", '', document.body);
+const main = renderMainContainer();
 const renderMain = async () => {
   const headings = [
     "Random Dinosaurs",
@@ -129,7 +130,7 @@ const renderMain = async () => {
   const randomNumber = (num) => Math.floor(Math.random() * num);
   const randomRGBa = () =>
     `rgba(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)}, ${Math.random() * 1})`;
-  const main = createEle("main", content, document.body);
+  main.innerHTML = content;
   const aboutSection = document.querySelector("section#about");
   aboutSection.style.background = `linear-gradient(to right bottom, ${randomRGBa()}, rgba(201,230,94, 0.545),${randomRGBa()}), url(./assets/watercolor/${Math.floor(Math.random() * 27)}.png)`
 
