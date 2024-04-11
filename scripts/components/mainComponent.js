@@ -5,7 +5,6 @@ import randomDino from "../utils/giveRandoDino";
 
 import dinoListItem from "./dino-list/dinoListItem.component";
 import renderDinoCard from "./card/card.component";
-import dinoOfTheDay from "./randoDino/randoDino.component";
 
 const callToActions = [
   "Learn More",
@@ -187,8 +186,8 @@ const renderMain = async () => {
 
   dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
 
-  const dinoOfTheDayContainer = document.getElementById("dino-of-the-day");
-  dinoOfTheDay(dinoOfTheDayContainer);
+  
+  
   const searchBar = document.getElementById("search-bar");
  
 
