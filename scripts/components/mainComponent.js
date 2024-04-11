@@ -1,7 +1,6 @@
 
 import dinosaurs from "../data/dinosaurs.json";
 import createEle from "../utils/createEle";
-import renderFooter from "./footer/footer.component";
 import randomDino from "../utils/giveRandoDino";
 
 import dinoListItem from "./dino-list/dinoListItem.component";
@@ -161,7 +160,7 @@ const renderMain = async () => {
   nextButton.onclick = () => pagination(currentPage);
 
 
-  renderFooter();
+
 
   const totalItems = dinosaurs.length;
   const itemsPerPage = 5;
