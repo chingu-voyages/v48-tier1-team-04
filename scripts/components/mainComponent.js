@@ -6,7 +6,7 @@ import renderFooter from "./footer/footer.component";
 import randomDino from "../utils/giveRandoDino";
 import { getCoords, placeMarker } from "../utils/mapBox";
 import dinoListItem from "./dino-list/dinoListItem.component";
-import renderDinoCard from "./card";
+import renderDinoCard from "./card/card.component";
 import dinoOfTheDay from "./randoDino/randoDino.component";
 
 

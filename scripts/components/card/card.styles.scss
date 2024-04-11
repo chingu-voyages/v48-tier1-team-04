@@ -1,0 +1,225 @@
+@import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins";
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
+
+  &__side {
+    font-size: 2rem;
+
+    height: 50rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    overflow: hidden;
+    @include backface-visibility;
+    @include border-radius-top;
+    @include border-radius;
+
+    @include respond(phone);
+
+    &--front {
+      background: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      background-size: cover;
+      background-blend-mode: color;
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // FRONT SIDE STYLING
+  &__picture {
+    height: 23rem;
+    background-blend-mode: color;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+
+    &--1 {
+      background-image: linear-gradient(
+        30deg,
+        $color-card-light,
+        $color-card-dark
+      );
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        30deg,
+        $color-card-dark,
+        $color-card-light
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(30deg, $color-green, $color-primary);
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $color-white;
+    position: absolute;
+    top: 12rem;
+    left: 2rem;
+    text-align: left;
+
+    &-span {
+      padding: 1rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      &--1 {
+        background-image: linear-gradient(
+          45deg,
+          rgba($color-secondary-light, 0.85),
+          rgba($color-secondary-dark, 0.85)
+        );
+      }
+      &--2 {
+        background-image: linear-gradient(
+          45deg,
+          rgba($color-tertiary-light, 0.85),
+          rgba($color-tertiary-dark, 0.85)
+        );
+      }
+      &--3 {
+        background-image: linear-gradient(
+          45deg,
+          rgba($color-green, 0.85),
+          rgba($color-yellow, 0.85)
+        );
+      }
+    }
+  }
+
+  &__details {
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    @include abs-center;
+    & .btn {
+      filter: brightness(100) hue-rotate(90deg);
+    }
+  }
+
+  &__price-box {
+    text-align: center;
+    color: white;
+
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 800;
+    -webkit-text-stroke: 1px black;
+  }
+
+  @include respond(tab-port) {
+    height: auto;
+    position: relative;
+    // @include border-radius
+    &__side {
+      height: auto;
+      position: relative;
+
+      &--back {
+        transform: rotateY(0);
+        -webkit-clip-path: polygon(0 85%, 85% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+        margin-top: -6rem;
+        border-radius: 0;
+        border-bottom-left-radius: 2pt;
+        border-bottom-right-radius: 1pt;
+        &-1 {
+          background-image: linear-gradient(
+            30deg,
+            hsl(240, 45%, 55%),
+            $color-card-dark
+          );
+        }
+
+        &-2 {
+          background-image: linear-gradient(
+            30deg,
+            $color-card-light,
+            $color-card-dark
+          );
+        }
+
+        &-3 {
+          background-image: linear-gradient(
+            30deg,
+            $color-card-light,
+            $color-card-dark
+          );
+        }
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &__details {
+      padding: 0 5rem 6rem;
+    }
+
+    // FRONT SIDE STYLING
+
+    &__cta {
+      position: relative;
+      top: 0%;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      text-align: center;
+      padding: 4rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+    }
+  }
+}
