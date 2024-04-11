@@ -1,36 +1,13 @@
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+
 import dinosaurs from "../data/dinosaurs.json";
 import createEle from "../utils/createEle";
 import renderFooter from "./footer/footer.component";
 import randomDino from "../utils/giveRandoDino";
-import { getCoords, placeMarker } from "../utils/mapBox";
+
 import dinoListItem from "./dino-list/dinoListItem.component";
 import renderDinoCard from "./card/card.component";
 import dinoOfTheDay from "./randoDino/randoDino.component";
 
-
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOXAPIKEY;
-let map;
-const placeMarkers = (map) =>
-  dinosaurs.forEach(async (dinosaur) =>
-    placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name)
-  );
-
-const renderBodyMap = () => {
-  map = new mapboxgl.Map({
-    container: "body-map",
-    style: "mapbox://styles/mnix-dev/cluiiopsk01ca01ql97063j4f",
-    center: [0, 0],
-    zoom: 1.9,
-    pitch: 0,
-    bearing: 0,
-    projection: "naturalEarth",
-    interactive: false,
-  });
-  placeMarkers(map);
-  return map;
-};
 const callToActions = [
   "Learn More",
   "Find More Information",
@@ -183,7 +160,7 @@ const renderMain = async () => {
   prevButton.onclick = () => pagination(currentPage, true);
   nextButton.onclick = () => pagination(currentPage);
 
-  renderBodyMap();
+
   renderFooter();
 
   const totalItems = dinosaurs.length;
