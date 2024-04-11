@@ -32,7 +32,7 @@ const renderFooter = () => {
         </div>
       </div>
       <div class="col-1-of-2">
-        <p class="footer__copyright"> &copy; ${new Date().getFullYear()} &lt; /&gt; with <span class="heart"></span> by <span>
+        <p class="footer__copyright"> &copy; ${new Date().getFullYear()} &lt; /&gt; with <span class="heart" style="background: url(./assets/chinguheart.png)></span> by <span>
         ${config.developers.map(
           (dev) =>
             `<a href="https://github.com/${dev}" class="footer__link" target="_blank"> ${dev}</a>`
