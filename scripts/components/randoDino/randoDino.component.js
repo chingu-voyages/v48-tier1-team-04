@@ -1,5 +1,26 @@
-import randomDino from "../utils/giveRandoDino";
-import createEle from "../utils/createEle";
+import randomDino from "../../utils/giveRandoDino";
+import createEle from "../../utils/createEle";
+
+
+const setDailyDinosaur = () => {
+// Get the current date
+const today = new Date().toDateString();
+// Get the stored date
+const storedDate = localStorage.getItem('date');
+
+// Check if the stored date is today's date
+if (storedDate === today) {
+  // If it is, get the daily variable
+  return JSON.parse(localStorage.getItem('dailyDinosaur'));
+} else {
+  // If it's not, update the daily variable and the date
+  const dailyDino = randomDino(); // replace this with the new value for the daily variable
+  localStorage.setItem('dailyDinosaur', JSON.stringify(dailyDino));
+  localStorage.setItem('date', today);
+  return JSON.parse(localStorage.getItem('dailyDinosaur'));
+}
+}
+
 
 function dinoOfTheDay(parentContainer){
     const {
@@ -15,13 +36,14 @@ function dinoOfTheDay(parentContainer){
         whenLived,
         typeSpecies,
         description
-    } = randomDino()
+    } = setDailyDinosaur()
     const innerHTML = 
     `
     <div>
     <img src="${imageSrc}" alt="${name}">
     </div>
     <div class="dino-of-the-day__info">
+    <h2 class="heading-main u-text-center">Dino of the Day</h3>
         <div class="header-flex">
             <h1 class="dinosaur-name">${name} (${taxonomy})</h1>
             <p><strong>Named By:</strong> ${namedBy}</p>
@@ -43,7 +65,8 @@ function dinoOfTheDay(parentContainer){
         </div>
     </div>
     `
-    createEle('div', innerHTML, parentContainer, "dino-of-the-day")
+    createEle('section', innerHTML, parentContainer, "features dino-of-the-day")
 }
+
 
 export default dinoOfTheDay

@@ -1,4 +1,5 @@
 import Chart  from "chart.js/auto";
+import createEle from "../../utils/createEle";
 
 /*
 const data = [{
@@ -9,9 +10,11 @@ const data = [{
     count: 6
 }]*/
 
-const dinoPie = (element, {labels, data}) => {
+const dinoPie = (parentContainer, {labels, data}) => {
+  const createChart = id => createEle("canvas", null, parentContainer, null, id);
+const dietChart = createChart('dietChart');
     new Chart(
-        element,
+        dietChart,
         {
           type: 'pie',
           data: {
@@ -26,6 +29,7 @@ const dinoPie = (element, {labels, data}) => {
         }
       );
 }
+
 export default dinoPie
 /*
 const chart = new Chart(

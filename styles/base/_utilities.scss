@@ -1,6 +1,7 @@
 .u{
     &-text-center{
         text-align:center !important;
+        width: 100%;
     }
     &-margin {
         &-bottom {
@@ -45,5 +46,16 @@
 .d {
     &-absolute {
         display: absolute !important;
+    }
+}
+.a{
+    &-fade{
+        transition: all 1.5s;
+        &-in{
+            opacity: 1 !important;
+        }
+        &-out{
+            opacity: 0 !important;
+        }
     }
 }
