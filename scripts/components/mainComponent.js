@@ -136,8 +136,8 @@ const renderMain = async () => {
 
   const allDinosaurs = document.querySelector("section#all-dinosaurs"); // declares the parent container which is the list of dinosaurs
   allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(
-    Math.random() * 58
-  )}.png) fixed`; // sets the background of the parent container to the image of the dinosaur
+    Math.random() * 27
+  ) + 37}.png) fixed`; // sets the background of the parent container to the image of the dinosaur
   // allDinosaurs.style.backgroundSize = "contain"; // sets the background size to cover
   const prevButton = document.getElementById("prev");
   const nextButton = document.getElementById("next");
