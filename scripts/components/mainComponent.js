@@ -132,13 +132,11 @@ const renderMain = async () => {
     `rgba(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)}, ${Math.random() * 1})`;
   main.innerHTML = content;
   const aboutSection = document.querySelector("section#about");
-  aboutSection.style.background = `linear-gradient(to right bottom, ${randomRGBa()}, rgba(201,230,94, 0.545),${randomRGBa()}), url(./assets/watercolor/${Math.floor(Math.random() * 27)}.png)`
+  aboutSection.style.background = `linear-gradient(to right bottom, ${randomRGBa()}, rgba(201,230,94, 0.545),${randomRGBa()}), url(./assets/watercolor/${Math.floor(Math.random() * 27)}.png) center center/cover`;
 
 
   const allDinosaurs = document.querySelector("section#all-dinosaurs"); // declares the parent container which is the list of dinosaurs
-  allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(
-    Math.random() * 27
-  ) + 37}.png) fixed`; // sets the background of the parent container to the image of the dinosaur
+  allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(Math.random() * 27) + 38}.png) center/contain fixed no-repeat`; // sets the background of the parent container to the image of the dinosaur
   // allDinosaurs.style.backgroundSize = "contain"; // sets the background size to cover
   const prevButton = document.getElementById("prev");
   const nextButton = document.getElementById("next");
