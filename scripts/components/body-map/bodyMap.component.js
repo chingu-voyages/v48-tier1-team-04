@@ -4,13 +4,18 @@ import { getCoords, placeMarker } from "../../utils/mapBox";
 import dinosaurs from "../../data/dinosaurs";
 import createEle from "../../utils/createEle";
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOXAPIKEY;
-let map;
-const placeMarkers = (map) =>
-  dinosaurs.forEach(async (dinosaur) =>
-    placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name)
-  );
-const bodyMap = createEle('section',null,document.querySelector('main'),'section-features','body-map');
+
+
+
+
 const renderBodyMap = () => {
+  let map;
+  const bodyMap = createEle(
+    "section",
+    '',
+    document.querySelector("main"),
+    "section-features",
+    "body-map");
   map = new mapboxgl.Map({
     container: "body-map",
     style: "mapbox://styles/mnix-dev/cluiiopsk01ca01ql97063j4f",
@@ -21,8 +26,13 @@ const renderBodyMap = () => {
     projection: "naturalEarth",
     interactive: false,
   });
-  placeMarkers(map);
-  return bodyMap;
+  const placeMarkers = (map) =>
+  dinosaurs.forEach(async (dinosaur) =>
+    placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name)
+  );
+placeMarkers(map);
+return bodyMap;
 };
+
 
 export default renderBodyMap;
