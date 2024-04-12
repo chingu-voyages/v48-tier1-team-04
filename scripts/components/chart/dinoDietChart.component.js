@@ -1,3 +1,4 @@
+import "./dinoChart-styles.scss";
 import Chart from "chart.js/auto";
 import createEle from "../../utils/createEle";
 import calculateDiet from "../../utils/chartHelpers.js";
@@ -14,6 +15,7 @@ const data = [{
 const renderCharts = () => {
 
   const innerHTML = `
+  <h2 class="heading-secondary u-text-center charts__heading">Dinosaur Charts</h2>
   <div class="charts-container flex">
     <canvas id="dietChart">
     </canvas>
@@ -34,9 +36,19 @@ const renderCharts = () => {
         datasets: [
           {
             label: 'diet',
-            data: [dinoDiet.carnivorous, dinoDiet.herbivorous, dinoDiet.omnivorous]
-          }
+            data: [dinoDiet.carnivorous, dinoDiet.herbivorous, dinoDiet.omnivorous],
+            backgroundColor: ['#D04848', '#82CD47', '#3081D0']
+          },
+
         ]
+      },
+      options: {
+        plugins: {
+          legend: {
+            display: true,
+            position: 'right'
+          }
+        }
       }
     }
   );
