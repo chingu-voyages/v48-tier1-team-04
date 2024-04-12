@@ -1,9 +1,9 @@
 import dinosaurs from "../data/dinosaurs.json";
 import createEle from "../utils/createEle";
 import randomDino from "../utils/giveRandoDino";
-import './about-section/about.styles.scss';
 import dinoListItem from "./dino-list/dinoListItem.component";
 import renderDinoCard from "./card/card.component";
+
 
 const callToActions = [
   "Learn More",
@@ -47,45 +47,6 @@ const renderMain = async () => {
   const randomFact = await generateRandomFact();
   let currentPage = 1;
   const content = `
-  <section class="section-about" id="about">
-      <div class="u-text-center u-margin-bottom-lg">
-        <h2 class="heading-primary">
-          ${
-            [
-              "Dinosaurs are cool",
-              "Dinosaurs are awesome",
-              "Dinosaurs are amazing",
-              "Dinosaurs are fascinating",
-              "Fun Facts About Dinosaurs",
-              "Who Knew Dinosaurs Were So Interesting?",
-              "Give Me More Dinosaurs",
-              "Dinosaurs are the best!",
-            ][Math.floor(Math.random() * 4)]
-          }
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-1-of-2 col-mn">
-          <h3 class="heading-tertiary u-margin-bottom-sm">
-            ${randomDino1.taxonomy}</h3>
-          <p class="paragraph">${randomDino1.description.substring(
-            0,
-            350
-          )}...</p>
-          <h3 class="heading-tertiary u-margin-bottom-sm">${randomFact.Name}
-            </h3>
-          <p class="paragraph">${randomFact.Description}</p>
-          <a href="" class="btn-text">${randomCallToAction()} &rarr;</a>
-        </div>
-        <div class="col-1-of-2">
-          <div class="composition">
-            ${randomDinos.map((img, i) => renderImg(img, i)).join("")}
-          
-          </div>
-        </div>
-      </div>
-  </div>
-    </section>
     <section class="section-features">
     <div id="dino-of-the-day"></div>
     </section>
@@ -127,17 +88,13 @@ const renderMain = async () => {
 
 <div id="dinosaur-modal"></div>
     `;
-  const randomNumber = (num) => Math.floor(Math.random() * num);
-  const randomRGBa = () =>
-    `rgba(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)}, ${Math.random() * 1})`;
+
   main.innerHTML = content;
-  const aboutSection = document.querySelector("section#about");
-  aboutSection.style.background = `linear-gradient(to right bottom, ${randomRGBa()}, rgba(201,230,94, 0.545),${randomRGBa()}), url(./assets/watercolor/${Math.floor(Math.random() * 27)}.png) center center/cover`;
+
 
 
   const allDinosaurs = document.querySelector("section#all-dinosaurs"); // declares the parent container which is the list of dinosaurs
   allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(Math.random() * 27) + 38}.png) center/contain fixed no-repeat`; // sets the background of the parent container to the image of the dinosaur
-  // allDinosaurs.style.backgroundSize = "contain"; // sets the background size to cover
   const prevButton = document.getElementById("prev");
   const nextButton = document.getElementById("next");
   const pagination = (page, prev, reset) => {
