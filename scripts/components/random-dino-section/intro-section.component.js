@@ -83,6 +83,7 @@ const renderIntroSection = () => {
   introSection.style.background = `linear-gradient(to right bottom, ${randomRGBa()}, rgba(201,230,94, 0.545),${randomRGBa()}), url(./assets/watercolor/${Math.floor(
     Math.random() * 27
   )}.png) center center/cover`;
-  return introSction;
+  return introSection;
 };
 export default renderIntroSection;
+export {callToActions, randomCallToAction, randomDinos}

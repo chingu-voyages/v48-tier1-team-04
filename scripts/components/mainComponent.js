@@ -2,8 +2,8 @@ import dinosaurs from "../data/dinosaurs.json";
 import createEle from "../utils/createEle";
 import randomDino from "../utils/giveRandoDino";
 import dinoListItem from "./dino-list/dinoListItem.component";
-import renderDinoCard from "./card/card.component";
-
+import createSearchBar from "./searchBar/searchBar";
+import filterDinosaursByName from "../utils/filterDinosaurs";
 
 const callToActions = [
   "Learn More",
@@ -46,31 +46,8 @@ const renderMain = async () => {
     ).then((res) => res.json());
   const randomFact = await generateRandomFact();
   let currentPage = 1;
-  const content = `
-    <section class="section-features">
-    <div id="dino-of-the-day"></div>
-    </section>
-         
+  const content = `       
 
-  
-    <section class="section-tours" >
-    <div class="u-text-center u-margin-bottom-lg">
-      <h2 class="heading-secondary" id="section-tours">
-        ${headings[Math.floor(Math.random() * headings.length)]}
-      </h2>
-    </div>
-    <div class="row">
-        ${randomDinos
-          .map((dino) =>
-            renderDinoCard(dino, callToActions, randomCallToAction, i)
-          )
-          .join("")}
-   
-    </div>
-    <div class="u-text-center u-margin-top-xl">
-    <a class="btn btn--white" href="#all-dinosaurs">View All Dinosaurs</a>
-  </div>
-  </section>
   <section id="body-map" class="section-features">
 
 </section>
@@ -92,6 +69,7 @@ const renderMain = async () => {
   main.innerHTML = content;
 
 
+  let currentDinoList = dinosaurs
 
   const allDinosaurs = document.querySelector("section#all-dinosaurs"); // declares the parent container which is the list of dinosaurs
   allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(Math.random() * 27) + 38}.png) center/contain fixed no-repeat`; // sets the background of the parent container to the image of the dinosaur
@@ -113,15 +91,17 @@ const renderMain = async () => {
 
     document.getElementById("dino-list").innerHTML = "";
     document.querySelector("#currentPage").textContent = currentPage;
-    const dinosaursToDisplay = displayItems(dinosaurs, currentPage);
+    const dinosaursToDisplay = displayItems(currentDinoList, currentPage);
     dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
   };
-  prevButton.onclick = () => pagination(currentPage, true);
+  prevButton.onclick = () => pagination(currentPage, true)
   nextButton.onclick = () => pagination(currentPage);
 
   const totalItems = dinosaurs.length;
   const itemsPerPage = 5;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  
 
   const displayItems = (items, page) => {
     const start = (page - 1) * itemsPerPage;
@@ -139,18 +119,19 @@ const renderMain = async () => {
   const updatePageNumber = (page) => {
     document.querySelector("#currentPage").textContent = page;
   };
-
-  const dinosaursToDisplay = displayItems(dinosaurs, currentPage);
+  const dinosaursToDisplay = displayItems(currentDinoList, currentPage);
 
   dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
 
   const searchBar = document.getElementById("search-bar");
 
   searchBar.addEventListener("input", () => {
+    currentPage = 1
     document.getElementById("dino-list").innerHTML = "";
-    filterDinosaursByName(searchBar.value).forEach((dinosaur) =>
-      dinoListItem(dinosaur)
-    );
+    currentDinoList = filterDinosaursByName(searchBar.value)
+    const filteredDinosaursToDisplay = displayItems(currentDinoList, currentPage)
+    filteredDinosaursToDisplay.forEach((dino) => dinoListItem(dino));
+    console.log(currentDinoList);
   });
 
   return main;

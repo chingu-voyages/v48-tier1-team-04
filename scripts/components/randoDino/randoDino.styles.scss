@@ -1,27 +1,29 @@
-#dino-of-the-day{
+.dino-of-the-day{
     margin: 6rem 0.5rem;
     background: #fff;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     width: 100%;
-}
-
-.dino-of-the-day{
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
     padding: 0.5rem;
     &__info{
         text-align: left;
-        padding: 0.5rem;
+        padding: auto 0;
+        margin-left: -10rem;
     }
     &__img{
         width: 100%;
+        height: fit-content;
+
     }
 }
 
 @media only screen and (max-width: 630px) {
     .dino-of-the-day{
+        display: flex;
         flex-direction: column;
+        margin-left: 0;
     }
 }
 
