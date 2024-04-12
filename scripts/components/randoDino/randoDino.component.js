@@ -1,5 +1,6 @@
 import randomDino from "../../utils/giveRandoDino";
 import createEle from "../../utils/createEle";
+import "./randoDino.styles.scss";
 
 
 const setDailyDinosaur = () => {
@@ -40,10 +41,10 @@ function dinoOfTheDay(parentContainer){
     const innerHTML = 
     `
     <div>
-    <img src="${imageSrc}" alt="${name}">
+    <img class="dino-of-the-day__img" src="${imageSrc}" alt="${name}">
     </div>
     <div class="dino-of-the-day__info">
-    <h2 class="heading-main u-text-center">Dino of the Day</h3>
+    <h2 class="heading-main">Dino of the Day</h3>
         <div class="header-flex">
             <h1 class="dinosaur-name">${name} (${taxonomy})</h1>
             <p><strong>Named By:</strong> ${namedBy}</p>
