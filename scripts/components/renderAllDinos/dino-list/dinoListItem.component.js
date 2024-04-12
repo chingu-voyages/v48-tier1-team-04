@@ -1,6 +1,6 @@
 import "./dinoListItem.styles.scss";
-import createEle from "../../utils/createEle.js";
-import displayDinosaur from "../displayDinosaur/displayDinosaur.js";
+import createEle from "../../../utils/createEle.js";
+import displayDinosaur from "../../displayDinosaur/displayDinosaur.component.js";
 
 
 const dinoListItem = (dinosaur) => {
@@ -31,13 +31,11 @@ const dinoListItem = (dinosaur) => {
         : " "
     }
 `;
-
+  const randomHue = Math.floor(Math.random() * 360); // generates a random hue
   const parentContainer = document.getElementById('dino-list'); // declares the parent container which is the list of dinosaurs
   const dinoLi = createEle("li", content, parentContainer, 'dino show'); // declares a variable to a new `<li>` with the content of `content` and appended  to the parentContainer
- // dinoLi.classList.add("show");
-
-  dinoLi.style.filter = `hue-rotate(${Math.floor(Math.random()*360)}deg)`
-  dinoLi.onhover = () => dinoLi.style.filter = `hue-rotate(${Math.floor(Math.random()*360)} saturate(5))`; // adds an event listener to the list item to change the background color on hover
+  dinoLi.style.filter = `hue-rotate(${randomHue}deg)` // sets the background color of the list item to a random hue
+  dinoLi.onhover = () => dinoLi.style.filter = `hue-rotate(${randomHue} saturate(5))`; // adds an event listener to the list item to rotate the hue randomly on hover
   dinoLi.onclick = () => displayDinosaur(dinosaur); // adds event listen on click to the list item just created, and calls the `displayDinosaur`, passing in this dinosaur into the function
   return "Dinosaur added of " + name + " to the list"; // returns a log if we wanted to console.log our results
 };

@@ -3,7 +3,7 @@ import createEle from "../../utils/createEle";
 import dinosaurs from "../../data/dinosaurs.json";
 import randomPhrase from "../../utils/randomPhrase";
 import renderNav from "./nav/nav.component";
-import displayDinosaur from "../displayDinosaur/displayDinosaur";
+import displayDinosaur from "../displayDinosaur/displayDinosaur.component";
 
 
 const renderHeader = () => {
