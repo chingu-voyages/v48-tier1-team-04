@@ -5,7 +5,7 @@
     align-items: center;
     list-style-type: none;
     padding:5em 15em;
-    height: 75vh;
+    height: 100vh;
     justify-content: space-around;
     overflow: auto;
     & > li {
@@ -20,20 +20,38 @@
     }
     @include respond(big-desktop){
       padding: 5% 10%;
+      height: 65vh;
       & > li {
         width: 15%;
       }
     }
     @include respond(tab-land) {
       padding: 5% 10%;
+      height: 57vh;
       & > li {
         width: 45%;
       }
     }
     @include respond(tab-port) {
-      padding: 5% 20%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 5% 20%;
+        height: 50em;
+        justify-content: end;
       & > li {
-        width: 100%;
+        width: 28em;
+        margin: auto 1em;
+      }
+    }
+    @include respond(phone) {
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 5% 20%;
+        height: 41em;
+        justify-content: end;
+      & > li {
+        width: 28em;
+        margin: auto 1em;
       }
     }
   }

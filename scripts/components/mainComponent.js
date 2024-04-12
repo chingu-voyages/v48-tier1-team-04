@@ -1,10 +1,9 @@
-
 import dinosaurs from "../data/dinosaurs.json";
 import createEle from "../utils/createEle";
 import randomDino from "../utils/giveRandoDino";
-
 import dinoListItem from "./dino-list/dinoListItem.component";
 import renderDinoCard from "./card/card.component";
+
 
 const callToActions = [
   "Learn More",
@@ -18,7 +17,8 @@ const callToActions = [
 let i;
 const randomCallToAction = () =>
   callToActions[Math.floor(Math.random() * callToActions.length)];
-
+const renderMainContainer = () => createEle("main", '', document.body);
+const main = renderMainContainer();
 const renderMain = async () => {
   const headings = [
     "Random Dinosaurs",
@@ -47,45 +47,6 @@ const renderMain = async () => {
   const randomFact = await generateRandomFact();
   let currentPage = 1;
   const content = `
-  <section class="section-about">
-      <div class="u-text-center u-margin-bottom-lg">
-        <h2 class="heading-primary">
-          ${
-            [
-              "Dinosaurs are cool",
-              "Dinosaurs are awesome",
-              "Dinosaurs are amazing",
-              "Dinosaurs are fascinating",
-              "Fun Facts About Dinosaurs",
-              "Who Knew Dinosaurs Were So Interesting?",
-              "Give Me More Dinosaurs",
-              "Dinosaurs are the best!",
-            ][Math.floor(Math.random() * 4)]
-          }
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-1-of-2 col-mn">
-          <h3 class="heading-tertiary u-margin-bottom-sm">
-            ${randomDino1.taxonomy}</h3>
-          <p class="paragraph">${randomDino1.description.substring(
-            0,
-            350
-          )}...</p>
-          <h3 class="heading-tertiary u-margin-bottom-sm">${randomFact.Name}
-            </h3>
-          <p class="paragraph">${randomFact.Description}</p>
-          <a href="" class="btn-text">${randomCallToAction()} &rarr;</a>
-        </div>
-        <div class="col-1-of-2">
-          <div class="composition">
-            ${randomDinos.map((img, i) => renderImg(img, i)).join("")}
-          
-          </div>
-        </div>
-      </div>
-  </div>
-    </section>
     <section class="section-features">
     <div id="dino-of-the-day"></div>
     </section>
@@ -127,18 +88,18 @@ const renderMain = async () => {
 
 <div id="dinosaur-modal"></div>
     `;
-    const main = createEle("main", content, document.body);
+
+  main.innerHTML = content;
+
+
 
   const allDinosaurs = document.querySelector("section#all-dinosaurs"); // declares the parent container which is the list of dinosaurs
-  allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(
-    Math.random() * 58
-  )}.png) fixed`; // sets the background of the parent container to the image of the dinosaur
- // allDinosaurs.style.backgroundSize = "contain"; // sets the background size to cover
+  allDinosaurs.style.background = `url(./assets/watercolor/${Math.floor(Math.random() * 27) + 38}.png) center/contain fixed no-repeat`; // sets the background of the parent container to the image of the dinosaur
   const prevButton = document.getElementById("prev");
   const nextButton = document.getElementById("next");
   const pagination = (page, prev, reset) => {
-    if (prev && currentPage  <= 1) return 
-    if (!prev && currentPage >= totalPages) return
+    if (prev && currentPage <= 1) return;
+    if (!prev && currentPage >= totalPages) return;
     page < 2
       ? (currentPage = 1)
       : page > totalPages
@@ -149,7 +110,7 @@ const renderMain = async () => {
       : prev
       ? (currentPage = currentPage - 1)
       : (currentPage = currentPage + 1);
-    
+
     document.getElementById("dino-list").innerHTML = "";
     document.querySelector("#currentPage").textContent = currentPage;
     const dinosaursToDisplay = displayItems(dinosaurs, currentPage);
@@ -157,9 +118,6 @@ const renderMain = async () => {
   };
   prevButton.onclick = () => pagination(currentPage, true);
   nextButton.onclick = () => pagination(currentPage);
-
-
-
 
   const totalItems = dinosaurs.length;
   const itemsPerPage = 5;
@@ -186,10 +144,7 @@ const renderMain = async () => {
 
   dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
 
-  
-  
   const searchBar = document.getElementById("search-bar");
- 
 
   searchBar.addEventListener("input", () => {
     document.getElementById("dino-list").innerHTML = "";
@@ -198,7 +153,6 @@ const renderMain = async () => {
     );
   });
 
-  
   return main;
 };
 
