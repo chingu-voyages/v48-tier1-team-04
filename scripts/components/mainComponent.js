@@ -52,7 +52,7 @@ const renderMain = async () => {
     </section>
          
 
-    </section>
+  
     <section class="section-tours" >
     <div class="u-text-center u-margin-bottom-lg">
       <h2 class="heading-secondary" id="section-tours">
