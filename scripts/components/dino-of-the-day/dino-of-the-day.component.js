@@ -66,7 +66,7 @@ function renderDinoOfTheDay(){
         </div>
     </div>
     `
-    createEle('section', innerHTML, document.querySelector('main'), "features dino-of-the-day", null, true)
+    createEle('section', innerHTML, document.querySelector('main'), "features dino-of-the-day")
 }
 
 
