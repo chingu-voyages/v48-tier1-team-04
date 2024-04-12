@@ -77,8 +77,7 @@ const renderIntroSection = () => {
     content,
     document.querySelector("main"),
     "section-intro",
-    "about",
-    true
+    "about"
   );
   introSection.style.background = `linear-gradient(to right bottom, ${randomRGBa()}, rgba(201,230,94, 0.545),${randomRGBa()}), url(./assets/watercolor/${Math.floor(
     Math.random() * 27
