@@ -64,10 +64,9 @@ ${weight > 0 ? `<p><strong>Weight:</strong> ${weight} Kg</p>` : ``}
 <p><strong>Description:</strong> ${description}</p>   
 </div>`;
 
-  createEle("div", content, modal); // creates a new div with the content above and appends it to the modal
+  ; // creates a new div with the content above and appends it to the modal
   // flies to the location using the newly rendered map within the modal
   //flyToLocation(map, coordinates, 4); // calls the flyToLocation function from map.js to fly to the location of the dinosaur
-  return "modal popup of " + name + " added to the screen"; // returns a message intended for the console if we wanted to log this function
+  return createEle("div", content, modal); 
 };
-
 export default displayDinosaur;

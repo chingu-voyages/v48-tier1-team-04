@@ -1,5 +1,5 @@
 import './card.styles.scss'  
-import createEle from "../../utils/createEle";
+import createEle from "../../../utils/createEle";
 
 const renderDinoCard = (dino, callToActions, randomCallToAction, i) => {
     const renderDinoPopup = (dino) =>
