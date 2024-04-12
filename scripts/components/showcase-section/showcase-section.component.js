@@ -1,5 +1,5 @@
 import createEle from "../../utils/createEle";
-import { callToActions, randomCallToAction, randomDinos } from "../random-dino-section/intro-section.component";
+import { callToActions, randomCallToAction, randomDinos } from "../intro-section/intro-section.component";
 import renderDinoCard from "./card/card.component";
 
 
@@ -27,7 +27,7 @@ const renderShowcase = () => {
   <div class="u-text-center u-margin-top-xl">
   <a class="btn btn--white" href="#all-dinosaurs">View All Dinosaurs</a>
 </div>`
-    return createEle('section', content, document.querySelector('main'), 'section-features', null, true)
+    return createEle('section', content, document.querySelector('main'), 'section-features')
 }
 
 export default renderShowcase;
