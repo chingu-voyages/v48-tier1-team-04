@@ -5,22 +5,18 @@ import dinoOfTheDay from "./components/dino-of-the-day/dino-of-the-day.component
 import renderShowcase from "./components/showcase-section/showcase-section.component.js";
 import renderCharts from "./components/chart/dinoDietChart.component.js";
 import renderFooter from "./components/footer/footer.component.js";
-import renderIntroSection from "./components/random-dino-section/intro-section.component.js";
+import renderIntroSection from "./components/intro-section/intro-section.component.js";
 import renderAllDinos from "./components/renderAllDinos/renderAllDinos.js";
 import "../styles/main.scss";
 
 renderHeader();
 createEle('main', '', document.body);
 createEle('div', '', document.body, null, 'dinosaur-modal');
-
-renderShowcase();
-dinoOfTheDay();
-renderBodyMap();
 renderIntroSection();
-renderCharts();
+dinoOfTheDay();
+renderShowcase();
+renderBodyMap();
 renderAllDinos();
-// dinoPie(document.querySelector('main'), {
-//   labels: ["carnivorous", "herbivorous", "omnivorous"],
-//   data: dinoDiet,
-// });
+renderCharts();
+
 renderFooter();
