@@ -1,9 +1,36 @@
+// @import "../../../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/mixins";
+
 .charts__heading {
     margin-bottom: 4rem;
 }
 
 .charts-container{
-    flex-wrap: wrap;
-    width: 50vw;
-    margin: 0 auto;
+    // flex-wrap: wrap;
+    width: 100%;
+    // margin: 0 auto;
 }
+
+// wrap class
+
+.flex {
+    display: flex;
+    
+    & > div{
+        width: 50%;
+        max-width: 30em;
+        @include respond(phone){
+            width: 75%;
+
+        }
+
+    }
+    
+    &.wrap {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
+// mobile view flex containers a different size

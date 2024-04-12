@@ -16,17 +16,31 @@ const renderCharts = () => {
 
   const innerHTML = `
   <h2 class="heading-secondary u-text-center charts__heading">Dinosaur Charts</h2>
-  <div class="charts-container flex">
+  <div class="charts-container flex wrap">
+    <div>
     <canvas id="dietChart">
-    </canvas>
+    </div>
+    <div>
     <canvas id="eraChart">
     </canvas>
+    </div>
+    
   </div>
   `;
   const dinoDiet = calculateDiet();
   // create a section, appends the charts-container is the parent container holding the chart
   const section = createEle('section', innerHTML, document.querySelector('main'), "section-features", 'charts');
   // create a new chart, where the <canvas> of id: 'dietChart'
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: true,
+        position: 'right'
+      }
+    }
+  }
   new Chart(
     document.querySelector('#dietChart'),
     {
@@ -42,14 +56,7 @@ const renderCharts = () => {
 
         ]
       },
-      options: {
-        plugins: {
-          legend: {
-            display: true,
-            position: 'right'
-          }
-        }
-      }
+      options
     }
   );
   new Chart(
@@ -64,7 +71,8 @@ const renderCharts = () => {
             data: [dinoDiet.carnivorous, dinoDiet.herbivorous, dinoDiet.omnivorous]
           }
         ]
-      }
+      },
+      options
     }
   );
   return section;
