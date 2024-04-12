@@ -18,5 +18,4 @@ renderShowcase();
 renderBodyMap();
 renderAllDinos();
 renderCharts();
-
 renderFooter();
