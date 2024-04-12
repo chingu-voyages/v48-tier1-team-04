@@ -1,6 +1,7 @@
 import dinosaurs from "../../data/dinosaurs";
 import createEle from "../../utils/createEle";
-import dinoListItem from "../dino-list/dinoListItem.component";
+import dinoListItem from "./dino-list/dinoListItem.component";
+import filterDinosaursByName from "../../utils/filterDinosaurs";
 
 let currentPage = 1;
 const renderAllDinosaursList = () => {
