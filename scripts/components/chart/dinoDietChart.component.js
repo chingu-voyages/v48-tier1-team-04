@@ -13,7 +13,6 @@ const data = [{
 }]*/
 // generates the charts section -vinc
 const renderCharts = () => {
-
   const innerHTML = `
   <h2 class="heading-secondary u-text-center charts__heading">Dinosaur Charts</h2>
   <div class="charts-container flex wrap">
@@ -29,7 +28,7 @@ const renderCharts = () => {
   `;
   const dinoDiet = calculateDiet();
   // create a section, appends the charts-container is the parent container holding the chart
-  const section = createEle('section', innerHTML, document.querySelector('main'), "section-features", 'charts');
+  const section = createEle('section', innerHTML, document.querySelector('main'), "section-features section-charts", 'charts');
   // create a new chart, where the <canvas> of id: 'dietChart'
   const options = {
     responsive: true,
@@ -37,6 +36,16 @@ const renderCharts = () => {
     plugins: {
       legend: {
         display: true,
+        position: 'right'
+      }
+    }
+  }
+  const optionsBar = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
         position: 'right'
       }
     }
@@ -62,7 +71,7 @@ const renderCharts = () => {
   new Chart(
     document.querySelector('#eraChart'),
     {
-      type: 'pie',
+      type: 'bar',
       data: {
         labels: ["carnivorous", "herbivorous", "omnivorous"],
         datasets: [
@@ -72,7 +81,11 @@ const renderCharts = () => {
           }
         ]
       },
-      options
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+
     }
   );
   return section;

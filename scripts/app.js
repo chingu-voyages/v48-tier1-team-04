@@ -15,7 +15,7 @@ createEle('div', '', document.body, null, 'dinosaur-modal');
 renderIntroSection();
 dinoOfTheDay();
 renderShowcase();
-renderBodyMap();
+//renderBodyMap();
 renderAllDinos();
 renderCharts();
 renderFooter();
