@@ -48,7 +48,6 @@ const renderMain = async () => {
   let currentPage = 1;
   const content = `       
 
-  <section id="body-map" class="section-features">
 
 </section>
 
