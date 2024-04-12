@@ -20,16 +20,15 @@ const renderAllDinosaursList = () => {
     </span><button id="next" class="btn btn-white">Next</button></div>
 `;
   let currentDinoList = dinosaurs;
-  const allDinosaursList = createEle(
+  const allDinosaurs = createEle(
     "section",
     innerHTML,
     document.querySelector("main"),
     "section-features",
     "all-dinosaurs"
   );
-  const allDinosaurs = document.querySelector("section#all-dinosaurs"); // declares the parent container which is the list of dinosaurs
   allDinosaurs.style.background = `url(./assets/watercolor/${
-    Math.floor(Math.random() * 27) + 38
+    Math.floor(Math.random() * 27) + 29
   }.png) center/contain fixed no-repeat`; // sets the background of the parent container to the image of the dinosaur
   const prevButton = document.getElementById("prev");
   const nextButton = document.getElementById("next");
@@ -87,6 +86,6 @@ const renderAllDinosaursList = () => {
       dinoListItem(dinosaur)
     );
   });
-  return allDinosaursList
+  return allDinosaurs;
 };
 export default renderAllDinosaursList;
