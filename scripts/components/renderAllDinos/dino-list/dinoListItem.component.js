@@ -1,4 +1,5 @@
 import "./dinoListItem.styles.scss";
+import "../searchBar/searchBar.styles.scss";
 import createEle from "../../../utils/createEle.js";
 import displayDinosaur from "../../displayDinosaur/displayDinosaur.component.js";
 
@@ -22,13 +23,12 @@ const dinoListItem = (dinosaur) => {
   <div class="species-type">Species Type:
       <span>${typeSpecies}</span>
     </div>
-    ${
-      weight > 0
-        ? `</div>
+    ${weight > 0
+      ? `</div>
     <div class="weight"> Weight:
       <span>${weight} Kg</span>
     </div>`
-        : " "
+      : " "
     }
 `;
   const randomHue = Math.floor(Math.random() * 360); // generates a random hue
