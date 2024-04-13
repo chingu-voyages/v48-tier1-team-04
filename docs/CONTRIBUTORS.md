@@ -1,1 +1,1 @@
-[mnichols08](https://github.com/mnichols08)
+- [mnichols08](https://github.com/mnichols08)
