@@ -1,15 +1,16 @@
 import createEle from "../../utils/createEle";
 import giveRandomDino from "../../utils/giveRandoDino";
+import displayDinosaur from "../displayDinosaur/displayDinosaur.component";
 import "./intro-section.styles.scss";
 const callToActions = [
-    "Learn More",
-    "Find More Information",
-    "Discover More Clues",
-    "Explore Now",
-    "Embark on Exploration",
-    "Uncover the Secrets",
-    "Start Your Adventure",
-  ];
+  "Learn More",
+  "Find More Information",
+  "Discover More Clues",
+  "Explore Now",
+  "Embark on Exploration",
+  "Uncover the Secrets",
+  "Start Your Adventure",
+];
 const randomDinos = [];
 while (randomDinos.length < 3) {
   const newDino = giveRandomDino();
@@ -62,7 +63,7 @@ const renderIntroSection = () => {
     <h3 class="heading-tertiary u-margin-bottom-sm">${randomFact.Name}
       </h3>
     <p class="paragraph">${randomFact.Description}</p>
-    <a href="" class="btn-text">${randomCallToAction()} &rarr;</a>
+    <a class="btn-text">${randomCallToAction()} &rarr;</a>
   </div>
   <div class="col-1-of-2">
     <div class="composition">
@@ -82,7 +83,13 @@ const renderIntroSection = () => {
   introSection.style.background = `linear-gradient(to right bottom, ${randomRGBa()}, rgba(201,230,94, 0.545),${randomRGBa()}), url(./assets/watercolor/${Math.floor(
     Math.random() * 27
   )}.png) center center/cover`;
+  const imgs = introSection.querySelectorAll(".composition__photo");
+  imgs.forEach(
+    (img, i) => (img.onclick = () => displayDinosaur(randomDinos[i]))
+  );
+  const button = introSection.querySelector(".btn-text");
+  button.addEventListener("click", () => displayDinosaur(randomDino));
   return introSection;
 };
 export default renderIntroSection;
-export {callToActions, randomCallToAction, randomDinos}
+export { callToActions, randomCallToAction, randomDinos };
