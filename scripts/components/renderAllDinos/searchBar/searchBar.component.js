@@ -1,3 +1,4 @@
+import dinosaurs from "../../../data/dinosaurs";
 import createEle from "../../../utils/createEle";
 import "./searchBar.styles.scss";
 import dinoListItem from "../dino-list/dinoListItem.component";
@@ -8,18 +9,27 @@ const renderSearchBar = () => {
   const searchBar = createEle(
     "input",
     "",
-    document.querySelector("#all-dinosaurs .search"),
+    document.querySelector("main .search"),
     null,
     "search-bar"
   );
   searchBar.placeholder = "Search for a dinosaur...";
+  let filteredDinosaurs;
   searchBar.oninput = (e) => {
+    e.preventDefault();
     const searchValue = e.target.value.toLowerCase();
     dinoList.innerHTML = "";
-    filterDinosaursByName(searchValue).forEach((dinosaur) => {
-      dinoListItem(dinosaur);
-    });
+    filteredDinosaurs = filterDinosaursByName(searchValue);
+    const markers =  document.querySelectorAll('.mapboxgl-marker');
+    markers.forEach(marker => marker.classList.add('hide'));
+   filteredDinosaurs.forEach(dino => {
+      dinoListItem(dino);
+      const marker = document.getElementById(`marker-${dino.id}`);
+      marker.classList.remove('hide');
+   })
+  
   };
+
   return "Search bar rendered";
 };
 
