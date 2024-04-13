@@ -1,5 +1,6 @@
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import "./bodyMap.styles.scss";
 import { getCoords, placeMarker } from "../../utils/mapBox";
 import dinosaurs from "../../data/dinosaurs";
 import createEle from "../../utils/createEle";
@@ -28,7 +29,7 @@ const renderBodyMap = () => {
   });
   const placeMarkers = (map) =>
   dinosaurs.forEach(async (dinosaur) =>
-    placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name)
+    placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur)
   );
 placeMarkers(map);
 return bodyMap;

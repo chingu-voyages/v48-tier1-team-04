@@ -1,31 +1,37 @@
+import "./renderAllDinos.styles.scss";
 import dinosaurs from "../../data/dinosaurs";
 import createEle from "../../utils/createEle";
 import dinoListItem from "./dino-list/dinoListItem.component";
-import filterDinosaursByName from "../../utils/filterDinosaurs";
+import renderSearchBar from "./searchBar/searchBar.component";
 
 let currentPage = 1;
 const renderAllDinosaursList = () => {
-  const innerHTML = `
-<h2 class="heading-secondary u-text-center">${
-    ["View All Dinosaurs", "All Dinosaurs", "Dinosaurs"][
-      Math.floor(Math.random() * 2)
-    ]
-  }</h2>
-<div id="dino-list"></div>
-<div class="u-text-center u-margin-top-xl">
-    <div class="search"><input id="search-bar" type="text" placeholder="Search For a Dinosaur...">
+  createEle(
+    "div",
+    `  <h2 class="heading-primary u-text-center">${
+      ["View All Dinosaurs", "All Dinosaurs", "Dinosaurs"][
+        Math.floor(Math.random() * 2)
+      ]
+    }</h2>
+  <div class="u-text-center">
+    <div class="search">
 </div>
 <button id="prev" class="btn btn-white">Previous</button> 
     <span id="currentPage" style="border: 2em;">
     ${currentPage}
-    </span><button id="next" class="btn btn-white">Next</button></div>
+    </span><button id="next" class="btn btn-white">Next</button></div>`,
+    document.querySelector("main"),
+    "search-section"
+  );
+  const innerHTML = `
+<div id="dino-list"></div>
 `;
   let currentDinoList = dinosaurs;
   const allDinosaurs = createEle(
     "section",
     innerHTML,
     document.querySelector("main"),
-    "section-features",
+    null,
     "all-dinosaurs"
   );
   allDinosaurs.style.background = `url(./assets/watercolor/${
@@ -79,14 +85,8 @@ const renderAllDinosaursList = () => {
 
   dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
 
-  const searchBar = document.getElementById("search-bar");
+  renderSearchBar();
 
-  searchBar.addEventListener("input", () => {
-    document.getElementById("dino-list").innerHTML = "";
-    filterDinosaursByName(searchBar.value).forEach((dinosaur) =>
-      dinoListItem(dinosaur)
-    );
-  });
   return allDinosaurs;
 };
 export default renderAllDinosaursList;
