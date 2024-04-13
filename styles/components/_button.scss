@@ -11,6 +11,7 @@
       border: 1pt solid $color-yellow;
       position: relative;
       font-size:1.6rem;
+      cursor: pointer;
       @include transition;
 
       // Change for the button element
@@ -69,6 +70,7 @@
       animation-fill-mode: backwards;
     }
     &-text{
+      cursor: pointer;
       &:link,
       &:visited {
         font-size: $default-font-size;
