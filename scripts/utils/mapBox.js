@@ -10,6 +10,7 @@ const getCoords = async (query) => {
 
 const placeMarker = (map, coordinates, image, dinosaur) => {
     const div = document.createElement("div");
+    div.id = `marker-${dinosaur.id}`;
     div.style.width = "50px";
     div.style.height = "50px";
     div.style.backgroundSize = "contain";
