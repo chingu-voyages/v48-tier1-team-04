@@ -6,7 +6,7 @@ import renderShowcase from "./components/showcase-section/showcase-section.compo
 import renderCharts from "./components/chart/dinoDietChart.component.js";
 import renderFooter from "./components/footer/footer.component.js";
 import renderIntroSection from "./components/intro-section/intro-section.component.js";
-import renderAllDinos from "./components/renderAllDinos/renderAllDinos.js";
+import renderAllDinos from "./components/renderAllDinos/renderAllDinos.component.js";
 import "../styles/main.scss";
 
 renderHeader();
