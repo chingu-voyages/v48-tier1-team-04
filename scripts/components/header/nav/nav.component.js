@@ -12,9 +12,6 @@ const content = `
   <li class="navigation__item">
       <a href="#about" class="navigation__link">Random Dinosaurs</a>
     </li>
-  <li class="navigation__item">
-      <a class="navigation__link">Dig (Search) For Dinosaurs</a>
-    </li>
     <li class="navigation__item">
       <a href="#all-dinosaurs" class="navigation__link">Dig (Search) For Dinosaurs</a>
     </li>
