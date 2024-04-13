@@ -41,7 +41,7 @@ const renderShowcase = () => {
     Math.random() * 58
   )}.png) left/contain no-repeat`;
   randomDinos.forEach((dino, i) =>
-    renderDinoCard(dino, callToActions, randomCallToAction, i+1)
+    renderDinoCard(dino, i+1)
   );
   return showcaseSection;
 };

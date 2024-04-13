@@ -1,8 +1,9 @@
 import './card.styles.scss'  
 import createEle from "../../../utils/createEle";
 import displayDinosaur from '../../displayDinosaur/displayDinosaur.component';
+import { randomCallToAction } from '../../intro-section/intro-section.component';
 
-const renderDinoCard = (dino, randomCallToAction, i) => {
+const renderDinoCard = (dino, i) => {
     const content = `
           <div class="card" style"background: blue">
             <div class="card__side card__side--front">
