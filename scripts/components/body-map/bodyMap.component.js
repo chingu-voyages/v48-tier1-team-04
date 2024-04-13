@@ -3,6 +3,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { getCoords, placeMarker } from "../../utils/mapBox";
 import dinosaurs from "../../data/dinosaurs";
 import createEle from "../../utils/createEle";
+import displayDinosaur from "../displayDinosaur/displayDinosaur.component";
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOXAPIKEY;
 
 const renderBodyMap = () => {
@@ -25,7 +26,7 @@ const renderBodyMap = () => {
   });
   const placeMarkers = (map) =>
     dinosaurs.forEach(async (dinosaur) =>
-      placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name)
+      placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name).onclick = () => displayDinosaur(dinosaur)
     );
   map.dragRotate.disable();
   map.touchZoomRotate.disableRotation();
