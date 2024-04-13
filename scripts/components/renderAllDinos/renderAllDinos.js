@@ -1,7 +1,7 @@
 import dinosaurs from "../../data/dinosaurs";
 import createEle from "../../utils/createEle";
 import dinoListItem from "./dino-list/dinoListItem.component";
-import filterDinosaursByName from "../../utils/filterDinosaurs";
+import renderSearchBar from "./searchBar/searchBar.component";
 
 let currentPage = 1;
 const renderAllDinosaursList = () => {
@@ -13,7 +13,7 @@ const renderAllDinosaursList = () => {
   }</h2>
 <div id="dino-list"></div>
 <div class="u-text-center u-margin-top-xl">
-    <div class="search"><input id="search-bar" type="text" placeholder="Search For a Dinosaur...">
+    <div class="search">
 </div>
 <button id="prev" class="btn btn-white">Previous</button> 
     <span id="currentPage" style="border: 2em;">
@@ -79,14 +79,8 @@ const renderAllDinosaursList = () => {
 
   dinosaursToDisplay.forEach((dino) => dinoListItem(dino));
 
-  const searchBar = document.getElementById("search-bar");
+  renderSearchBar();  
 
-  searchBar.addEventListener("input", () => {
-    document.getElementById("dino-list").innerHTML = "";
-    filterDinosaursByName(searchBar.value).forEach((dinosaur) =>
-      dinoListItem(dinosaur)
-    );
-  });
   return allDinosaurs;
 };
 export default renderAllDinosaursList;
