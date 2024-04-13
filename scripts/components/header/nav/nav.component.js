@@ -9,8 +9,14 @@ const content = `
 <div class="navigation__background">&nbsp;</div>
 <nav class="navigation__nav">
   <ul class="navigation__list">
+  <li class="navigation__item">
+      <a href="#about" class="navigation__link">Random Dinosaurs</a>
+    </li>
+  <li class="navigation__item">
+      <a class="navigation__link">Dig (Search) For Dinosaurs</a>
+    </li>
     <li class="navigation__item">
-      <a href="#all-dinosaurs" class="navigation__link">Dig Up Some Dinosaurs</a>
+      <a href="#all-dinosaurs" class="navigation__link">Dig (Search) For Dinosaurs</a>
     </li>
     <li class="navigation__item">
       <a href="#charts" class="navigation__link">View Some Charts</a>
@@ -36,7 +42,7 @@ const renderNav = () => {
     "div",
     content,
     document.body,
-    "navigation fade-out",
+    "navigation",
     "nav"
   ); // create the navigation element and appends it to document.body
   const navItems = document.querySelector(".navigation__nav");
@@ -70,15 +76,15 @@ const renderNav = () => {
       toTopButton.classList.remove("fade-out");
       toTopButton.classList.add("fade-in");
     }
-    if (window.scrollY > 0) {
-      // user has scrolled down
-      nav.classList.remove("fade-out");
-      nav.classList.add("fade-in");
-    } else {
-      // user is at the top of the page
-      nav.classList.remove("fade-in");
-      nav.classList.add("fade-out");
-    }
+    // if (window.scrollY > 0) {
+    //   // user has scrolled down
+    //   nav.classList.remove("fade-out");
+    //   nav.classList.add("fade-in");
+    // } else {
+    //   // user is at the top of the page
+    //   nav.classList.remove("fade-in");
+    //   nav.classList.add("fade-out");
+    // }
     scrollTop = st <= 0 ? 0 : st; // set the scrollTop to 0 if the user is at the top of the page
   });
 

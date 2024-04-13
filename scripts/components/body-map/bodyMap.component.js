@@ -1,5 +1,6 @@
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import "./bodyMap.styles.scss";
 import { getCoords, placeMarker } from "../../utils/mapBox";
 import dinosaurs from "../../data/dinosaurs";
 import createEle from "../../utils/createEle";
