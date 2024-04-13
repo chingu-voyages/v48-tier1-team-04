@@ -30,6 +30,7 @@ const dinoListItem = (dinosaur) => {
     </div>`
       : " "
     }
+<button class="btn btn--green">Learn More</button>
 `;
   const randomHue = Math.floor(Math.random() * 360); // generates a random hue
   const parentContainer = document.getElementById('dino-list'); // declares the parent container which is the list of dinosaurs
