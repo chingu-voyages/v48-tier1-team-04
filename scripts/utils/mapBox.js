@@ -21,6 +21,7 @@ const placeMarker = (map, coordinates, image, dinosaur) => {
       div.onclick = () => console.log(dinosaur)
     }
     new mapboxgl.Marker(div).setLngLat(coordinates).addTo(map);
+    return div;
   };
 
 export { getCoords, placeMarker };
