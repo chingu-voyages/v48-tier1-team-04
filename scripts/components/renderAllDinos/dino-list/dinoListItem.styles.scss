@@ -33,12 +33,12 @@
     @include respond(tab-port) {
         flex-wrap: wrap;
         flex-direction: column;
-        height: 55rem;
+        height: 85rem;
         padding: 5% 20%;
         justify-content: end;
       & > li {
         width: 24em;
-        max-height: 100rem;
+        max-height: 85rem;
         margin: auto 1em;
       }
     }
