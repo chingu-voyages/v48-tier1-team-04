@@ -26,8 +26,11 @@ const renderBodyMap = () => {
     projection: "naturalEarth",
   });
   const placeMarkers = (map) =>
-    dinosaurs.forEach(async (dinosaur) =>
-      placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name).onclick = () => displayDinosaur(dinosaur)
+    dinosaurs.forEach(async (dinosaur) =>{
+      const marker = placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name);
+      marker.id = `marker-${dinosaur.id}`;
+      marker.onclick = () => displayDinosaur(dinosaur);}
+
     );
   map.dragRotate.disable();
   map.touchZoomRotate.disableRotation();
