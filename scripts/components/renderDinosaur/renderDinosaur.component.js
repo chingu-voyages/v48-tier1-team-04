@@ -1,8 +1,8 @@
-import "./displayDinosaur.styles.scss"; 
+import "./renderDinosaur.styles.scss"; 
 import createEle from "../../utils/createEle.js";
 
 // function to display a dinosaur modal
-const displayDinosaur = async (dinosaur) => {
+const renderDinosaur = async (dinosaur) => {
   const {
     description,
     diet,
@@ -69,4 +69,4 @@ ${weight > 0 ? `<p><strong>Weight:</strong> ${weight} Kg</p>` : ``}
   //flyToLocation(map, coordinates, 4); // calls the flyToLocation function from map.js to fly to the location of the dinosaur
   return createEle("div", content, modal); 
 };
-export default displayDinosaur;
+export default renderDinosaur;
