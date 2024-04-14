@@ -1,6 +1,6 @@
 import createEle from "../../utils/createEle";
 import giveRandomDino from "../../utils/giveRandoDino";
-import displayDinosaur from "../displayDinosaur/displayDinosaur.component";
+import displayDinosaur from "../renderDinosaur/renderDinosaur.component";
 import "./intro-section.styles.scss";
 const callToActions = [
   "Learn More",
