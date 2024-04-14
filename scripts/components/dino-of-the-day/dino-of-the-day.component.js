@@ -2,7 +2,7 @@ import randomDino from "../../utils/giveRandoDino";
 import createEle from "../../utils/createEle";
 import "./dino-of-the-day.styles.scss";
 import { randomCallToAction } from "../intro-section/intro-section.component";
-import displayDinosaur from "../displayDinosaur/displayDinosaur.component";
+import displayDinosaur from "../renderDinosaur/renderDinosaur.component";
 const setDailyDinosaur = () => {
   // Get the current date
   const today = new Date().toDateString();
