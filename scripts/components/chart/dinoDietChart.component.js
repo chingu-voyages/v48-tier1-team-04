@@ -77,15 +77,15 @@ const renderCharts = () => {
         labels: ["cretaceous", "jurassic", "triassic"],
         datasets: [
           {
-            label: 'diet',
-            data: [dinoEra.cretaceous, dinoEra.jurassic, dinoEra.triassic]
+            label: 'era',
+            data: [dinoEra.cretaceous, dinoEra.jurassic, dinoEra.triassic],
+            backgroundColor: ['#A8CD9F', '#58A399', '#496989'],
+            borderColor: '#36A2EB',
+
           }
         ]
       },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false
-      }
+      options: optionsBar
 
     }
   );
