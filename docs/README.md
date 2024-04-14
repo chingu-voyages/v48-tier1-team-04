@@ -26,9 +26,10 @@ Chingu Voyage 48 is a six-week project where a team of X individuals, including 
 The Minimum Viable Product of this SPA allows users to: 
 - View a comprehensive list of dinosaur names and images, Easily find specific dinosaurs by name, Understand the distribution of dinosaur diets with an informative chart, Access detailed information about each dinosaur, including type, size, diet, era, species.
 
-#### Example Image
+#### Example Requirement Image
 
-insert link here
+<img width="1332" alt="image" src="https://github.com/chingu-voyages/v48-tier1-team-04/assets/161270515/cb66b3a5-8698-4748-91ab-6fff551c8db9">
+
 
 This project provided an opportunity for the team to gain hands-on experience in web development and work with multi-dimensional datasets. It served as a practical application to hone their skills and delve into the complexities of data manipulation within a web-based environment.
 
