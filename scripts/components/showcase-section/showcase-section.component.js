@@ -38,8 +38,8 @@ const renderShowcase = () => {
     "section-features section-showcase"
   );
   showcaseSection.style.background = `linear-gradient(to bottom, ${randomHsla()}, rgba(255,255,255,255.9)), url(./assets/watercolor/${Math.floor(
-    Math.random() * 58
-  )}.png) left/contain no-repeat`;
+    Math.random() * 58+1
+  )}.png) center/cover no-repeat`;
   randomDinos.forEach((dino, i) =>
     renderDinoCard(dino, i+1)
   );
