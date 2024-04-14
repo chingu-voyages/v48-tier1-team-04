@@ -59,13 +59,17 @@ This project provided an opportunity for the team to gain hands-on experience in
 
 #### Authors
 
-- Suruchi Patki (Scrum Master)
-- Michael Brindley (Product Owner)
-- Sebastian De La Quintana: [GitHub](https://github.com/sebastiandlq) / Don't have Linkedin :(
-- Mikey Nichols: [GitHub](https://github.com/mnichols08) / [LinkedIn](https://linkedin.com/in/mnix-dev)
-- Joel Nwamba: [Github](https://github.com/joel-elyon-nwamba)/ [Linkedin](https://www.linkedin.com/in/joel-nwamba/)
-- Vincent Chan: [GitHub](https://github.com/vinccodes) / [Linkedin](https://www.linkedin.com/in/vincentdychan/)
-- Jordan Osikowicz: [GitHub](https://github.com/JOSIK95) / [LinkedIn](https://www.linkedin.com/in/jordan-osikowicz-developer/) 
+| Name | Role | Github Profile | LinkedIn Profile |
+| --- | --- | --- | --- |
+| Jim Medlock | Initial work | [jmedlock](https://github.com/jdmedlock) | [in/jmedlock](https://www.linkedin.com/in/jdmedlock/)
+| Joel Nwamba | Developer | [joel-elyon-nwamba](https://github.com/joel-elyon-nwamba) | [in/joel-nwamba](https://www.linkedin.com/in/joel-nwamba/) |
+| Chingu Voyages | Initial work | [chingu-voyages](https://github.com/chingu-voyages) | [company/chingu-os](https://www.linkedin.com/company/chingu-os/) |
+| Jordan Osikowics | Developer | [JOSIC95](https://github.com/JOSIC95) | [in/jordan-osikowicz-developer](https://www.linkedin.com/in/jordan-osikowicz-developer/) |
+| Mike | Product Owner | [Mikelovin23](https://github.com/Mikelovin23) | --- |
+| Mikey Nichols | Developer | [mnichols08](https://github.com/mnichols08) | [in/mnix-dev/](https://www.linkedin.com/in/mnix-dev/) |
+| Sebastian | Developer | [sebastiandlq](https://github.com/sebastiandlq) | --- |
+| Suruchi Patki | Scrum Master | [Supatki](https://github.com/Supatki) | [in/suruchi-patki-b0710b195/](https://linkedin.com/in/in/suruchi-patki-b0710b195/) |
+| Vincent Chan | Developer | [vinccodes](https://github.com/vinccodes) | --- |
 
 ## Acknowledgments
 
