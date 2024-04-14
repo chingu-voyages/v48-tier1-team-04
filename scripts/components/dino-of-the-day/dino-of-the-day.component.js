@@ -42,6 +42,7 @@ function renderDinoOfTheDay() {
     <img class="dino-of-the-day__img" src="${imageSrc}" alt="${name}">
 
     <div class="dino-of-the-day__info">
+    <h3 class="heading-secondary u-text-center">Dino of the Day</h3>
     <h2 class="heading-main">${name}</h3>
         <div class="header-flex">
             <h6 class="dinosaur-name">(${taxonomy})</h1>
