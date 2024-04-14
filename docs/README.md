@@ -23,7 +23,8 @@ Chingu Voyage 48 is a six-week project where a team of X individuals, including 
 
 ### The Project
 
-The Minimum Viable Product of this SPA allows users to: View a comprehensive list of dinosaur names and images, Easily find specific dinosaurs by name, Understand the distribution of dinosaur diets with an informative chart, Access detailed information about each dinosaur, including type, size, diet, era, species.
+The Minimum Viable Product of this SPA allows users to: 
+- View a comprehensive list of dinosaur names and images, Easily find specific dinosaurs by name, Understand the distribution of dinosaur diets with an informative chart, Access detailed information about each dinosaur, including type, size, diet, era, species.
 
 #### Example Image
 
