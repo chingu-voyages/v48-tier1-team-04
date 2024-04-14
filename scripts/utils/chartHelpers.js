@@ -20,7 +20,6 @@ export const calculateDiet = () =>{
             dinoDiet.omnivorous += 1;
         }
     })
-    console.log(dinoDiet)
     return dinoDiet;
 }
 
