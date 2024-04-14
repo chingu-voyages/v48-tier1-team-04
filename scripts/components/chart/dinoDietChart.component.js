@@ -1,8 +1,8 @@
 import "./dinoChart-styles.scss";
 import Chart from "chart.js/auto";
 import createEle from "../../utils/createEle";
-import calculateDiet from "../../utils/chartHelpers.js";
-
+//import calculateDiet from "../../utils/chartHelpers.js";
+import {calculateEra, calculateDiet}  from "../../utils/chartHelpers.js";
 /*
 const data = [{
     count: 28
@@ -27,6 +27,7 @@ const renderCharts = () => {
   </div>
   `;
   const dinoDiet = calculateDiet();
+  const dinoEra = calculateEra();
   // create a section, appends the charts-container is the parent container holding the chart
   const section = createEle('section', innerHTML, document.querySelector('main'), "section-features section-charts", 'charts');
   // create a new chart, where the <canvas> of id: 'dietChart'
@@ -73,11 +74,11 @@ const renderCharts = () => {
     {
       type: 'bar',
       data: {
-        labels: ["carnivorous", "herbivorous", "omnivorous"],
+        labels: ["cretaceous", "jurassic", "triassic"],
         datasets: [
           {
             label: 'diet',
-            data: [dinoDiet.carnivorous, dinoDiet.herbivorous, dinoDiet.omnivorous]
+            data: [dinoEra.cretaceous, dinoEra.jurassic, dinoEra.triassic]
           }
         ]
       },
