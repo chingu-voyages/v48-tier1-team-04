@@ -1,4 +1,8 @@
 @import "../../../styles/abstracts/mixins";
+html.saturate {
+  transition: 30s filter;
+  filter: saturate(1.1);
+}
 .modal-container {
   height: 75vh;
   width: 75vw;
@@ -37,7 +41,9 @@
     }
   }
 }
-
+#modal-map {
+  height: 40vh;
+}
 span.close-btn {
   z-index: 100;
   position: fixed;
