@@ -1,6 +1,9 @@
 @import "../../../styles/components/bg-video";
 @import "../../../styles/abstracts/mixins";
 @import "../../../styles/abstracts/variables";
+html.desaturate{
+  filter: saturate(0);
+}
 .header {
     block-size: 75vh;
     position: relative;
