@@ -40,8 +40,7 @@ const renderFooter = (map) => {
     </div>
     `;
   const footer = createEle("footer", content, document.body, "footer");
-  footer.querySelector(".footer__logo-box img").onclick = () =>
-    displayTeamLocations(map, "url(./assets/chinguheart.png)");
+  footer.querySelector(".footer__logo-box img").onclick = () => displayTeamLocations(map, "url(./assets/chinguheart.png)");
 
   return footer;
 };
