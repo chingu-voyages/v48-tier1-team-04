@@ -7,6 +7,18 @@ const getCoords = async (query) => {
     .then((response) => response.json())
     .then((data) => data.features[0].geometry.coordinates);
 };
+
+const renderMap = (container, coords, interactive) => new mapboxgl.Map({
+  container: container,
+  style: "mapbox://styles/mnix-dev/cluiiopsk01ca01ql97063j4f",
+  center: coords ? coords : [0, 0],
+  zoom: 1.9,
+  pitch: 0,
+  bearing: 0,
+  projection: "naturalEarth",
+  interactive: interactive ? true : false
+});
+
 const displayTeamLocations = async (map, image) => {
 const teamLocations = [
   "Bolivia",
@@ -40,4 +52,4 @@ const placeMarker = (map, coordinates, image, dinosaur) => {
     return div;
   };
 
-export { getCoords, placeMarker, displayTeamLocations };
+export { getCoords, placeMarker, displayTeamLocations, renderMap };
