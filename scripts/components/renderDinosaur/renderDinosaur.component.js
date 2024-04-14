@@ -1,4 +1,6 @@
-import "./renderDinosaur.styles.scss"; 
+import mapboxgl from "mapbox-gl";
+import { getCoords, placeMarker, renderMap } from "../../utils/mapBox.js";
+import "./renderDinosaur.styles.scss";
 import createEle from "../../utils/createEle.js";
 
 // function to display a dinosaur modal
@@ -17,6 +19,7 @@ const renderDinosaur = async (dinosaur) => {
     weight,
     whenLived,
   } = dinosaur;
+  document.body.parentElement.classList = ("saturate");
   // destructures the dinosaur object
   const parentContainer = document.getElementById("dinosaur-modal"); // declares where we are going to append this container
   parentContainer.innerHTML = ``; // resets the innerHTML of the parentContainer so that we can update with new content
@@ -25,16 +28,12 @@ const renderDinosaur = async (dinosaur) => {
     <span class="close-btn">&times;</span>
     </div>
     `; // the innerHTML for our page dynamically generated with conditionals
-  const modal = createEle("div", container, parentContainer); // creates an empty div and fills it in with the content above appending it to the parentContainer
-  modal.classList = "modal-container fade"; // applies a className of modal-container to the modal
-  modal.style.filter = `hue-rotate(${Math.floor(Math.random() * 360)}deg) saturate(5) contrast(1.5)`
-  setTimeout(() => {
-    modal.classList.remove("a-fade-out");
-    modal.classList.add("a-fade-in");
-  }, 0); // removes the fade-out class after 100ms to animate the modal in
+  const modal = createEle("div", container, parentContainer, "modal-container a-fade-in"); // creates an empty div and fills it in with the content above appending it to the parentContainer
+
+  setTimeout(() => modal.classList.remove("a-fade-out"), 0); // removes the fade-out class after 100ms to animate the modal in
   const closeBtn = modal.querySelector(".close-btn"); // points to the close button
   closeBtn.onclick = () => {
-    modal.classList.remove("a-fade-out");
+    modal.classList.remove("a-fade-in");
     modal.classList.add("a-fade-out");
     setTimeout(() => {
       modal.remove(); // removes the modal from html dom on click
@@ -43,8 +42,6 @@ const renderDinosaur = async (dinosaur) => {
   }; // remove the modal from the dom on click of th close button and hides the modal
   parentContainer.append(modal); // appends this modal to its parent
   parentContainer.classList.remove("hidden");
-
-
 
   // Create a new instance of the control with the desired title
   const content = `<div class="header-flex">
@@ -62,11 +59,17 @@ ${weight > 0 ? `<p><strong>Weight:</strong> ${weight} Kg</p>` : ``}
 <p><strong>Lived during:</strong> ${whenLived}</p>
 <p><strong>Species Type:</strong> ${typeSpecies}</p>
 <p><strong>Description:</strong> ${description}</p>   
-</div>`;
-
-  ; // creates a new div with the content above and appends it to the modal
-  // flies to the location using the newly rendered map within the modal
+</div><div id="modal-map"></div>`; // creates a new div with the content above and appends it to the modal
+const popup = createEle("div", content, modal);
+  mapboxgl.accessToken = import.meta.env.VITE_MAPBOXAPIKEY; // sets the mapbox access token
+  const coords = await getCoords(foundIn); // gets the coordinates of the location of the dinosaur
+  const map = renderMap('modal-map', coords); // renders the map with the coordinates and the popup with the dinosaur information 
+  map.setPitch(75);
+  map.setProjection("mercator");
+  map.setZoom(9);
+  placeMarker(map, coords, undefined, dinosaur); // places a marker on the map at the location of the dinosaur
+  return popup, {map}; // returns the popup
   //flyToLocation(map, coordinates, 4); // calls the flyToLocation function from map.js to fly to the location of the dinosaur
-  return createEle("div", content, modal); 
+ 
 };
 export default renderDinosaur;
