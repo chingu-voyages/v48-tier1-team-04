@@ -25,11 +25,14 @@ const renderBodyMap = () => {
     bearing: 0,
     projection: "naturalEarth",
   });
+  // disable map zoom when using scroll
+  map.scrollZoom.disable();
   const placeMarkers = (map) =>
-    dinosaurs.forEach(async (dinosaur) =>{
+    dinosaurs.forEach(async (dinosaur) => {
       const marker = placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name);
       marker.id = `marker-${dinosaur.id}`;
-      marker.onclick = () => displayDinosaur(dinosaur);}
+      marker.onclick = () => displayDinosaur(dinosaur);
+    }
 
     );
   map.dragRotate.disable();
