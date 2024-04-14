@@ -1,5 +1,6 @@
 @import "../../../styles/components/bg-video";
 @import "../../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/variables";
 .header {
     block-size: 75vh;
     position: relative;
@@ -33,4 +34,23 @@
       transform: translate(-50%, -50%);
       text-align: center;
     }
+    
+    & .heading-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba($color-primary, 0.27);
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(7.1px);
+        -webkit-backdrop-filter: blur(7.1px);
+        border: 1px solid rgba($color-secondary, 0.85);
+        transform: skewY(4deg);
+        transform-origin: top left;
+        z-index: -1;
+        margin-top: -8rem;
+      }
   }
