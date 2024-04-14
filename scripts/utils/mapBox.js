@@ -7,7 +7,7 @@ const getCoords = async (query) => {
     .then((response) => response.json())
     .then((data) => data.features[0].geometry.coordinates);
 };
-const displayTeamLocations = (map, image) => {
+const displayTeamLocations = async (map, image) => {
 const teamLocations = [
   "Bolivia",
   "Cincinnati",
@@ -21,12 +21,7 @@ teamLocations.forEach(async (location) => {
   const coordinates = await getCoords(location);
   markers.push(placeMarker(map, coordinates, image));
 });
-markers.forEach((marker, i) => marker.onclick = () => {
-  const developers = ["sebastianlq", "Supatki", "mnichols08", "JOSIK95", "mikelovin23", "Vinccodes"];
-  const github = dev => `https://github.com/${dev}`;
-  marker.style.cursor = "pointer";
-  marker.onclick = () => window.open(github(developers[i]), '_blank')
-})
+console.log('%cEaster Egg found!',  'color: red; background-color: aquamarine;');
 return markers;
 };
 
