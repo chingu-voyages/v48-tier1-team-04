@@ -34,7 +34,8 @@ This project provided an opportunity for the team to gain hands-on experience in
 
 ### Screenshot
 
-![Screenshot of the application](./assets/screenshot.png)
+<img width="1682" alt="image" src="https://github.com/chingu-voyages/v48-tier1-team-04/assets/161270515/3e00d1e9-e0df-4051-b7d8-2e1423e784a5">
+
 
 ### [Video Showcase]
 
