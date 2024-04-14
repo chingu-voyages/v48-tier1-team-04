@@ -21,7 +21,8 @@ const renderAllDinosaursList = () => {
     ${currentPage}
     </span><button id="next" class="btn btn-white">Next</button></div>`,
     document.querySelector("main"),
-    "search-section"
+    "search-section",
+    "search-dinosaurs-section"
   );
   const innerHTML = `
 <div id="dino-list"></div>
