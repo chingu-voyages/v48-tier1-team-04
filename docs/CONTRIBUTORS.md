@@ -1,2 +1,5 @@
 - [mnichols08](https://github.com/mnichols08)
 - [JOSIK95](https://github.com/JOSIK95)
+- [sebastiandlq](https://github.com/sebastiandlq)
+- [Mikelovin23](https://github.com/Mikelovin23)
+- [vinccodes](https://github.com/vinccodes)
