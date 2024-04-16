@@ -19,7 +19,6 @@ const renderDinosaur = async (dinosaur) => {
     weight,
     whenLived,
   } = dinosaur;
-  document.body.parentElement.classList = ("saturate");
   // destructures the dinosaur object
   const parentContainer = document.getElementById("dinosaur-modal"); // declares where we are going to append this container
   parentContainer.innerHTML = ``; // resets the innerHTML of the parentContainer so that we can update with new content
