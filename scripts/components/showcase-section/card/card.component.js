@@ -1,6 +1,6 @@
 import './card.styles.scss'  
 import createEle from "../../../utils/createEle";
-import displayDinosaur from '../../displayDinosaur/displayDinosaur.component';
+import displayDinosaur from '../../renderDinosaur/renderDinosaur.component';
 import { randomCallToAction } from '../../intro-section/intro-section.component';
 
 const renderDinoCard = (dino, i) => {

@@ -1,7 +1,8 @@
 import "./footer.styles.scss";
 import createEle from "../../utils/createEle";
+import { displayTeamLocations } from "../../utils/mapBox";
 
-const renderFooter = () => {
+const renderFooter = (map) => {
   const config = {
     voyage: 48,
     tier: 1,
@@ -10,7 +11,7 @@ const renderFooter = () => {
   };
   const content = `
     <div class="footer__logo-box">
-      <img src="./assets/raptors-logo-transparent.png" alt="full logo" class="footer__logo">
+      <a href="#body-map"><img src="./assets/raptors-logo-transparent.png" alt="full logo" class="footer__logo"></a>
     </div>
     <div class="row">
       <div class="col-1-of-2">
@@ -32,13 +33,16 @@ const renderFooter = () => {
           (dev) =>
             `<a href="https://github.com/${dev}" class="footer__link" target="_blank"> ${dev}</a>`
         )}
-      </span> for a <a href="https://www.chingu.io/" target="_blank"
-            class="footer__link"> another wonderful Chingu Event </a> called <a href="#" href="https://www.chingu.io" target="_blank" class="footer__link">Voyage 48</a>
+      </span> for <a href="https://www.chingu.io/" target="_blank"
+            class="footer__link"> Chingu Voyage </a> <a href="#" href="https://www.chingu.io" target="_blank" class="footer__link">48</a>
         </p>
       </div>
     </div>
     `;
-  return createEle("footer", content, document.body, "footer");
+  const footer = createEle("footer", content, document.body, "footer");
+  footer.querySelector(".footer__logo-box img").onclick = () => displayTeamLocations(map, "url(./assets/chinguheart.png)");
+
+  return footer;
 };
 
 export default renderFooter;

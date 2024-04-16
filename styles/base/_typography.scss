@@ -11,24 +11,6 @@ body {
     text-shadow: 0 0 3em lighten($color-yellow, 15%);
     line-height: 1.5;
     @include backface-visibility;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: rgba($color-primary, 0.27);
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(7.1px);
-      -webkit-backdrop-filter: blur(7.1px);
-      border: 1px solid rgba($color-secondary, 0.85);
-      transform: skewY(4deg);
-      transform-origin: top left;
-      z-index: -1;
-      margin-top: -8rem;
-    }
 
     &--main {
       display: block;

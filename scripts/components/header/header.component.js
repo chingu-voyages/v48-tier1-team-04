@@ -3,7 +3,7 @@ import createEle from "../../utils/createEle";
 import dinosaurs from "../../data/dinosaurs.json";
 import randomPhrase from "../../utils/randomPhrase";
 import renderNav from "./nav/nav.component";
-import displayDinosaur from "../displayDinosaur/displayDinosaur.component";
+import displayDinosaur from "../renderDinosaur/renderDinosaur.component";
 
 
 const renderHeader = () => {
@@ -30,7 +30,7 @@ const renderHeader = () => {
       A video is being played in the background here, but unfortunately your browser is not supported!
     </video>
   </div>
-    <div class="header__logo-box">
+    <div class="header__logo-box" id="header-logo">
       <img src="assets/raptors-logo-transparent.png" class="header__logo" alt="Logo">
     </div>
 
@@ -63,6 +63,7 @@ const renderHeader = () => {
     firstCta.style.hover = "cursor: pointer";
     firstCta.onclick = () => displayDinosaur(randomDinosaur);
   renderNav();
+  header.querySelector('#header-logo').onclick = () => document.body.parentElement.classList.toggle('hue-rotate')
   return header;
 };
 

@@ -13,7 +13,7 @@ const content = `
       <a href="#about" class="navigation__link">Random Dinosaurs</a>
     </li>
     <li class="navigation__item">
-      <a href="#all-dinosaurs" class="navigation__link">Dig (Search) For Dinosaurs</a>
+      <a href="#search-dinosaurs-section" class="navigation__link">Dig (Search) For Dinosaurs</a>
     </li>
     <li class="navigation__item">
       <a href="#charts" class="navigation__link">View Some Charts</a>

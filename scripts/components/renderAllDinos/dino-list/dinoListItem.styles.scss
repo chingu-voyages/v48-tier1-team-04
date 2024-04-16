@@ -5,7 +5,6 @@
     align-items: center;
     list-style-type: none;
     padding:5em;
-    height: 100vh;
     justify-content: space-around;
     align-items: flex-start;
     overflow: auto;
@@ -21,14 +20,12 @@
     }
     @include respond(big-desktop){
       padding: 5% 10%;
-      height: 65vh;
       & > li {
         width: 15%;
       }
     }
     @include respond(tab-land) {
       padding: 5% 10%;
-      height: 57vh;
       & > li {
         width: 45%;
       }
@@ -36,11 +33,12 @@
     @include respond(tab-port) {
         flex-wrap: wrap;
         flex-direction: column;
+        height: 85rem;
         padding: 5% 20%;
-        height: 50em;
         justify-content: end;
       & > li {
-        width: 28em;
+        width: 24em;
+        max-height: 85rem;
         margin: auto 1em;
       }
     }
@@ -48,8 +46,8 @@
         flex-wrap: wrap;
         flex-direction: column;
         padding: 5% 20%;
-        height: 41em;
-        justify-content: end;
+        height: 115rem;
+        justify-content: start;
       & > li {
         width: 28em;
         margin: auto 1em;

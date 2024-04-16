@@ -21,7 +21,8 @@ const renderAllDinosaursList = () => {
     ${currentPage}
     </span><button id="next" class="btn btn-white">Next</button></div>`,
     document.querySelector("main"),
-    "search-section"
+    "search-section",
+    "search-dinosaurs-section"
   );
   const innerHTML = `
 <div id="dino-list"></div>
@@ -36,7 +37,7 @@ const renderAllDinosaursList = () => {
   );
   allDinosaurs.style.background = `url(./assets/watercolor/${
     Math.floor(Math.random() * 27) + 29
-  }.png) center/contain fixed no-repeat`; // sets the background of the parent container to the image of the dinosaur
+  }.png) center/cover fixed no-repeat`; // sets the background of the parent container to the image of the dinosaur
   const prevButton = document.getElementById("prev");
   const nextButton = document.getElementById("next");
   const pagination = (page, prev, reset) => {
