@@ -15,10 +15,18 @@ const renderBodyMap = () => {
     "section-features",
     "body-map"
   );
+
   const map = renderMap("body-map", null, true);
+  // disable map zoom when using scroll
+  map.scrollZoom.disable();
+
   const placeMarkers = (map) =>
-    dinosaurs.forEach(async (dinosaur) =>
-      placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name).onclick = () => displayDinosaur(dinosaur)
+    dinosaurs.forEach(async (dinosaur) => {
+      const marker = placeMarker(map, await getCoords(dinosaur.foundIn), null, dinosaur.name);
+      marker.id = `marker-${dinosaur.id}`;
+      marker.onclick = () => displayDinosaur(dinosaur);
+    }
+
     );
   map.dragRotate.disable();
   map.touchZoomRotate.disableRotation();
