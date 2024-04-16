@@ -1,0 +1,80 @@
+@import "../../../styles/abstracts/mixins";
+
+.dino-of-the-day {
+  margin: 5em auto;
+  @include random-bgr();
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 75%;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  padding: 2em;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  &__info {
+    text-align: right;
+    padding: 5%;
+    margin-left: 12rem;
+    & .heading-main {
+      font-size: 4rem;
+      text-align: center;
+      margin-bottom:-1rem;
+    }
+    & .dinosaur-name {
+      font-size: 1rem;
+      text-align: center;
+    }
+    & .btn {
+      margin-top: 2rem;
+      display: flex;
+      margin: 1em auto;
+    }
+  }
+  &__img {
+    margin: 1rem;
+    width: 100%;
+    height: fit-content;
+  }
+  img {
+    @include trans-img();
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .dino-of-the-day {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 0;
+    &__info {
+      margin-left: 0;
+      text-align: justify;
+      padding: 0;
+      & .heading-main {
+        font-size: 3rem;
+      }
+      & .dinosaur-name {
+        font-size: 1rem;
+      }
+      & .btn {
+        margin: 5rem auto;
+      }
+    }
+  }
+}
+
+//Maybe moving these to a more general style file in the future
+.share-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 0.5rem 0;
+  i {
+    color: black;
+    font-size: 4rem;
+    transition: all 0.2s;
+    &:hover {
+      transform: scale(1.2);
+      color: #fff;
+      text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+  }
+}

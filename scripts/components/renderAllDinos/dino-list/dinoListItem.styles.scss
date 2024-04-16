@@ -1,0 +1,96 @@
+@import "../../../../styles/abstracts/mixins";
+#dino-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+    padding:5em;
+    justify-content: space-around;
+    align-items: flex-start;
+    overflow: auto;
+    & > li {
+      width: 30%;
+      margin: 1em auto;
+      img {
+        width: 100%;
+        border-radius: 20px;
+        mix-blend-mode: multiply;
+        opacity: .5;
+      }
+    }
+    @include respond(big-desktop){
+      padding: 5% 10%;
+      & > li {
+        width: 15%;
+      }
+    }
+    @include respond(tab-land) {
+      padding: 5% 10%;
+      & > li {
+        width: 45%;
+      }
+    }
+    @include respond(tab-port) {
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 85rem;
+        padding: 5% 20%;
+        justify-content: end;
+      & > li {
+        width: 24em;
+        max-height: 85rem;
+        margin: auto 1em;
+      }
+    }
+    @include respond(phone) {
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 5% 20%;
+        height: 115rem;
+        justify-content: start;
+      & > li {
+        width: 28em;
+        margin: auto 1em;
+      }
+    }
+  }
+  
+  
+  .dino {
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+    background: rgba(255, 255, 255, 0.77);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13.6px);
+    -webkit-backdrop-filter: blur(13.6px);
+    border: 1px solid rgba(255, 255, 255, 0.86);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    text-align: center;
+    background-color: fbfbfb;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding-bottom: 1rem;
+    &:hover {
+      scale: 1.1;
+      transition: 0.1s all;
+      cursor: pointer;
+      @include random-bgr();
+    }
+    &-info__name {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: greenyellow;
+      padding: 1rem;
+    }
+    &.show{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  span#currentPage {
+    margin: auto 1em;
+    padding: .75em;
+    background: #f0f0f0;
+  }

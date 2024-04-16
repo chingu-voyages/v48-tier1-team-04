@@ -1,0 +1,42 @@
+// @import "../../../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/mixins";
+
+.section-charts {
+    background: beige;
+    margin-top: -10rem;
+    padding: 10rem 0;
+}
+
+.charts__heading {
+    margin-bottom: 4rem;
+}
+
+.charts-container{
+    // flex-wrap: wrap;
+    width: 100%;
+    // margin: 0 auto;
+}
+
+// wrap class
+
+.flex {
+    display: flex;
+    
+    & > div{
+        width: 50%;
+        max-width: 30em;
+        @include respond(phone){
+            width: 75%;
+
+        }
+
+    }
+    
+    &.wrap {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
+// mobile view flex containers a different size
