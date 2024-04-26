@@ -1,5 +1,4 @@
 \.vscode
-docs/
 node_modules/
 \.github/
 *.doc
