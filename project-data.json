@@ -1,5 +1,42 @@
 {
-  "project": "Task App",
-  "role": "Developer"
-  "description": ".."
+  "project": "Chingu Raptors Presents: Dinosauria - Chingu Voyage 48 Tier 1 Team 04",
+  "description": "Chingu Voyage 48 is a six-week project where a team of 7 individuals, including a Scrum Master and a product owner, developed a single page application (SPA) for learning about Dinosaurs.",
+  "position": "Product Owner / Developer",
+  "image": "./docs/Images/screenshot.png",
+  "language": {
+    "reason": "The Minimum Viable Product of this SPA allows users to: View a comprehensive list of dinosaur names and images, understand the distribution of dinosaur diets with an informative chart, and access detailed information about each dinosaur, including type, size, diet, era, species.",
+    "language": ["html", "SASS", "Vite", "Mapbox API", "Chart.js", "Modular Javascript", "scrum"]
+  },
+  "project_goal": [
+    {
+      "title": "Dinosaur List",
+      "goal": "View a comprehensive list of dinosaur names and images.",
+      "description": "Effortlessly locate specific dinosaurs by name using our user-friendly search feature. Whether you're trying to identify a common species like Stegosaurus or seeking information on a lesser-known dinosaur such as the Ichthyosaurus, our intuitive system allows you to quickly narrow down your search. Simply type the name of the dinosaur you're interested in, and you'll instantly access detailed profiles complete with descriptive information and images. Perfect for students, educators, and dinosaur enthusiasts, this tool makes discovering and learning about your favorite prehistoric creatures easier than ever."
+    },
+    {
+      "title": "Search Functionality",
+      "goal": "Easily find specific dinosaurs by name.",
+      "description": "Effortlessly locate specific dinosaurs by name using our user-friendly search feature. Whether you're trying to identify a common species like Stegosaurus or seeking information on a lesser-known dinosaur such as the Ichthyosaurus, our intuitive system allows you to quickly narrow down your search. Simply type the name of the dinosaur you're interested in, and you'll instantly access detailed profiles complete with descriptive information and images. Perfect for students, educators, and dinosaur enthusiasts, this tool makes discovering and learning about your favorite prehistoric creatures easier than ever."
+    },
+    {
+      "title": "Dinosaur Diet Charts",
+      "goal": "Understand the distribution of dinosaur diets with an informative chart.",
+      "description": "Understand the distribution of dinosaur diets with an informative chart."
+    },
+    {
+      "title": "Detailed Information",
+      "goal": "Access detailed information about each dinosaur, including type, size, diet, era, and species.",
+      "description": "Access thorough and detailed information about each dinosaur, including its type, size, diet, era, and species. Each dinosaur profile offers a comprehensive overview, covering key attributes such as its classification (e.g., theropod, sauropod), physical dimensions, dietary preferences, historical era (such as the Jurassic or Cretaceous period), and specific species details. This resource is perfect for students, educators, researchers, and dinosaur aficionados, providing an in-depth understanding of each dinosaur's unique characteristics and role in prehistoric ecosystems."
+    }
+  ],
+  "visual_identification": {
+    "reason": "We did not have a designer on board for this project so we began with a very simple design. We used a color palette of green, white, and black to create a clean and easy-to-read interface. The font used is 'Lato' which is a clean and modern typeface that is easy to read on screens. The layout is simple and straightforward, with a focus on usability and accessibility. The wireframe below shows the basic structure of the page, with a header, search bar, dinosaur list, diet chart, and detailed information section. The goal was to create a user-friendly interface that allows visitors to quickly find and access information about dinosaurs. It features a responsive design that adapts to different screen sizes, making it accessible on desktops, tablets, and mobile devices. I also sprung to purchase some really neat water-color dinosaur images to add a bit of fun to the site.",
+    "fonts": ["Lato", "sans-serif"],
+    "colors": ["White", "Green", "Black", "Random Gradient Colors"]
+  },
+  "challenge_solution": {
+    "challenge": "In this Voyage I learned what it was like to work with a real Scrum Master and Product Owner. I learned how to work with a team of developers and how to communicate effectively with them. I learned how to use the Scrum framework to manage the project and how to prioritize tasks and set goals. I also was able to take to time to teach others how to use tools like GitHub to collaborate with the team and track our progress. Overall, it was a valuable experience that taught me a lot about working in a team and managing a project. I also learned a lot about dinosaurs, which was a fun bonus! The biggest challenge that we faced was not having a dedicated designer on the team. ",
+    "solution": "We overcame this challenge by keeping the design simple and focusing on usability. We used a clean and modern color palette, a legible font, and a straightforward layout to create an interface that is easy to navigate and understand. We also purchased some water-color dinosaur images to add visual interest to the site. By working closely with the team and communicating effectively, we were able to create a functional and informative SPA that meets the needs of our target audience. We also used the Scrum framework to manage the project and prioritize tasks, which helped us stay on track and meet our goals. Overall, the project was a success, and we are proud of what we accomplished together. In the end I implemented a design from another project and tweaked it to work with our project. I do wish I had done this sooner as it would have been a great learning experience for the others."
+  },
+  "wireframe": "./docs/Images/wireframe.png"
 }
