@@ -7,6 +7,8 @@ import renderCharts from "./components/chart/dinoDietChart.component.js";
 import renderFooter from "./components/footer/footer.component.js";
 import renderIntroSection from "./components/intro-section/intro-section.component.js";
 import renderAllDinos from "./components/renderAllDinos/renderAllDinos.component.js";
+import arCode from "./components/ar-code/arCode.component";
+
 import "../styles/main.scss";
 
 renderHeader();
@@ -20,3 +22,4 @@ const map = bodyMap.map;
 renderAllDinos();
 renderCharts();
 renderFooter(map);
+setTimeout(() => arCode(document.body), 1000 * 60 ); 
