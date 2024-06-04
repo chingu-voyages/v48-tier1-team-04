@@ -1,0 +1,30 @@
+.ar-code {
+  display: none;
+  text-align: center;
+  h3 {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 1024px) {
+    z-index: 999;
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 1.25s ease-in;
+    &:hover {
+      transform: translate(-51%, -49%) scale(.91) rotate(3deg);
+      transition: 0.2s all;
+      animation: hue-rotate 100s infinite;
+    }
+  }
+}
